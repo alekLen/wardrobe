@@ -8,7 +8,7 @@ namespace wardrobe
 {
     internal class Colors
     {
+        public int Id { get; set; }
         public string Color_name { get; set; }
-        public Colors(string name) => Color_name = name;
     }
 }
