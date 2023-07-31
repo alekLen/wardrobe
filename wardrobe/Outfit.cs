@@ -12,5 +12,6 @@ namespace wardrobe
         public string outfit_name { get; set; }
         public virtual ICollection <Clothes_Item> clothes_items { get; set; }
         public string? photo { get; set; }
+        public virtual Album album { get; set; }
     }
 }

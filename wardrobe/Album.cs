@@ -8,7 +8,8 @@ namespace wardrobe
 {
     internal class Album
     {
-        public string album_name;
-        public ICollection<Outfit> album;
+        public int Id { get; set; }
+        public string album_name { get; set; }
+        public virtual ICollection<Outfit> outfits { get; set; }
     }
 }
