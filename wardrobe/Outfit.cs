@@ -8,8 +8,9 @@ namespace wardrobe
 {
     internal class Outfit
     {
-        public string outfit_name;
-        public ICollection <Clothes_Item> outfit;
-        public string? photo;
+        public int Id { get; set; }
+        public string outfit_name { get; set; }
+        public virtual ICollection <Clothes_Item> clothes_items { get; set; }
+        public string? photo { get; set; }
     }
 }
