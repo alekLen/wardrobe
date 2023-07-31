@@ -8,14 +8,15 @@ namespace wardrobe
 {
     internal class Clothes_Item
     {
+        public int Id { get; set; }
         public string Clothes_Item_name { get; set; }
-        public Colors color;
-        public Clothes_type type;
-        public Season season;
-        public Clothes_style style;
-        public DateTime? date;
-        public string? place;
-        public string? size;
-        public string photo;
+        public Colors color { get; set; }
+        public Clothes_type type { get; set; }
+        public Season season { get; set; }
+        public Clothes_style style { get; set; }
+        public DateTime? date { get; set; }
+        public string? place { get; set; }
+        public string? size { get; set; }
+        public string photo { get; set; }
     }
 }
