@@ -19,10 +19,16 @@ namespace wardrobe
         {
             if (Database.EnsureCreated())
             {
-                Clothes_style style1 = new Clothes_style {Style_name = "Повседневный" };             
+                Clothes_style style1 = new Clothes_style {Style_name = "Повседневный" };
+                Clothes_style style2 = new Clothes_style { Style_name = "Спортивный" };
+                Clothes_style style3 = new Clothes_style { Style_name = "Вечерний" };
+                Clothes_style style4 = new Clothes_style { Style_name = "Рабочий" };
 
                 clothes_styles.Add(style1);
-              
+                clothes_styles.Add(style2);
+                clothes_styles.Add(style3);
+                clothes_styles.Add(style4);
+
                 SaveChanges();
             }
         }
