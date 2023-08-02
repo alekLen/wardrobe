@@ -61,6 +61,18 @@ namespace wardrobe
                 colors.Add(color9);
                 colors.Add(color10);
 
+                Season season1 = new Season { Season_name = "все сезоны" };
+                Season season2 = new Season { Season_name = "зима" };
+                Season season3 = new Season { Season_name = "весна" };
+                Season season4 = new Season { Season_name = "лето" };
+                Season season5 = new Season { Season_name = "осень" };
+
+                seasons.Add(season1);
+                seasons.Add(season2);
+                seasons.Add(season3);
+                seasons.Add(season4);
+                seasons.Add(season5);
+
                 SaveChanges();
             }
         }
