@@ -29,6 +29,7 @@ namespace wardrobe
                 {
                     ToSeasonBox(db);
                     ToStyleBox(db);
+                    ToColorBox(db);
                 }
             }
             catch (Exception ex)
@@ -66,6 +67,24 @@ namespace wardrobe
                         string s = p.Style_name;
                         form.SetStyleToWardrobe(s);
                     }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void ToColorBox(Wardrobe_Context db)
+        {
+            try
+            {
+                var query = from b in db.colors
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Color_name;
+                    form.SetColorToWardrobe(s);
+                }
             }
             catch (Exception ex)
             {
