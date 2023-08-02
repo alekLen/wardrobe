@@ -1,7 +1,10 @@
+using Azure.Messaging;
+
 namespace wardrobe
 {
-    public partial class Form1 : Form,IForm1
+    public partial class Form1 : Form, IForm1
     {
+        public event EventHandler<EventArgs> Load;
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +36,18 @@ namespace wardrobe
         public void SetColorToWardrobe(string s)
         {
             listBox5.Items.Add(s);
+        }
+
+        private void LoadForm(object sender, EventArgs e)
+        {
+            try
+            {
+                Load?.Invoke(this, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

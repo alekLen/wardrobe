@@ -39,6 +39,7 @@
             сезонToolStripMenuItem = new ToolStripMenuItem();
             цветToolStripMenuItem = new ToolStripMenuItem();
             альбомToolStripMenuItem = new ToolStripMenuItem();
+            добавитьодеждуToolStripMenuItem = new ToolStripMenuItem();
             просмотрToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             button2 = new Button();
@@ -68,7 +69,6 @@
             label4 = new Label();
             button5 = new Button();
             button6 = new Button();
-            добавитьодеждуToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -153,6 +153,12 @@
             альбомToolStripMenuItem.Name = "альбомToolStripMenuItem";
             альбомToolStripMenuItem.Size = new Size(210, 26);
             альбомToolStripMenuItem.Text = "альбом";
+            // 
+            // добавитьодеждуToolStripMenuItem
+            // 
+            добавитьодеждуToolStripMenuItem.Name = "добавитьодеждуToolStripMenuItem";
+            добавитьодеждуToolStripMenuItem.Size = new Size(145, 24);
+            добавитьодеждуToolStripMenuItem.Text = "добавить_одежду";
             // 
             // просмотрToolStripMenuItem
             // 
@@ -408,12 +414,6 @@
             button6.Text = "фильтровать";
             button6.UseVisualStyleBackColor = true;
             // 
-            // добавитьодеждуToolStripMenuItem
-            // 
-            добавитьодеждуToolStripMenuItem.Name = "добавитьодеждуToolStripMenuItem";
-            добавитьодеждуToolStripMenuItem.Size = new Size(145, 24);
-            добавитьодеждуToolStripMenuItem.Text = "добавить_одежду";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -453,6 +453,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Гардероб";
+            Load += LoadForm;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
