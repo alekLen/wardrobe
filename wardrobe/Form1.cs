@@ -14,9 +14,21 @@ namespace wardrobe
         {
             listBox7.Items.Add(s);
         }
-        public void SetTypeToWardrobe(string s)
+        public void SetTypeUpToWardrobe(string s)
         {
-
+            listBox1.Items.Add(s);
+        }
+        public void SetTypeBottomToWardrobe(string s)
+        {
+            listBox2.Items.Add(s);
+        }
+        public void SetTypeSuitToWardrobe(string s)
+        {
+            listBox3.Items.Add(s);
+        }
+        public void SetTypeShoeToWardrobe(string s)
+        {
+            listBox4.Items.Add(s);
         }
         public void SetColorToWardrobe(string s)
         {

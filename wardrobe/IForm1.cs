@@ -11,7 +11,10 @@ namespace wardrobe
     {
         public void SetSeasonToWardrobe(string s);
         public void SetStyleToWardrobe(string s);
-        public void SetTypeToWardrobe(string s);
+        public void SetTypeUpToWardrobe(string s);
+        public void SetTypeBottomToWardrobe(string s);
+        public void SetTypeSuitToWardrobe(string s);
+        public void SetTypeShoeToWardrobe(string s);
         public void SetColorToWardrobe(string s);
 
     }
