@@ -312,7 +312,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1376, 276);
+            button4.Location = new Point(1376, 378);
             button4.Name = "button4";
             button4.Size = new Size(94, 113);
             button4.TabIndex = 20;
@@ -323,7 +323,7 @@
             // 
             listBox5.FormattingEnabled = true;
             listBox5.ItemHeight = 20;
-            listBox5.Location = new Point(32, 96);
+            listBox5.Location = new Point(32, 107);
             listBox5.Name = "listBox5";
             listBox5.Size = new Size(150, 24);
             listBox5.TabIndex = 21;
@@ -331,7 +331,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 73);
+            label1.Location = new Point(32, 84);
             label1.Name = "label1";
             label1.Size = new Size(40, 20);
             label1.TabIndex = 22;
@@ -358,7 +358,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 137);
+            label2.Location = new Point(32, 146);
             label2.Name = "label2";
             label2.Size = new Size(49, 20);
             label2.TabIndex = 25;
@@ -367,7 +367,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 205);
+            label3.Location = new Point(32, 210);
             label3.Name = "label3";
             label3.Size = new Size(47, 20);
             label3.TabIndex = 26;
@@ -375,16 +375,16 @@
             // 
             // listView5
             // 
-            listView5.Location = new Point(32, 299);
+            listView5.Location = new Point(32, 336);
             listView5.Name = "listView5";
-            listView5.Size = new Size(148, 161);
+            listView5.Size = new Size(148, 124);
             listView5.TabIndex = 27;
             listView5.UseCompatibleStateImageBehavior = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(35, 276);
+            label4.Location = new Point(32, 313);
             label4.Name = "label4";
             label4.Size = new Size(59, 20);
             label4.TabIndex = 28;
