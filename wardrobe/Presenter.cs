@@ -17,10 +17,44 @@ namespace wardrobe
         public Presenter(IForm1 f)
         {
             form = f;
-            //form.Load += new EventHandler<EventArgs>(Load);
+            form.Load += new EventHandler<EventArgs>(Load);
           
         }
-      
+        public void Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+           
+             ToSeasonBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void ToSeasonBox(Wardrobe_Context db)
+        {
+            try
+            {
+
+                using (db)
+                {
+                    var query = from b in db.seasons
+                                select b;
+
+                    foreach (var p in query)
+                    {
+                        string s = p.Season_name;
+                        form.SetSeasonToWardrobe(s);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         Wardrobe_Context Get_db()
         {
             var builder = new ConfigurationBuilder();
