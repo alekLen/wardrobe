@@ -24,32 +24,48 @@ namespace wardrobe
         {
             try
             {
-               // Wardrobe_Context db = Get_db();
-           
-             ToSeasonBox();
+               Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    ToSeasonBox(db);
+                    ToStyleBox(db);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        public void ToSeasonBox()
+        public void ToSeasonBox(Wardrobe_Context db)
         {
             try
-            {
-                Wardrobe_Context db = Get_db();
-
-                using (db)
-                {
-                    var query = from b in db.seasons
+            {                        
+                    var query1 = from b in db.seasons
                                 select b;
 
-                    foreach (var p in query)
+                    foreach (var p in query1)
                     {
                         string s = p.Season_name;
                         form.SetSeasonToWardrobe(s);
                     }
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void ToStyleBox(Wardrobe_Context db)
+        {
+            try
+            {
+                    var query = from b in db.clothes_styles
+                                 select b;
+
+                    foreach (var p in query)
+                    {
+                        string s = p.Style_name;
+                        form.SetStyleToWardrobe(s);
+                    }
             }
             catch (Exception ex)
             {
