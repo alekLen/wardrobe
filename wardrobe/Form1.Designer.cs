@@ -331,6 +331,7 @@
             listBox5.ItemHeight = 20;
             listBox5.Location = new Point(32, 107);
             listBox5.Name = "listBox5";
+            listBox5.SelectionMode = SelectionMode.MultiSimple;
             listBox5.Size = new Size(150, 24);
             listBox5.TabIndex = 21;
             // 
@@ -349,6 +350,7 @@
             listBox6.ItemHeight = 20;
             listBox6.Location = new Point(32, 169);
             listBox6.Name = "listBox6";
+            listBox6.SelectionMode = SelectionMode.MultiSimple;
             listBox6.Size = new Size(150, 24);
             listBox6.TabIndex = 23;
             // 
@@ -358,6 +360,7 @@
             listBox7.ItemHeight = 20;
             listBox7.Location = new Point(32, 233);
             listBox7.Name = "listBox7";
+            listBox7.SelectionMode = SelectionMode.MultiSimple;
             listBox7.Size = new Size(150, 24);
             listBox7.TabIndex = 24;
             // 
