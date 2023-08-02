@@ -4,7 +4,7 @@ namespace wardrobe
 {
     public partial class Form1 : Form, IForm1
     {
-        public event EventHandler<EventArgs> Load;
+        public event EventHandler<EventArgs> LoadF;
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace wardrobe
         {
             try
             {
-                Load?.Invoke(this, EventArgs.Empty);
+                LoadF?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {

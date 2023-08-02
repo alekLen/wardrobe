@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace wardrobe
 {
-    internal class Wardrobe_Context : DbContext
+    internal partial class Wardrobe_Context : DbContext
     {
         // Для работы с БД MS SQL Server необходимо добавить пакет:
         // Microsoft.EntityFrameworkCore.SqlServer(представляет функциональность Entity Framework для работы с MS SQL Server)
@@ -84,9 +84,5 @@ namespace wardrobe
         public DbSet<Outfit> outfits { get; set; }
         public DbSet<Album> albums { get; set; }
 
-
-      /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {         
-        }*/
     }
 }

@@ -17,26 +17,27 @@ namespace wardrobe
         public Presenter(IForm1 f)
         {
             form = f;
-            form.Load += new EventHandler<EventArgs>(Load);
+            form.LoadF += new EventHandler<EventArgs>(LoadAll);
           
         }
-        public void Load(object sender, EventArgs e)
+        public void LoadAll(object sender, EventArgs e)
         {
             try
             {
-                Wardrobe_Context db = Get_db();
+               // Wardrobe_Context db = Get_db();
            
-             ToSeasonBox(db);
+             ToSeasonBox();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        public void ToSeasonBox(Wardrobe_Context db)
+        public void ToSeasonBox()
         {
             try
             {
+                Wardrobe_Context db = Get_db();
 
                 using (db)
                 {

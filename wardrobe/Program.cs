@@ -15,7 +15,7 @@ namespace wardrobe
             try
             {
                
-                var builder = new ConfigurationBuilder();
+              /*  var builder = new ConfigurationBuilder();
                 builder.SetBasePath(Directory.GetCurrentDirectory());
                 builder.AddJsonFile("appsettings.json");
                 var config = builder.Build();
@@ -24,7 +24,7 @@ namespace wardrobe
                 var optionsBuilder = new DbContextOptionsBuilder<Wardrobe_Context>();
                 var options = optionsBuilder.UseSqlServer(connectionString).Options;
 
-                Wardrobe_Context db = new Wardrobe_Context(options);
+                Wardrobe_Context db = new Wardrobe_Context(options);*/
                
                 /* using (LanguageContext db = new LanguageContext(options))
                  {
