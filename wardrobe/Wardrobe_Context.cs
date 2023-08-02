@@ -39,6 +39,28 @@ namespace wardrobe
                 clothes_types.Add(type3);
                 clothes_types.Add(type4);
 
+                Colors color1 = new Colors { Color_name = "белый" };
+                Colors color2 = new Colors { Color_name = "черный" };
+                Colors color3 = new Colors { Color_name = "бежевый" };
+                Colors color4 = new Colors { Color_name = "красный" };
+                Colors color5 = new Colors { Color_name = "зеленый" };
+                Colors color6 = new Colors { Color_name = "желтый" };
+                Colors color7 = new Colors { Color_name = "коричневый" };
+                Colors color8 = new Colors { Color_name = "синий" };
+                Colors color9 = new Colors { Color_name = "серый" };
+                Colors color10 = new Colors { Color_name = "с рисунком" };
+
+                colors.Add(color1);
+                colors.Add(color2);
+                colors.Add(color3);
+                colors.Add(color4);
+                colors.Add(color5);
+                colors.Add(color6);
+                colors.Add(color7);
+                colors.Add(color8);
+                colors.Add(color9);
+                colors.Add(color10);
+
                 SaveChanges();
             }
         }
