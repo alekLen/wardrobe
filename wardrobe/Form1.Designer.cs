@@ -68,6 +68,7 @@
             label4 = new Label();
             button5 = new Button();
             button6 = new Button();
+            добавитьодеждуToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -96,7 +97,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, просмотрToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, добавитьодеждуToolStripMenuItem, просмотрToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1482, 28);
@@ -407,6 +408,12 @@
             button6.Text = "фильтровать";
             button6.UseVisualStyleBackColor = true;
             // 
+            // добавитьодеждуToolStripMenuItem
+            // 
+            добавитьодеждуToolStripMenuItem.Name = "добавитьодеждуToolStripMenuItem";
+            добавитьодеждуToolStripMenuItem.Size = new Size(145, 24);
+            добавитьодеждуToolStripMenuItem.Text = "добавить_одежду";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -498,5 +505,6 @@
         private Button button5;
         private ToolStripMenuItem альбомToolStripMenuItem;
         private Button button6;
+        private ToolStripMenuItem добавитьодеждуToolStripMenuItem;
     }
 }
