@@ -29,6 +29,16 @@ namespace wardrobe
                 clothes_styles.Add(style3);
                 clothes_styles.Add(style4);
 
+                Clothes_type type1 = new Clothes_type { Type_name = "верх" };
+                Clothes_type type2 = new Clothes_type { Type_name = "низ" };
+                Clothes_type type3 = new Clothes_type { Type_name = "платье/костюм" };
+                Clothes_type type4 = new Clothes_type { Type_name = "обувь" };
+
+                clothes_types.Add(type1);
+                clothes_types.Add(type2);
+                clothes_types.Add(type3);
+                clothes_types.Add(type4);
+
                 SaveChanges();
             }
         }
