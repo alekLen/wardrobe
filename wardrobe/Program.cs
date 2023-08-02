@@ -39,7 +39,9 @@ namespace wardrobe
                      }
                  }*/
                 ApplicationConfiguration.Initialize();
-                Application.Run(new Form1());
+               Form1 form = new Form1();
+               Presenter presenter = new Presenter(form);
+                Application.Run(form);
             }
             catch (Exception ex)
             {
