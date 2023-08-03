@@ -160,6 +160,7 @@
             button1.TabIndex = 11;
             button1.Text = "загрузить фото";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += addPhoto;
             // 
             // label6
             // 

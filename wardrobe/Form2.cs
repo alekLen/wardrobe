@@ -12,6 +12,7 @@ namespace wardrobe
 {
     public partial class Form2 : Form
     {
+        private string FilePath;
         public event EventHandler<EventArgs> LoadF2;
         public Form1 MainForm { get; set; }
         public Form2()
@@ -46,6 +47,19 @@ namespace wardrobe
         public void SetColor(string s)
         {
             listBox3.Items.Add(s);
+        }
+
+        private void addPhoto(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FilePath = openFileDialog.FileName;                
+                    pictureBox1.Image = Image.FromFile(FilePath);
+                }
+            }
         }
     }
 }
