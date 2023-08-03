@@ -1,10 +1,11 @@
 using Azure.Messaging;
+using System.Windows.Forms;
 
 namespace wardrobe
 {
     public partial class Form1 : Form, IForm1
     {
-        public Form2 add_clothe { get; set; }
+        public Form2 add_clothe { get; set; } =new Form2();
 
         public event EventHandler<EventArgs> LoadF;
         public Form1()
@@ -54,8 +55,8 @@ namespace wardrobe
 
         private void Add_Form(object sender, EventArgs e)
         {
-            add_clothe = new Form2();
             add_clothe.MainForm = this;
+            add_clothe.Show();
         }
     }
 }
