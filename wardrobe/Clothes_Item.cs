@@ -18,6 +18,6 @@ namespace wardrobe
         public string? place { get; set; }
         public string? size { get; set; }
         public string photo { get; set; }
-        public virtual Outfit outfit { get; set; }
+        public virtual ICollection<Outfit> outfits { get; set; }
     }
 }
