@@ -45,7 +45,10 @@ namespace wardrobe
                 Wardrobe_Context db = Get_db();
                 using (db)
                 {
-                   
+                    SeasonToForm2(db);
+                    StyleToForm2(db);
+                    ColorToForm2(db);
+                    TypeToForm2(db);
                 }
             }
             catch (Exception ex)
@@ -119,6 +122,78 @@ namespace wardrobe
             var options = optionsBuilder.UseSqlServer(connectionString).Options;
             var db = new Wardrobe_Context(options);
             return db;
+        }
+        public void SeasonToForm2(Wardrobe_Context db)
+        {
+            try
+            {
+                var query1 = from b in db.seasons
+                             select b;
+
+                foreach (var p in query1)
+                {
+                    string s = p.Season_name;
+                    form.add_clothe.SetSeason(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void StyleToForm2(Wardrobe_Context db)
+        {
+            try
+            {
+                var query = from b in db.clothes_styles
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Style_name;
+                    form.add_clothe.SetStyle(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void ColorToForm2(Wardrobe_Context db)
+        {
+            try
+            {
+                var query = from b in db.colors
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Color_name;
+                    form.add_clothe.SetColor(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void TypeToForm2(Wardrobe_Context db)
+        {
+            try
+            {
+                var query = from b in db.clothes_types
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Type_name;
+                    form.add_clothe.SetType(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
