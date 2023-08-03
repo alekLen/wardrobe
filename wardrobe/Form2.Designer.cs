@@ -244,6 +244,7 @@
             Controls.Add(label1);
             Name = "Form2";
             Text = "добавление одежды";
+            Load += LoadForm2;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

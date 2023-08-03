@@ -13,12 +13,13 @@ namespace wardrobe
 {
     internal class Presenter
     {
-        private readonly IForm1 form;
+        private readonly IForm1 form;     
         public Presenter(IForm1 f)
         {
             form = f;
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
-          
+            form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
+
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -30,6 +31,21 @@ namespace wardrobe
                     ToSeasonBox(db);
                     ToStyleBox(db);
                     ToColorBox(db);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadAdd(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                   
                 }
             }
             catch (Exception ex)
