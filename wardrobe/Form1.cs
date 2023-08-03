@@ -51,5 +51,11 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Add_Form(object sender, EventArgs e)
+        {
+            add_clothe = new Form2();
+            add_clothe.MainForm = this;
+        }
     }
 }

@@ -159,6 +159,7 @@
             добавитьодеждуToolStripMenuItem.Name = "добавитьодеждуToolStripMenuItem";
             добавитьодеждуToolStripMenuItem.Size = new Size(145, 24);
             добавитьодеждуToolStripMenuItem.Text = "добавить_одежду";
+            добавитьодеждуToolStripMenuItem.Click += Add_Form;
             // 
             // просмотрToolStripMenuItem
             // 
