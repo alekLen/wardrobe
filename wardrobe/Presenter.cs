@@ -14,7 +14,8 @@ namespace wardrobe
 {
     internal class Presenter
     {
-        private readonly IForm1 form;     
+        private readonly IForm1 form;
+        string targetFilePath;
         public Presenter(IForm1 f)
         {
             form = f;
@@ -66,7 +67,7 @@ namespace wardrobe
                 using (db)
                 {
                     savePhoto();
-                   //ClothesToDataBase(db);                 
+                    //ClothesToDataBase(db);
                 }
             }
             catch (Exception ex)
@@ -81,10 +82,11 @@ namespace wardrobe
             {
                 Directory.CreateDirectory(targetFolderPath);
             }
-            string targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(form.add_clothe.FilePath));
+            targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(form.add_clothe.FilePath));
             File.Copy(form.add_clothe.FilePath, targetFilePath, true);
         }
        
+
         public void ToSeasonBox(Wardrobe_Context db)
         {
             try
