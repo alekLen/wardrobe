@@ -45,19 +45,19 @@ namespace wardrobe
         }
         public void SetSeason(string s)
         {
-            listBox4.Items.Add(s);
+            comboBox4.Items.Add(s);
         }
         public void SetStyle(string s)
         {
-            listBox2.Items.Add(s);
+            comboBox2.Items.Add(s);
         }
         public void SetType(string s)
         {
-            listBox1.Items.Add(s);
+            comboBox1.Items.Add(s);
         }
         public void SetColor(string s)
         {
-            listBox3.Items.Add(s);
+            comboBox3.Items.Add(s);
         }
 
         private void addPhoto(object sender, EventArgs e)
@@ -75,10 +75,10 @@ namespace wardrobe
 
         private void saveClothe(object sender, EventArgs e)
         {
-            if (FilePath != null && name!=null)
+            if (FilePath != null && name != null)
             {
                 Save_clothes?.Invoke(this, EventArgs.Empty);
-                FilePath = null;              
+                FilePath = null;
                 this.Close();
                 MessageBox.Show("одежда добавлена");
             }

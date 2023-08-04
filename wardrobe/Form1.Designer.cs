@@ -390,6 +390,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(31, 107);
             comboBox1.Name = "comboBox1";
@@ -398,6 +399,7 @@
             // 
             // comboBox2
             // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(32, 169);
             comboBox2.Name = "comboBox2";
@@ -406,6 +408,7 @@
             // 
             // comboBox3
             // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(31, 233);
             comboBox3.Name = "comboBox3";

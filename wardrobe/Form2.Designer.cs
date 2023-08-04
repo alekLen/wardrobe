@@ -36,10 +36,6 @@
             openFileDialog1 = new OpenFileDialog();
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
-            listBox3 = new ListBox();
-            listBox4 = new ListBox();
             button1 = new Button();
             label6 = new Label();
             textBox2 = new TextBox();
@@ -48,13 +44,17 @@
             label8 = new Label();
             dateTimePicker1 = new DateTimePicker();
             button2 = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox4 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 127);
+            label1.Location = new Point(38, 130);
             label1.Name = "label1";
             label1.Size = new Size(92, 20);
             label1.TabIndex = 0;
@@ -72,7 +72,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 268);
+            label3.Location = new Point(38, 272);
             label3.Name = "label3";
             label3.Size = new Size(40, 20);
             label3.TabIndex = 2;
@@ -81,7 +81,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(34, 335);
+            label4.Location = new Point(38, 335);
             label4.Name = "label4";
             label4.Size = new Size(49, 20);
             label4.TabIndex = 3;
@@ -116,42 +116,6 @@
             textBox1.Size = new Size(220, 27);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += textCanged;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(34, 150);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 24);
-            listBox1.TabIndex = 7;
-            // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 20;
-            listBox2.Location = new Point(34, 222);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(150, 24);
-            listBox2.TabIndex = 8;
-            // 
-            // listBox3
-            // 
-            listBox3.FormattingEnabled = true;
-            listBox3.ItemHeight = 20;
-            listBox3.Location = new Point(34, 291);
-            listBox3.Name = "listBox3";
-            listBox3.Size = new Size(150, 24);
-            listBox3.TabIndex = 9;
-            // 
-            // listBox4
-            // 
-            listBox4.FormattingEnabled = true;
-            listBox4.ItemHeight = 20;
-            listBox4.Location = new Point(34, 358);
-            listBox4.Name = "listBox4";
-            listBox4.Size = new Size(150, 24);
-            listBox4.TabIndex = 10;
             // 
             // button1
             // 
@@ -221,11 +185,51 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += saveClothe;
             // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(38, 153);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 20;
+            // 
+            // comboBox2
+            // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(38, 218);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(151, 28);
+            comboBox2.TabIndex = 21;
+            // 
+            // comboBox3
+            // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(38, 295);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(151, 28);
+            comboBox3.TabIndex = 22;
+            // 
+            // comboBox4
+            // 
+            comboBox4.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(38, 358);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(151, 28);
+            comboBox4.TabIndex = 23;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 440);
+            Controls.Add(comboBox4);
+            Controls.Add(comboBox3);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label8);
@@ -234,10 +238,6 @@
             Controls.Add(textBox2);
             Controls.Add(label6);
             Controls.Add(button1);
-            Controls.Add(listBox4);
-            Controls.Add(listBox3);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
@@ -263,10 +263,6 @@
         private OpenFileDialog openFileDialog1;
         private PictureBox pictureBox1;
         private TextBox textBox1;
-        private ListBox listBox1;
-        private ListBox listBox2;
-        private ListBox listBox3;
-        private ListBox listBox4;
         private Button button1;
         private Label label6;
         private TextBox textBox2;
@@ -275,5 +271,9 @@
         private Label label8;
         private DateTimePicker dateTimePicker1;
         private Button button2;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
+        private ComboBox comboBox4;
     }
 }
