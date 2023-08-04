@@ -5,20 +5,35 @@ namespace wardrobe
 {
     public partial class Form1 : Form, IForm1
     {
-        public Form2 add_clothe { get; set; } =new Form2();
+        public Form2 add_clothe { get; set; } = new Form2();
 
         public event EventHandler<EventArgs> LoadF;
         public Form1()
         {
             InitializeComponent();
+
+            try
+            {
+
+                pictureBox2.Image = Image.FromFile("Photos/up.png");
+                pictureBox1.Image = Image.FromFile("Photos/bottom.png");
+                pictureBox3.Image = Image.FromFile("Photos/dress.png");
+                pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         public void SetSeasonToWardrobe(string s)
         {
-            listBox6.Items.Add(s);
+            comboBox2.Items.Add(s);
         }
         public void SetStyleToWardrobe(string s)
         {
-            listBox7.Items.Add(s);
+            comboBox3.Items.Add(s);
         }
         public void SetTypeUpToWardrobe(string s)
         {
@@ -38,7 +53,7 @@ namespace wardrobe
         }
         public void SetColorToWardrobe(string s)
         {
-            listBox5.Items.Add(s);
+            comboBox1.Items.Add(s);
         }
 
         private void LoadForm(object sender, EventArgs e)

@@ -59,16 +59,16 @@
             checkBox3 = new CheckBox();
             checkBox4 = new CheckBox();
             button4 = new Button();
-            listBox5 = new ListBox();
             label1 = new Label();
-            listBox6 = new ListBox();
-            listBox7 = new ListBox();
             label2 = new Label();
             label3 = new Label();
             listView5 = new ListView();
             label4 = new Label();
             button5 = new Button();
             button6 = new Button();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox3 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -326,16 +326,6 @@
             button4.Text = "добавить комплект";
             button4.UseVisualStyleBackColor = true;
             // 
-            // listBox5
-            // 
-            listBox5.FormattingEnabled = true;
-            listBox5.ItemHeight = 20;
-            listBox5.Location = new Point(32, 107);
-            listBox5.Name = "listBox5";
-            listBox5.SelectionMode = SelectionMode.MultiSimple;
-            listBox5.Size = new Size(150, 24);
-            listBox5.TabIndex = 21;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -344,26 +334,6 @@
             label1.Size = new Size(40, 20);
             label1.TabIndex = 22;
             label1.Text = "цвет";
-            // 
-            // listBox6
-            // 
-            listBox6.FormattingEnabled = true;
-            listBox6.ItemHeight = 20;
-            listBox6.Location = new Point(32, 169);
-            listBox6.Name = "listBox6";
-            listBox6.SelectionMode = SelectionMode.MultiSimple;
-            listBox6.Size = new Size(150, 24);
-            listBox6.TabIndex = 23;
-            // 
-            // listBox7
-            // 
-            listBox7.FormattingEnabled = true;
-            listBox7.ItemHeight = 20;
-            listBox7.Location = new Point(32, 233);
-            listBox7.Name = "listBox7";
-            listBox7.SelectionMode = SelectionMode.MultiSimple;
-            listBox7.Size = new Size(150, 24);
-            listBox7.TabIndex = 24;
             // 
             // label2
             // 
@@ -418,21 +388,45 @@
             button6.Text = "фильтровать";
             button6.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(31, 107);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 31;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(32, 169);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(151, 28);
+            comboBox2.TabIndex = 32;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(31, 233);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(151, 28);
+            comboBox3.TabIndex = 33;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1482, 572);
+            Controls.Add(comboBox3);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label4);
             Controls.Add(listView5);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(listBox7);
-            Controls.Add(listBox6);
             Controls.Add(label1);
-            Controls.Add(listBox5);
             Controls.Add(button4);
             Controls.Add(checkBox4);
             Controls.Add(checkBox3);
@@ -499,10 +493,7 @@
         private CheckBox checkBox3;
         private CheckBox checkBox4;
         private Button button4;
-        private ListBox listBox5;
         private Label label1;
-        private ListBox listBox6;
-        private ListBox listBox7;
         private Label label2;
         private Label label3;
         private ListView listView5;
@@ -511,5 +502,8 @@
         private ToolStripMenuItem альбомToolStripMenuItem;
         private Button button6;
         private ToolStripMenuItem добавитьодеждуToolStripMenuItem;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
     }
 }
