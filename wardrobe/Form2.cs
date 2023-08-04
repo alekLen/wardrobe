@@ -93,5 +93,25 @@ namespace wardrobe
         {
             name = textBox1.Text;
         }
+
+        private void selectedType(object sender, EventArgs e)
+        {
+            type = comboBox1.SelectedItem.ToString();
+        }
+
+        private void selectedStyle(object sender, EventArgs e)
+        {
+            style = comboBox2.SelectedItem.ToString();
+        }
+
+        private void selecteColor(object sender, EventArgs e)
+        {
+            color = comboBox3.SelectedItem.ToString();
+        }
+
+        private void selecteSeason(object sender, EventArgs e)
+        {
+            season= comboBox4.SelectedItem.ToString();
+        }
     }
 }

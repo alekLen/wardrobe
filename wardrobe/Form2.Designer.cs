@@ -193,6 +193,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 20;
+            comboBox1.SelectedIndexChanged += selectedType;
             // 
             // comboBox2
             // 
@@ -202,6 +203,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 21;
+            comboBox2.SelectedIndexChanged += selectedStyle;
             // 
             // comboBox3
             // 
@@ -211,6 +213,7 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
             comboBox3.TabIndex = 22;
+            comboBox3.SelectedIndexChanged += selecteColor;
             // 
             // comboBox4
             // 
@@ -220,6 +223,7 @@
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(151, 28);
             comboBox4.TabIndex = 23;
+            comboBox4.SelectedIndexChanged += selecteSeason;
             // 
             // Form2
             // 
