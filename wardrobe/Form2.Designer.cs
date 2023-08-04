@@ -48,6 +48,7 @@
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
             comboBox4 = new ComboBox();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,45 +57,45 @@
             label1.AutoSize = true;
             label1.Location = new Point(38, 130);
             label1.Name = "label1";
-            label1.Size = new Size(92, 20);
+            label1.Size = new Size(98, 20);
             label1.TabIndex = 0;
-            label1.Text = "тип одежды";
+            label1.Text = "*тип одежды";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(34, 199);
             label2.Name = "label2";
-            label2.Size = new Size(47, 20);
+            label2.Size = new Size(53, 20);
             label2.TabIndex = 1;
-            label2.Text = "стиль";
+            label2.Text = "*стиль";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(38, 272);
             label3.Name = "label3";
-            label3.Size = new Size(40, 20);
+            label3.Size = new Size(46, 20);
             label3.TabIndex = 2;
-            label3.Text = "цвет";
+            label3.Text = "*цвет";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Location = new Point(38, 335);
             label4.Name = "label4";
-            label4.Size = new Size(49, 20);
+            label4.Size = new Size(55, 20);
             label4.TabIndex = 3;
-            label4.Text = "сезон";
+            label4.Text = "*сезон";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(34, 41);
             label5.Name = "label5";
-            label5.Size = new Size(173, 20);
+            label5.Size = new Size(179, 20);
             label5.TabIndex = 4;
-            label5.Text = "наименование одежды";
+            label5.Text = "*наименование одежды";
             // 
             // openFileDialog1
             // 
@@ -225,11 +226,21 @@
             comboBox4.TabIndex = 23;
             comboBox4.SelectedIndexChanged += selecteSeason;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(291, 54);
+            label9.Name = "label9";
+            label9.Size = new Size(15, 20);
+            label9.TabIndex = 24;
+            label9.Text = "*";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 440);
+            Controls.Add(label9);
             Controls.Add(comboBox4);
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
@@ -279,5 +290,6 @@
         private ComboBox comboBox2;
         private ComboBox comboBox3;
         private ComboBox comboBox4;
+        private Label label9;
     }
 }

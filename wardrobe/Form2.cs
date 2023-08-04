@@ -75,7 +75,7 @@ namespace wardrobe
 
         private void saveClothe(object sender, EventArgs e)
         {
-            if (FilePath != null && name != null)
+            if (FilePath != null && name != null && type != null && style != null && season != null && color != null)
             {
                 Save_clothes?.Invoke(this, EventArgs.Empty);
                 FilePath = null;
@@ -84,7 +84,7 @@ namespace wardrobe
             }
             else
             {
-                MessageBox.Show("Выберите фотографию перед сохранением.");
+                MessageBox.Show("ПЕРЕД ДОБАВЛЕНИЕМ ОБЯЗАТЕЛЬНО:\n\nзагрузить фото\nввести название\n тип\n стиль\n цвет\n сезон");
             }
 
         }
@@ -111,7 +111,7 @@ namespace wardrobe
 
         private void selecteSeason(object sender, EventArgs e)
         {
-            season= comboBox4.SelectedItem.ToString();
+            season = comboBox4.SelectedItem.ToString();
         }
     }
 }
