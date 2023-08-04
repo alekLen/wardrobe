@@ -218,6 +218,7 @@
             button2.TabIndex = 19;
             button2.Text = "добавить одежду";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += saveClothe;
             // 
             // Form2
             // 

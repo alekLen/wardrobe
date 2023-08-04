@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,12 @@ namespace wardrobe
 {
     public partial class Form2 : Form
     {
-        private string FilePath;
+        public string FilePath { get; set; }
+        public string type { get; set; }
+        public string color { get; set; }
+        public string season { get; set; }
+        public string style { get; set; }
+
         public event EventHandler<EventArgs> LoadF2;
         public Form1 MainForm { get; set; }
         public Form2()
@@ -56,10 +62,12 @@ namespace wardrobe
                 openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    FilePath = openFileDialog.FileName;                
+                    FilePath = openFileDialog.FileName;
                     pictureBox1.Image = Image.FromFile(FilePath);
                 }
             }
         }
+
+       
     }
 }
