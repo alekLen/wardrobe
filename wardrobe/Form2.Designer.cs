@@ -115,6 +115,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(220, 27);
             textBox1.TabIndex = 6;
+            textBox1.TextChanged += textCanged;
             // 
             // listBox1
             // 

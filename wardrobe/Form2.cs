@@ -75,17 +75,23 @@ namespace wardrobe
 
         private void saveClothe(object sender, EventArgs e)
         {
-            if (FilePath != null)
+            if (FilePath != null && name!=null)
             {
                 Save_clothes?.Invoke(this, EventArgs.Empty);
-                FilePath = null;
+                FilePath = null;              
                 this.Close();
+                MessageBox.Show("одежда добавлена");
             }
             else
             {
                 MessageBox.Show("Выберите фотографию перед сохранением.");
             }
 
+        }
+
+        private void textCanged(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
         }
     }
 }
