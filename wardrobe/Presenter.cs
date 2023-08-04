@@ -77,13 +77,21 @@ namespace wardrobe
         }
        void savePhoto()
         {
-            string targetFolderPath = Path.Combine(Application.StartupPath, "Photos");
+            try
+            {
+                string targetFolderPath = Path.Combine(Application.StartupPath, "Photos");
             if (!Directory.Exists(targetFolderPath))
             {
                 Directory.CreateDirectory(targetFolderPath);
             }
             targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(form.add_clothe.FilePath));
             File.Copy(form.add_clothe.FilePath, targetFilePath, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                targetFilePath = null;
+            }
         }
        
 
