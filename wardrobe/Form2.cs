@@ -20,6 +20,7 @@ namespace wardrobe
         public string style { get; set; }
 
         public event EventHandler<EventArgs> LoadF2;
+        public event EventHandler<EventArgs> Save_clothes;
         public Form1 MainForm { get; set; }
         public Form2()
         {
@@ -68,6 +69,18 @@ namespace wardrobe
             }
         }
 
-       
+        private void saveClothe(object sender, EventArgs e)
+        {
+            if (FilePath != null)
+            {
+                Save_clothes?.Invoke(this, EventArgs.Empty);
+                FilePath = null;              
+            }
+            else
+            {
+                MessageBox.Show("Выберите фотографию перед сохранением.");
+            }
+
+        }
     }
 }

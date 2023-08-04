@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace wardrobe
@@ -19,6 +20,7 @@ namespace wardrobe
             form = f;
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
+            form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
 
         }
         public void LoadAll(object sender, EventArgs e)
@@ -56,6 +58,33 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void SaveAdd(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    savePhoto();
+                   //ClothesToDataBase(db);                 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+       void savePhoto()
+        {
+            string targetFolderPath = Path.Combine(Application.StartupPath, "Photos");
+            if (!Directory.Exists(targetFolderPath))
+            {
+                Directory.CreateDirectory(targetFolderPath);
+            }
+            string targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(form.add_clothe.FilePath));
+            File.Copy(form.add_clothe.FilePath, targetFilePath, true);
+        }
+       
         public void ToSeasonBox(Wardrobe_Context db)
         {
             try
