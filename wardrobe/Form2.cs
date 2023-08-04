@@ -18,6 +18,10 @@ namespace wardrobe
         public string color { get; set; }
         public string season { get; set; }
         public string style { get; set; }
+        public string name { get; set; }
+        public DateTime date { get; set; }
+        public string place { get; set; }
+        public string size { get; set; }
 
         public event EventHandler<EventArgs> LoadF2;
         public event EventHandler<EventArgs> Save_clothes;
@@ -74,7 +78,8 @@ namespace wardrobe
             if (FilePath != null)
             {
                 Save_clothes?.Invoke(this, EventArgs.Empty);
-                FilePath = null;              
+                FilePath = null;
+                this.Close();
             }
             else
             {
