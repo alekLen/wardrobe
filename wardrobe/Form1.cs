@@ -8,6 +8,7 @@ namespace wardrobe
         public Form2 add_clothe { get; set; } = new Form2();
 
         public event EventHandler<EventArgs> LoadF;
+        public event EventHandler<EventArgs> LoadUp;
         public Form1()
         {
             InitializeComponent();
@@ -61,12 +62,13 @@ namespace wardrobe
             try
             {
                 LoadF?.Invoke(this, EventArgs.Empty);
+                LoadUp?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }      
 
         private void Add_Form(object sender, EventArgs e)
         {
