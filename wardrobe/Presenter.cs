@@ -67,7 +67,33 @@ namespace wardrobe
                 using (db)
                 {
                     savePhoto();
-                    //ClothesToDataBase(db);
+                   if(targetFilePath != null)
+                   {
+                        Clothes_Item item = new Clothes_Item();
+                        item.Clothes_Item_name = form.add_clothe.name;
+                        item.photo = targetFilePath;
+                        var type_query = (from b in db.clothes_types
+                                     where b.Type_name == form.add_clothe.type
+                                     select b).Single();
+                        item.type=type_query;
+                        var style_query = (from b in db.clothes_styles
+                                          where b.Style_name == form.add_clothe.style
+                                           select b).Single();
+                        item.style=style_query;
+                        var season_query = (from b in db.seasons
+                                           where b.Season_name == form.add_clothe.season
+                                            select b).Single();
+                        item.season=season_query;
+                        var color_query = (from b in db.colors
+                                            where b.Color_name == form.add_clothe.color
+                                            select b).Single();
+                        item.color=color_query;
+                        item.place = form.add_clothe.place;
+                        item.size = form.add_clothe.size;
+                        item.date= form.add_clothe.date;
+                        db.clothes_items.Add(item);
+                        db.SaveChanges();
+                   }
                 }
             }
             catch (Exception ex)
