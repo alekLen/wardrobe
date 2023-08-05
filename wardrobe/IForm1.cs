@@ -18,6 +18,7 @@ namespace wardrobe
         public void SetColorToWardrobe(string s);
 
         public event EventHandler<EventArgs> LoadF;
+        public event EventHandler<EventArgs> LoadUp;
         public Form2 add_clothe { get; set; }
 
     }
