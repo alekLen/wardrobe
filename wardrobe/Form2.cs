@@ -13,15 +13,15 @@ namespace wardrobe
 {
     public partial class Form2 : Form
     {
-        public string FilePath { get; set; }
-        public string type { get; set; }
-        public string color { get; set; }
-        public string season { get; set; }
-        public string style { get; set; }
-        public string name { get; set; }
+        public string FilePath { get; set; } = null;
+        public string type { get; set; } = null;
+        public string color { get; set; } = null;
+        public string season { get; set; } = null;
+        public string style { get; set; } = null;
+        public string name { get; set; } = null;
         public DateTime date { get; set; }
-        public string place { get; set; }
-        public string size { get; set; }
+        public string place { get; set; } = null;
+        public string size { get; set; } = null;
 
         public event EventHandler<EventArgs> LoadF2;
         public event EventHandler<EventArgs> Save_clothes;
@@ -29,7 +29,7 @@ namespace wardrobe
         public Form2()
         {
             InitializeComponent();
-
+            date = dateTimePicker1.Value.Date;
         }
 
         private void LoadForm2(object sender, EventArgs e)
@@ -112,6 +112,11 @@ namespace wardrobe
         private void selecteSeason(object sender, EventArgs e)
         {
             season = comboBox4.SelectedItem.ToString();
+        }
+
+        private void dateChange(object sender, EventArgs e)
+        {
+            date = dateTimePicker1.Value.Date;
         }
     }
 }
