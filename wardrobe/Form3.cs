@@ -57,8 +57,9 @@ namespace wardrobe
             pictureBox1.Image = Image.FromFile(s);
         }
 
-        private void LoadForm3(object sender, EventArgs e)
+        private void LoadFm3(object sender, EventArgs e)
         {
+
             try
             {
                 LoadF3?.Invoke(this, EventArgs.Empty);

@@ -60,6 +60,7 @@
             pictureBox1.Location = new Point(360, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(708, 653);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -125,6 +126,7 @@
             // 
             // textBoxDate
             // 
+            textBoxDate.Enabled = false;
             textBoxDate.Location = new Point(83, 191);
             textBoxDate.Name = "textBoxDate";
             textBoxDate.Size = new Size(271, 27);
@@ -150,6 +152,7 @@
             // 
             // textBoxPlace
             // 
+            textBoxPlace.Enabled = false;
             textBoxPlace.Location = new Point(83, 237);
             textBoxPlace.Name = "textBoxPlace";
             textBoxPlace.Size = new Size(271, 27);
@@ -157,6 +160,7 @@
             // 
             // textBoxSize
             // 
+            textBoxSize.Enabled = false;
             textBoxSize.Location = new Point(229, 280);
             textBoxSize.Name = "textBoxSize";
             textBoxSize.Size = new Size(125, 27);
@@ -193,7 +197,7 @@
             Controls.Add(textBoxName);
             Name = "Form3";
             Text = "Предмет одежды";
-            Load += LoadForm3;
+            Load += LoadFm3;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
