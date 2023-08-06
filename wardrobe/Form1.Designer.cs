@@ -52,7 +52,6 @@
             listBox3 = new ListBox();
             listBox4 = new ListBox();
             listView2 = new ListView();
-            listView3 = new ListView();
             listView4 = new ListView();
             checkBox1 = new CheckBox();
             checkBox2 = new CheckBox();
@@ -69,6 +68,11 @@
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox3 = new ComboBox();
+            listView3 = new ListView();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -78,18 +82,21 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(205, 378);
+            listView1.AccessibleRole = AccessibleRole.ScrollBar;
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+            listView1.Location = new Point(227, 378);
             listView1.Name = "listView1";
-            listView1.Size = new Size(261, 147);
+            listView1.Size = new Size(314, 304);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.List;
+            listView1.View = View.Details;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(205, 31);
+            pictureBox1.Location = new Point(227, 38);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(261, 272);
+            pictureBox1.Size = new Size(314, 272);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -100,7 +107,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, добавитьодеждуToolStripMenuItem, просмотрToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1482, 28);
+            menuStrip1.Size = new Size(1702, 28);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -169,7 +176,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(349, 531);
+            button1.Location = new Point(357, 699);
             button1.Name = "button1";
             button1.Size = new Size(261, 29);
             button1.TabIndex = 3;
@@ -178,7 +185,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(673, 531);
+            button2.Location = new Point(699, 699);
             button2.Name = "button2";
             button2.Size = new Size(261, 29);
             button2.TabIndex = 4;
@@ -187,7 +194,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(994, 531);
+            button3.Location = new Point(1018, 699);
             button3.Name = "button3";
             button3.Size = new Size(261, 29);
             button3.TabIndex = 5;
@@ -198,34 +205,34 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(205, 336);
+            listBox1.Location = new Point(261, 348);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(190, 24);
             listBox1.TabIndex = 6;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(510, 31);
+            pictureBox2.Location = new Point(573, 38);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(261, 272);
+            pictureBox2.Size = new Size(314, 272);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(794, 31);
+            pictureBox3.Location = new Point(922, 38);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(261, 272);
+            pictureBox3.Size = new Size(314, 272);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(1077, 31);
+            pictureBox4.Location = new Point(1270, 38);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(261, 272);
+            pictureBox4.Size = new Size(314, 272);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
@@ -234,7 +241,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 20;
-            listBox2.Location = new Point(510, 336);
+            listBox2.Location = new Point(614, 348);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(199, 24);
             listBox2.TabIndex = 10;
@@ -243,7 +250,7 @@
             // 
             listBox3.FormattingEnabled = true;
             listBox3.ItemHeight = 20;
-            listBox3.Location = new Point(794, 336);
+            listBox3.Location = new Point(952, 348);
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(210, 24);
             listBox3.TabIndex = 11;
@@ -252,39 +259,33 @@
             // 
             listBox4.FormattingEnabled = true;
             listBox4.ItemHeight = 20;
-            listBox4.Location = new Point(1077, 336);
+            listBox4.Location = new Point(1314, 348);
             listBox4.Name = "listBox4";
             listBox4.Size = new Size(190, 24);
             listBox4.TabIndex = 12;
             // 
             // listView2
             // 
-            listView2.Location = new Point(510, 378);
+            listView2.Location = new Point(573, 378);
             listView2.Name = "listView2";
-            listView2.Size = new Size(261, 147);
+            listView2.Size = new Size(314, 304);
             listView2.TabIndex = 13;
             listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView3
-            // 
-            listView3.Location = new Point(794, 378);
-            listView3.Name = "listView3";
-            listView3.Size = new Size(261, 147);
-            listView3.TabIndex = 14;
-            listView3.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
             // 
             // listView4
             // 
-            listView4.Location = new Point(1077, 378);
+            listView4.Location = new Point(1270, 378);
             listView4.Name = "listView4";
-            listView4.Size = new Size(261, 147);
+            listView4.Size = new Size(314, 304);
             listView4.TabIndex = 15;
             listView4.UseCompatibleStateImageBehavior = false;
+            listView4.View = View.Details;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(433, 343);
+            checkBox1.Location = new Point(486, 355);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(18, 17);
             checkBox1.TabIndex = 16;
@@ -293,7 +294,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(734, 343);
+            checkBox2.Location = new Point(849, 355);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(18, 17);
             checkBox2.TabIndex = 17;
@@ -302,7 +303,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(1026, 343);
+            checkBox3.Location = new Point(1198, 355);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(18, 17);
             checkBox3.TabIndex = 18;
@@ -311,7 +312,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(1301, 343);
+            checkBox4.Location = new Point(1536, 355);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(18, 17);
             checkBox4.TabIndex = 19;
@@ -319,7 +320,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1376, 378);
+            button4.Location = new Point(1596, 287);
             button4.Name = "button4";
             button4.Size = new Size(94, 113);
             button4.TabIndex = 20;
@@ -415,11 +416,60 @@
             comboBox3.Size = new Size(151, 28);
             comboBox3.TabIndex = 33;
             // 
+            // listView3
+            // 
+            listView3.Location = new Point(922, 378);
+            listView3.Name = "listView3";
+            listView3.Size = new Size(314, 304);
+            listView3.TabIndex = 14;
+            listView3.UseCompatibleStateImageBehavior = false;
+            listView3.View = View.Details;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(339, 313);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 20);
+            label5.TabIndex = 34;
+            label5.Text = "верх";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(708, 313);
+            label6.Name = "label6";
+            label6.Size = new Size(34, 20);
+            label6.TabIndex = 35;
+            label6.Text = "низ";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(999, 313);
+            label7.Name = "label7";
+            label7.Size = new Size(114, 20);
+            label7.TabIndex = 36;
+            label7.Text = "платье/костюм";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(1366, 313);
+            label8.Name = "label8";
+            label8.Size = new Size(50, 20);
+            label8.TabIndex = 37;
+            label8.Text = "обувь";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1482, 572);
+            ClientSize = new Size(1702, 740);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
@@ -489,7 +539,6 @@
         private ListBox listBox3;
         private ListBox listBox4;
         private ListView listView2;
-        private ListView listView3;
         private ListView listView4;
         private CheckBox checkBox1;
         private CheckBox checkBox2;
@@ -508,5 +557,10 @@
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private ComboBox comboBox3;
+        private ListView listView3;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
     }
 }
