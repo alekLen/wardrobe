@@ -20,6 +20,7 @@ namespace wardrobe
         {
             form = f;
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
+            form.LoadUp += new EventHandler<EventArgs>(Load_Up);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
 
@@ -52,6 +53,27 @@ namespace wardrobe
                     StyleToForm2(db);
                     ColorToForm2(db);
                     TypeToForm2(db);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Load_Up(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {                  
+                    var query = from b in db.clothes_items
+                                     where b.type.Type_name == "верх"
+                                     select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" +b.season.Season_name;
+                    foreach (var i in query)
+                    { 
+                        form.SetTypeUpToWardrobe(i);
+                    }
                 }
             }
             catch (Exception ex)
