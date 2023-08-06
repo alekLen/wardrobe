@@ -16,10 +16,11 @@ namespace wardrobe
             try
             {
 
-                pictureBox2.Image = Image.FromFile("Photos/up.png");
-                pictureBox1.Image = Image.FromFile("Photos/bottom.png");
+                pictureBox1.Image = Image.FromFile("Photos/up.png");
+                pictureBox2.Image = Image.FromFile("Photos/bottom.png");
                 pictureBox3.Image = Image.FromFile("Photos/dress.png");
                 pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
+                listView1.Columns.Add(null, 300);
 
             }
             catch (Exception ex)
@@ -38,7 +39,8 @@ namespace wardrobe
         }
         public void SetTypeUpToWardrobe(string s)
         {
-            listBox1.Items.Add(s);
+            ListViewItem item1 = new ListViewItem(s);
+            listView1.Items.Add(item1);
         }
         public void SetTypeBottomToWardrobe(string s)
         {
@@ -68,7 +70,7 @@ namespace wardrobe
             {
                 MessageBox.Show(ex.Message);
             }
-        }      
+        }
 
         private void Add_Form(object sender, EventArgs e)
         {
