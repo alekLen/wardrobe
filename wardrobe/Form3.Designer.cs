@@ -37,11 +37,11 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            textBoxDate = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textBoxPlace = new TextBox();
+            textBoxSize = new TextBox();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -123,12 +123,12 @@
             label3.TabIndex = 8;
             label3.Text = "сезон";
             // 
-            // textBox1
+            // textBoxDate
             // 
-            textBox1.Location = new Point(83, 191);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 27);
-            textBox1.TabIndex = 9;
+            textBoxDate.Location = new Point(83, 191);
+            textBoxDate.Name = "textBoxDate";
+            textBoxDate.Size = new Size(271, 27);
+            textBoxDate.TabIndex = 9;
             // 
             // label4
             // 
@@ -148,19 +148,19 @@
             label5.TabIndex = 11;
             label5.Text = "магазин";
             // 
-            // textBox2
+            // textBoxPlace
             // 
-            textBox2.Location = new Point(83, 237);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(271, 27);
-            textBox2.TabIndex = 12;
+            textBoxPlace.Location = new Point(83, 237);
+            textBoxPlace.Name = "textBoxPlace";
+            textBoxPlace.Size = new Size(271, 27);
+            textBoxPlace.TabIndex = 12;
             // 
-            // textBox3
+            // textBoxSize
             // 
-            textBox3.Location = new Point(229, 280);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 13;
+            textBoxSize.Location = new Point(229, 280);
+            textBoxSize.Name = "textBoxSize";
+            textBoxSize.Size = new Size(125, 27);
+            textBoxSize.TabIndex = 13;
             // 
             // label6
             // 
@@ -177,11 +177,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 688);
             Controls.Add(label6);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxSize);
+            Controls.Add(textBoxPlace);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxDate);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -209,11 +209,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox textBoxDate;
         private Label label4;
         private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBoxPlace;
+        private TextBox textBoxSize;
         private Label label6;
     }
 }
