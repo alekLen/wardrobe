@@ -6,6 +6,7 @@ namespace wardrobe
     public partial class Form1 : Form, IForm1
     {
         public Form2 add_clothe { get; set; } = new Form2();
+        public Form3 see_clothe { get; set; } = new Form3();
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
