@@ -44,6 +44,10 @@ namespace wardrobe
         {
             textBoxPlace.Text = s;
         }
+        public void SetDate(string s)
+        {
+            textBoxDate.Text = s;
+        }
         public void SetSize(string s)
         {
             textBoxSize.Text = s;
@@ -51,6 +55,18 @@ namespace wardrobe
         public void SetPhoto(string s)
         {
             pictureBox1.Image = Image.FromFile(s);
+        }
+
+        private void LoadForm3(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadF3?.Invoke(this, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

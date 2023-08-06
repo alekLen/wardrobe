@@ -193,6 +193,7 @@
             Controls.Add(textBoxName);
             Name = "Form3";
             Text = "Предмет одежды";
+            Load += LoadForm3;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
