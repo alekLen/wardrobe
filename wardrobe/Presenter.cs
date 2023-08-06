@@ -21,6 +21,9 @@ namespace wardrobe
             form = f;
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
             form.LoadUp += new EventHandler<EventArgs>(Load_Up);
+            form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
+            form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
+            form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
 
@@ -72,6 +75,69 @@ namespace wardrobe
                                      select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" +b.season.Season_name;
                     foreach (var i in query)
                     { 
+                        form.SetTypeUpToWardrobe(i);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Load_Bottom(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = from b in db.clothes_items
+                                where b.type.Type_name == "низ"
+                                select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+                    foreach (var i in query)
+                    {
+                        form.SetTypeUpToWardrobe(i);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Load_Suit(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = from b in db.clothes_items
+                                where b.type.Type_name == "платье/костюм"
+                                select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+                    foreach (var i in query)
+                    {
+                        form.SetTypeUpToWardrobe(i);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Load_Shoe(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = from b in db.clothes_items
+                                where b.type.Type_name == "обувь"
+                                select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+                    foreach (var i in query)
+                    {
                         form.SetTypeUpToWardrobe(i);
                     }
                 }
