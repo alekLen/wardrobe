@@ -74,7 +74,7 @@ namespace wardrobe
                 {
                     var query = (from b in db.clothes_items
                                 where b.Id == form.setId
-                                 select b.Id + "~" + b.Clothes_Item_name + "~" + b.type.Type_name + "~" + b.color.Color_name + "~" + b.style.Style_name + "~" + b.season.Season_name + "~" + b.date.ToString() + "~" + b.place + "~" + b.size + "~" + b.photo).Single();
+                                 select b.Id + "~" + b.Clothes_Item_name + "~" + b.type.Type_name + "~" + b.color.Color_name + "~" + b.style.Style_name + "~" + b.season.Season_name + "~" + b.date + "~" + b.place + "~" + b.size + "~" + b.photo).Single();
                     string s = query.ToString();
                     string[]s1=s.Split('~');
                     form.see_clothe.SetName(s1[1]);
@@ -208,7 +208,7 @@ namespace wardrobe
                         item.color=color_query;
                         item.place = form.add_clothe.place;
                         item.size = form.add_clothe.size;
-                        item.date= form.add_clothe.date;
+                        item.date= form.add_clothe.date1;
                         db.clothes_items.Add(item);
                         db.SaveChanges();
                    }
