@@ -9,6 +9,9 @@ namespace wardrobe
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
+        public event EventHandler<EventArgs> LoadBottom;
+        public event EventHandler<EventArgs> LoadSuit;
+        public event EventHandler<EventArgs> LoadShoe;
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +24,9 @@ namespace wardrobe
                 pictureBox3.Image = Image.FromFile("Photos/dress.png");
                 pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
                 listView1.Columns.Add(null, 300);
-
+                listView2.Columns.Add(null, 300);
+                listView3.Columns.Add(null, 300);
+                listView4.Columns.Add(null, 300);
             }
             catch (Exception ex)
             {
