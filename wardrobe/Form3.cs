@@ -12,6 +12,7 @@ namespace wardrobe
 {
     public partial class Form3 : Form
     {
+        public Form1 MainForm { get; set; }
         public Form3()
         {
             InitializeComponent();

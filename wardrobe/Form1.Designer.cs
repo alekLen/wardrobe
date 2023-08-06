@@ -91,6 +91,7 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            listView1.SelectedIndexChanged += Load_see_form;
             // 
             // pictureBox1
             // 

@@ -86,5 +86,11 @@ namespace wardrobe
             add_clothe.MainForm = this;
             add_clothe.Show();
         }
+
+        private void Load_see_form(object sender, EventArgs e)
+        {
+            see_clothe.MainForm = this;
+            see_clothe.Show();
+        }
     }
 }
