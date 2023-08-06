@@ -19,6 +19,9 @@ namespace wardrobe
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
+        public event EventHandler<EventArgs> LoadBottom;
+        public event EventHandler<EventArgs> LoadSuit;
+        public event EventHandler<EventArgs> LoadShoe;
         public Form2 add_clothe { get; set; }
 
     }
