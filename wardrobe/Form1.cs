@@ -49,15 +49,18 @@ namespace wardrobe
         }
         public void SetTypeBottomToWardrobe(string s)
         {
-            listBox2.Items.Add(s);
+            ListViewItem item1 = new ListViewItem(s);
+            listView2.Items.Add(item1);
         }
         public void SetTypeSuitToWardrobe(string s)
         {
-            listBox3.Items.Add(s);
+            ListViewItem item1 = new ListViewItem(s);
+            listView3.Items.Add(item1);
         }
         public void SetTypeShoeToWardrobe(string s)
         {
-            listBox4.Items.Add(s);
+            ListViewItem item1 = new ListViewItem(s);
+            listView4.Items.Add(item1);
         }
         public void SetColorToWardrobe(string s)
         {
