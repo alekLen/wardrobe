@@ -26,6 +26,7 @@ namespace wardrobe
             form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
+            form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
 
         }
         public void LoadAll(object sender, EventArgs e)
@@ -56,6 +57,35 @@ namespace wardrobe
                     StyleToForm2(db);
                     ColorToForm2(db);
                     TypeToForm2(db);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadSeeForm(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = (from b in db.clothes_items
+                                where b.Id == form.setId
+                                 select b.Id + "~" + b.Clothes_Item_name + "~" + b.type.Type_name + "~" + b.color.Color_name + "~" + b.style.Style_name + "~" + b.season.Season_name + "~" + b.date.ToString() + "~" + b.place + "~" + b.size + "~" + b.photo).Single();
+                    string s = query.ToString();
+                    string[]s1=s.Split('~');
+                    form.see_clothe.SetName(s1[1]);
+                    form.see_clothe.SetColor(s1[3]);
+                    form.see_clothe.SetStyle(s1[4]);
+                    form.see_clothe.SetColor(s1[3]);
+                    form.see_clothe.SetPhoto(s1[9]);
+                    form.see_clothe.SetDate(s1[6]);
+                    form.see_clothe.SetPlace(s1[7]);
+                    form.see_clothe.SetSize(s1[8]);
+                    form.see_clothe.Focus();
                 }
             }
             catch (Exception ex)

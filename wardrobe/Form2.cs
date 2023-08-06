@@ -22,6 +22,7 @@ namespace wardrobe
         public DateTime date { get; set; }
         public string place { get; set; } = null;
         public string size { get; set; } = null;
+        public string date1 { get; set; } = null;
 
         public event EventHandler<EventArgs> LoadF2;
         public event EventHandler<EventArgs> Save_clothes;
@@ -116,7 +117,8 @@ namespace wardrobe
 
         private void dateChange(object sender, EventArgs e)
         {
-            date = dateTimePicker1.Value.Date;
+             date = dateTimePicker1.Value.Date;
+          //  date1 = dateTimePicker1.Value.ToString("dd.MM.yyyy");
         }
     }
 }

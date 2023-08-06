@@ -49,9 +49,10 @@
             // textBoxName
             // 
             textBoxName.Enabled = false;
+            textBoxName.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxName.Location = new Point(83, 12);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(271, 27);
+            textBoxName.Size = new Size(271, 47);
             textBoxName.TabIndex = 0;
             // 
             // pictureBox1
@@ -67,7 +68,7 @@
             // textBoxStyle
             // 
             textBoxStyle.Enabled = false;
-            textBoxStyle.Location = new Point(83, 55);
+            textBoxStyle.Location = new Point(83, 65);
             textBoxStyle.Name = "textBoxStyle";
             textBoxStyle.Size = new Size(271, 27);
             textBoxStyle.TabIndex = 2;
@@ -75,7 +76,7 @@
             // textBoxColor
             // 
             textBoxColor.Enabled = false;
-            textBoxColor.Location = new Point(83, 96);
+            textBoxColor.Location = new Point(83, 99);
             textBoxColor.Name = "textBoxColor";
             textBoxColor.Size = new Size(271, 27);
             textBoxColor.TabIndex = 3;
@@ -83,7 +84,7 @@
             // textBoxSeason
             // 
             textBoxSeason.Enabled = false;
-            textBoxSeason.Location = new Point(83, 145);
+            textBoxSeason.Location = new Point(83, 132);
             textBoxSeason.Name = "textBoxSeason";
             textBoxSeason.Size = new Size(271, 27);
             textBoxSeason.TabIndex = 4;
@@ -100,7 +101,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 58);
+            label1.Location = new Point(21, 68);
             label1.Name = "label1";
             label1.Size = new Size(47, 20);
             label1.TabIndex = 6;
@@ -109,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 99);
+            label2.Location = new Point(20, 106);
             label2.Name = "label2";
             label2.Size = new Size(40, 20);
             label2.TabIndex = 7;
@@ -118,7 +119,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 148);
+            label3.Location = new Point(19, 139);
             label3.Name = "label3";
             label3.Size = new Size(49, 20);
             label3.TabIndex = 8;
@@ -127,7 +128,7 @@
             // textBoxDate
             // 
             textBoxDate.Enabled = false;
-            textBoxDate.Location = new Point(83, 191);
+            textBoxDate.Location = new Point(83, 165);
             textBoxDate.Name = "textBoxDate";
             textBoxDate.Size = new Size(271, 27);
             textBoxDate.TabIndex = 9;
@@ -135,7 +136,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(21, 194);
+            label4.Location = new Point(19, 172);
             label4.Name = "label4";
             label4.Size = new Size(39, 20);
             label4.TabIndex = 10;
@@ -144,7 +145,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 237);
+            label5.Location = new Point(3, 205);
             label5.Name = "label5";
             label5.Size = new Size(67, 20);
             label5.TabIndex = 11;
@@ -153,7 +154,7 @@
             // textBoxPlace
             // 
             textBoxPlace.Enabled = false;
-            textBoxPlace.Location = new Point(83, 237);
+            textBoxPlace.Location = new Point(83, 198);
             textBoxPlace.Name = "textBoxPlace";
             textBoxPlace.Size = new Size(271, 27);
             textBoxPlace.TabIndex = 12;
@@ -161,7 +162,7 @@
             // textBoxSize
             // 
             textBoxSize.Enabled = false;
-            textBoxSize.Location = new Point(229, 280);
+            textBoxSize.Location = new Point(229, 231);
             textBoxSize.Name = "textBoxSize";
             textBoxSize.Size = new Size(125, 27);
             textBoxSize.TabIndex = 13;
@@ -169,7 +170,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(9, 287);
+            label6.Location = new Point(7, 238);
             label6.Name = "label6";
             label6.Size = new Size(61, 20);
             label6.TabIndex = 14;

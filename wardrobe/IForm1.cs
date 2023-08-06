@@ -16,7 +16,7 @@ namespace wardrobe
         public void SetTypeSuitToWardrobe(string s);
         public void SetTypeShoeToWardrobe(string s);
         public void SetColorToWardrobe(string s);
-        public int Id { get; set; }
+        public int setId { get; set; }
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;

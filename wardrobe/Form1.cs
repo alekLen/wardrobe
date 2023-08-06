@@ -7,7 +7,7 @@ namespace wardrobe
     {
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
-        public int Id { get; set; }
+        public int setId { get; set; }
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
@@ -93,7 +93,7 @@ namespace wardrobe
             ListViewItem selectedItem = listView1.SelectedItems[0];
             string s = selectedItem.SubItems[0].Text;
             string[] s1 = s.Split('.');
-            Id = int.Parse(s1[0]);          
+            setId = int.Parse(s1[0]);          
             see_clothe.MainForm = this;
             see_clothe.Show();
         }
