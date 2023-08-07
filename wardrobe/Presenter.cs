@@ -126,7 +126,7 @@ namespace wardrobe
                                 select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
                     foreach (var i in query)
                     {
-                        form.SetTypeUpToWardrobe(i);
+                        form.SetTypeBottomToWardrobe(i);
                     }
                 }
             }
@@ -147,7 +147,7 @@ namespace wardrobe
                                 select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
                     foreach (var i in query)
                     {
-                        form.SetTypeUpToWardrobe(i);
+                        form.SetTypeSuitToWardrobe(i);
                     }
                 }
             }
@@ -168,7 +168,7 @@ namespace wardrobe
                                 select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
                     foreach (var i in query)
                     {
-                        form.SetTypeUpToWardrobe(i);
+                        form.SetTypeShoeToWardrobe(i);
                     }
                 }
             }
