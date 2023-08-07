@@ -21,6 +21,8 @@ namespace wardrobe
         public void ClearSuit();
         public void ClearShoe();
         public int setId { get; set; }
+        public List<int> Ids { get; set; }
+        public void SetChoseItemUp(string s);
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;

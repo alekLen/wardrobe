@@ -103,6 +103,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Location = new Point(457, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(319, 317);
@@ -180,6 +181,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.Bottom;
             button2.Location = new Point(562, 378);
             button2.Name = "button2";
             button2.Size = new Size(214, 29);

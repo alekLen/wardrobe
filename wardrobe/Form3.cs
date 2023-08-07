@@ -15,6 +15,8 @@ namespace wardrobe
     {
         public Form1 MainForm { get; set; }
         public event EventHandler<EventArgs> LoadF3;
+        public event EventHandler<EventArgs> AddToCom;
+        public int cId;
         public Form3()
         {
             InitializeComponent();
@@ -59,6 +61,7 @@ namespace wardrobe
             try
             {
                 LoadF3?.Invoke(this, EventArgs.Empty);
+                cId = MainForm.setId;
             }
             catch (Exception ex)
             {
@@ -66,5 +69,10 @@ namespace wardrobe
             }
         }
 
+        private void AddToComplectBox(object sender, EventArgs e)
+        {
+            AddToCom?.Invoke(this, EventArgs.Empty);
+            this.Close();
+        }
     }
 }

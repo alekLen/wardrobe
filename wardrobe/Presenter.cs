@@ -29,6 +29,7 @@ namespace wardrobe
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
+            form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -412,11 +413,36 @@ namespace wardrobe
         public void NewSForm(object sender, EventArgs e)
         {
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
+            form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
         }
         public void NewAForm(object sender, EventArgs e)
         {
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
+        }
+        public void AddToChose(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = (from b in db.clothes_items
+                                where b.Id == form.see_clothe.cId
+                                select b.type.Type_name+"|"+b.Id + "." + b.Clothes_Item_name).Single();
+                  form.Ids.Add(form.see_clothe.cId);
+                    string[] s = query.Split('|');
+                    if (s[0] == "верх")
+                    {
+                        form.SetChoseItemUp(s[1]);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

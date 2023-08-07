@@ -9,6 +9,7 @@ namespace wardrobe
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
         public int setId { get; set; }
+        public List <int> Ids { get; set; }
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
@@ -23,7 +24,7 @@ namespace wardrobe
 
             try
             {
-
+                Ids = new();
                 pictureBox1.Image = Image.FromFile("Photos/up.png");
                 pictureBox2.Image = Image.FromFile("Photos/bottom.png");
                 pictureBox3.Image = Image.FromFile("Photos/dress.png");
@@ -85,6 +86,10 @@ namespace wardrobe
         public void SetColorToWardrobe(string s)
         {
             comboBox1.Items.Add(s);
+        }
+        public void SetChoseItemUp(string s)
+        {
+            listBox1.Items.Add(s);
         }
 
         private void LoadForm(object sender, EventArgs e)
