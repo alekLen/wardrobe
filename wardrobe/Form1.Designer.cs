@@ -91,7 +91,7 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
-            listView1.SelectedIndexChanged += Load_see_form;
+            listView1.SelectedIndexChanged += Load_see_formUp;
             // 
             // pictureBox1
             // 
@@ -267,15 +267,18 @@
             // 
             // listView2
             // 
+            listView2.GridLines = true;
             listView2.Location = new Point(573, 378);
             listView2.Name = "listView2";
             listView2.Size = new Size(314, 304);
             listView2.TabIndex = 13;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
+            listView2.SelectedIndexChanged += Load_see_formBottom;
             // 
             // listView4
             // 
+            listView4.GridLines = true;
             listView4.Location = new Point(1270, 378);
             listView4.Name = "listView4";
             listView4.Size = new Size(314, 304);
@@ -419,6 +422,7 @@
             // 
             // listView3
             // 
+            listView3.GridLines = true;
             listView3.Location = new Point(922, 378);
             listView3.Name = "listView3";
             listView3.Size = new Size(314, 304);
