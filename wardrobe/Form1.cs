@@ -1,5 +1,6 @@
 using Azure.Messaging;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace wardrobe
 {
@@ -8,12 +9,13 @@ namespace wardrobe
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
         public int setId { get; set; }
-
+       
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
         public event EventHandler<EventArgs> LoadBottom;
         public event EventHandler<EventArgs> LoadSuit;
         public event EventHandler<EventArgs> LoadShoe;
+        public event EventHandler<EventArgs> NewF3;
         public Form1()
         {
             InitializeComponent();
@@ -46,8 +48,7 @@ namespace wardrobe
         }
         public void SetTypeUpToWardrobe(string s)
         {
-            ListViewItem item1 = new ListViewItem(s);
-            listView1.Items.Add(item1);
+            listView1.Items.Add(s);
         }
         public void SetTypeBottomToWardrobe(string s)
         {
@@ -92,12 +93,20 @@ namespace wardrobe
         {
             try
             {
-                ListViewItem selectedItem = listView1.SelectedItems[0];
-                string s = selectedItem.Text;
-                string[] s1 = s.Split('.');
-                setId = int.Parse(s1[0]);
-                see_clothe.MainForm = this;
-                see_clothe.Show();
+                if(see_clothe.IsDisposed || see_clothe.Visible)
+                {
+                    see_clothe = new Form3();
+                    NewF3?.Invoke(this, EventArgs.Empty);
+                }
+                if (listView1.SelectedItems.Count > 0)
+                {
+                    ListViewItem selectedItem = listView1.SelectedItems[0];
+                    string s = selectedItem.Text;
+                    string[] s1 = s.Split('.');
+                    setId = int.Parse(s1[0]);
+                    see_clothe.MainForm = this;
+                    see_clothe.Show();
+                }
             }
             catch { MessageBox.Show("ops"); }
         }
