@@ -91,6 +91,10 @@ namespace wardrobe
         {
             listBox1.Items.Add(s);
         }
+        public void SetPhotoItemUp(string s)
+        {
+            pictureBox1.Image = Image.FromFile(s);
+        }
 
         private void LoadForm(object sender, EventArgs e)
         {

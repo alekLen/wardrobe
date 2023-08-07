@@ -429,12 +429,13 @@ namespace wardrobe
                 {
                     var query = (from b in db.clothes_items
                                 where b.Id == form.see_clothe.cId
-                                select b.type.Type_name+"|"+b.Id + "." + b.Clothes_Item_name).Single();
+                                select b.type.Type_name+"|"+ b.photo + "|" + b.Id + "." + b.Clothes_Item_name).Single();
                   form.Ids.Add(form.see_clothe.cId);
                     string[] s = query.Split('|');
                     if (s[0] == "верх")
                     {
-                        form.SetChoseItemUp(s[1]);
+                        form.SetChoseItemUp(s[2]);
+                        form.SetPhotoItemUp(s[1]);
                     }
 
                 }
