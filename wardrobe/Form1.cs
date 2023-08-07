@@ -50,20 +50,36 @@ namespace wardrobe
         {
             listView1.Items.Add(s);
         }
+        public void ClearUp()
+        {
+            listView1.Items.Clear();
+        }
         public void SetTypeBottomToWardrobe(string s)
         {
             ListViewItem item1 = new ListViewItem(s);
             listView2.Items.Add(item1);
+        }
+        public void ClearBottom()
+        {
+            listView2.Items.Clear();
         }
         public void SetTypeSuitToWardrobe(string s)
         {
             ListViewItem item1 = new ListViewItem(s);
             listView3.Items.Add(item1);
         }
+        public void ClearSuit()
+        {
+            listView3.Items.Clear();
+        }
         public void SetTypeShoeToWardrobe(string s)
         {
             ListViewItem item1 = new ListViewItem(s);
             listView4.Items.Add(item1);
+        }
+        public void ClearShoe()
+        {
+            listView4.Items.Clear();
         }
         public void SetColorToWardrobe(string s)
         {
