@@ -15,6 +15,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadBottom;
         public event EventHandler<EventArgs> LoadSuit;
         public event EventHandler<EventArgs> LoadShoe;
+        public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
         public Form1()
         {
@@ -27,10 +28,10 @@ namespace wardrobe
                 pictureBox2.Image = Image.FromFile("Photos/bottom.png");
                 pictureBox3.Image = Image.FromFile("Photos/dress.png");
                 pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
-                listView1.Columns.Add(null, 300);
-                listView2.Columns.Add(null, 300);
-                listView3.Columns.Add(null, 300);
-                listView4.Columns.Add(null, 300);
+                listView1.Columns.Add("верх", 300);
+                listView2.Columns.Add("низ", 300);
+                listView3.Columns.Add("платье/костюм", 300);
+                listView4.Columns.Add("обувь", 300);
             }
             catch (Exception ex)
             {
@@ -104,6 +105,11 @@ namespace wardrobe
 
         private void Add_Form(object sender, EventArgs e)
         {
+            if (add_clothe.IsDisposed || add_clothe.Visible)
+            {
+                add_clothe = new Form2();
+                NewF2?.Invoke(this, EventArgs.Empty);
+            }
             add_clothe.MainForm = this;
             add_clothe.Show();
         }

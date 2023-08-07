@@ -20,6 +20,7 @@ namespace wardrobe
         {
             form = f;
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
+            form.NewF2 += new EventHandler<EventArgs>(NewAForm);
             form.NewF3 += new EventHandler<EventArgs>(NewSForm);
             form.LoadUp += new EventHandler<EventArgs>(Load_Up);
             form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
@@ -411,6 +412,11 @@ namespace wardrobe
         public void NewSForm(object sender, EventArgs e)
         {
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
+        }
+        public void NewAForm(object sender, EventArgs e)
+        {
+            form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
+            form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
         }
     }
 }
