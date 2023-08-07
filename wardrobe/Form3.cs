@@ -28,10 +28,6 @@ namespace wardrobe
         {
             textBoxStyle.Text = s;
         }
-        public void SetType(string s)
-        {
-            textBoxDate.Text = s;
-        }
         public void SetColor(string s)
         {
             textBoxColor.Text = s;
@@ -62,7 +58,7 @@ namespace wardrobe
 
             try
             {
-                LoadF3?.Invoke(this, EventArgs.Empty);              
+                LoadF3?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {

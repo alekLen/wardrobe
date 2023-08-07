@@ -19,10 +19,10 @@ namespace wardrobe
         public string season { get; set; } = null;
         public string style { get; set; } = null;
         public string name { get; set; } = null;
-      //  public DateTime date { get; set; }
+        //public DateTime date { get; set; }
         public string place { get; set; } = null;
         public string size { get; set; } = null;
-        public string date1 { get; set; } = null;
+          public string date { get; set; } = null;
 
         public event EventHandler<EventArgs> LoadF2;
         public event EventHandler<EventArgs> Save_clothes;
@@ -31,7 +31,7 @@ namespace wardrobe
         {
             InitializeComponent();
             //date = dateTimePicker1.Value.Date;
-            date1 = dateTimePicker1.Value.ToString("dd.MM.yyyy");
+             date = dateTimePicker1.Value.ToString("dd.MM.yyyy");
         }
 
         private void LoadForm2(object sender, EventArgs e)
@@ -118,8 +118,8 @@ namespace wardrobe
 
         private void dateChange(object sender, EventArgs e)
         {
-           //  date = dateTimePicker1.Value.Date;
-            date1 = dateTimePicker1.Value.ToString("dd.MM.yyyy");
+            //date = dateTimePicker1.Value.Date;
+             date = dateTimePicker1.Value.ToString("dd.MM.yyyy");
         }
     }
 }

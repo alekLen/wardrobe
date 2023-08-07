@@ -90,12 +90,16 @@ namespace wardrobe
 
         private void Load_see_form(object sender, EventArgs e)
         {
-            ListViewItem selectedItem = listView1.SelectedItems[0];
-            string s = selectedItem.SubItems[0].Text;
-            string[] s1 = s.Split('.');
-            setId = int.Parse(s1[0]);          
-            see_clothe.MainForm = this;
-            see_clothe.Show();
+            try
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                string s = selectedItem.Text;
+                string[] s1 = s.Split('.');
+                setId = int.Parse(s1[0]);
+                see_clothe.MainForm = this;
+                see_clothe.Show();
+            }
+            catch { MessageBox.Show("ops"); }
         }
     }
 }

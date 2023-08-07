@@ -208,7 +208,7 @@ namespace wardrobe
                         item.color=color_query;
                         item.place = form.add_clothe.place;
                         item.size = form.add_clothe.size;
-                        item.date= form.add_clothe.date1;
+                        item.date= form.add_clothe.date;
                         db.clothes_items.Add(item);
                         db.SaveChanges();
                    }

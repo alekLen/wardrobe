@@ -37,12 +37,12 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBoxDate = new TextBox();
             label4 = new Label();
             label5 = new Label();
             textBoxPlace = new TextBox();
             textBoxSize = new TextBox();
             label6 = new Label();
+            textBoxDate = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -50,17 +50,17 @@
             // 
             textBoxName.Enabled = false;
             textBoxName.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxName.Location = new Point(83, 12);
+            textBoxName.Location = new Point(7, 12);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(271, 47);
+            textBoxName.Size = new Size(392, 47);
             textBoxName.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Location = new Point(360, 12);
+            pictureBox1.Location = new Point(405, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(708, 653);
+            pictureBox1.Size = new Size(663, 653);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -101,7 +101,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 68);
+            label1.Location = new Point(23, 68);
             label1.Name = "label1";
             label1.Size = new Size(47, 20);
             label1.TabIndex = 6;
@@ -110,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 106);
+            label2.Location = new Point(28, 106);
             label2.Name = "label2";
             label2.Size = new Size(40, 20);
             label2.TabIndex = 7;
@@ -119,24 +119,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(19, 139);
+            label3.Location = new Point(21, 139);
             label3.Name = "label3";
             label3.Size = new Size(49, 20);
             label3.TabIndex = 8;
             label3.Text = "сезон";
             // 
-            // textBoxDate
-            // 
-            textBoxDate.Enabled = false;
-            textBoxDate.Location = new Point(83, 165);
-            textBoxDate.Name = "textBoxDate";
-            textBoxDate.Size = new Size(271, 27);
-            textBoxDate.TabIndex = 9;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(19, 172);
+            label4.Location = new Point(31, 168);
             label4.Name = "label4";
             label4.Size = new Size(39, 20);
             label4.TabIndex = 10;
@@ -145,7 +137,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 205);
+            label5.Location = new Point(3, 201);
             label5.Name = "label5";
             label5.Size = new Size(67, 20);
             label5.TabIndex = 11;
@@ -170,23 +162,31 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(7, 238);
+            label6.Location = new Point(7, 234);
             label6.Name = "label6";
             label6.Size = new Size(61, 20);
             label6.TabIndex = 14;
             label6.Text = "размер";
+            // 
+            // textBoxDate
+            // 
+            textBoxDate.Enabled = false;
+            textBoxDate.Location = new Point(187, 165);
+            textBoxDate.Name = "textBoxDate";
+            textBoxDate.Size = new Size(167, 27);
+            textBoxDate.TabIndex = 15;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 688);
+            Controls.Add(textBoxDate);
             Controls.Add(label6);
             Controls.Add(textBoxSize);
             Controls.Add(textBoxPlace);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBoxDate);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -215,11 +215,11 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBoxDate;
         private Label label4;
         private Label label5;
         private TextBox textBoxPlace;
         private TextBox textBoxSize;
         private Label label6;
+        private TextBox textBoxDate;
     }
 }
