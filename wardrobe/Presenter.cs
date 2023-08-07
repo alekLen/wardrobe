@@ -437,6 +437,21 @@ namespace wardrobe
                         form.SetChoseItemUp(s[2]);
                         form.SetPhotoItemUp(s[1]);
                     }
+                    if (s[0] == "низ")
+                    {
+                        form.SetChoseItemBottom(s[2]);
+                        form.SetPhotoItemBottom(s[1]);
+                    }
+                    if (s[0] == "платье/костюм")
+                    {
+                        form.SetChoseItemSuit(s[2]);
+                        form.SetPhotoItemSuit(s[1]);
+                    }
+                    if (s[0] == "обувь")
+                    {
+                        form.SetChoseItemShoe(s[2]);
+                        form.SetPhotoItemShoe(s[1]);
+                    }
 
                 }
             }
