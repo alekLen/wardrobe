@@ -26,7 +26,7 @@ namespace wardrobe
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
             form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
-            form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
+            form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
         }
         public void LoadAll(object sender, EventArgs e)
@@ -183,7 +183,7 @@ namespace wardrobe
             {
                 Wardrobe_Context db = Get_db();
                 using (db)
-                {
+                {                  
                     savePhoto();
                    if(targetFilePath != null)
                    {
@@ -211,7 +211,8 @@ namespace wardrobe
                         item.date= form.add_clothe.date;
                         db.clothes_items.Add(item);
                         db.SaveChanges();
-                   }
+                        UpdateForm1(sender, e);
+                    }
                 }
             }
             catch (Exception ex)
@@ -237,8 +238,22 @@ namespace wardrobe
                 targetFilePath = null;
             }
         }
-       
 
+        public void UpdateForm1(object sender, EventArgs e)
+        {
+            try
+            {
+                if(form.add_clothe.type=="верх")
+                {
+                    form.ClearUp();
+                    Load_Up(sender, e);
+                }                             
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void ToSeasonBox(Wardrobe_Context db)
         {
             try
