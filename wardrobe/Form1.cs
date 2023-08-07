@@ -9,7 +9,7 @@ namespace wardrobe
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
         public int setId { get; set; }
-        public List <int> Ids { get; set; }
+        public List<int> Ids { get; set; }
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
@@ -90,6 +90,7 @@ namespace wardrobe
         public void SetChoseItemUp(string s)
         {
             listBox1.Items.Add(s);
+            label9.Text = listBox1.Items.Count.ToString();
         }
         public void SetPhotoItemUp(string s)
         {
@@ -98,6 +99,7 @@ namespace wardrobe
         public void SetChoseItemBottom(string s)
         {
             listBox2.Items.Add(s);
+            label10.Text = listBox2.Items.Count.ToString();
         }
         public void SetPhotoItemBottom(string s)
         {
@@ -106,6 +108,7 @@ namespace wardrobe
         public void SetChoseItemSuit(string s)
         {
             listBox3.Items.Add(s);
+            label11.Text = listBox3.Items.Count.ToString();
         }
         public void SetPhotoItemSuit(string s)
         {
@@ -114,6 +117,7 @@ namespace wardrobe
         public void SetChoseItemShoe(string s)
         {
             listBox4.Items.Add(s);
+            label12.Text = listBox4.Items.Count.ToString();
         }
         public void SetPhotoItemShoe(string s)
         {

@@ -73,6 +73,10 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -91,6 +95,7 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            listView1.ItemChecked += Load_see_formUp;
             listView1.SelectedIndexChanged += Load_see_formUp;
             // 
             // pictureBox1
@@ -108,7 +113,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, добавитьодеждуToolStripMenuItem, просмотрToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1702, 28);
+            menuStrip1.Size = new Size(1714, 28);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -325,11 +330,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1596, 287);
+            button4.Location = new Point(1596, 305);
             button4.Name = "button4";
-            button4.Size = new Size(94, 113);
+            button4.Size = new Size(106, 80);
             button4.TabIndex = 20;
-            button4.Text = "добавить комплект";
+            button4.Text = "ДОБАВИТЬ КОМПЛЕКТ";
             button4.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -468,11 +473,47 @@
             label8.TabIndex = 37;
             label8.Text = "обувь";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(461, 353);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 20);
+            label9.TabIndex = 38;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(825, 351);
+            label10.Name = "label10";
+            label10.Size = new Size(0, 20);
+            label10.TabIndex = 39;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(1174, 352);
+            label11.Name = "label11";
+            label11.Size = new Size(0, 20);
+            label11.TabIndex = 40;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(1513, 351);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 20);
+            label12.TabIndex = 41;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1702, 740);
+            ClientSize = new Size(1714, 740);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -569,5 +610,9 @@
         private Label label6;
         private Label label7;
         private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
     }
 }
