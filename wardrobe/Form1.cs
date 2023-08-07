@@ -127,7 +127,7 @@ namespace wardrobe
                     see_clothe.Show();
                 }
             }
-            catch { MessageBox.Show("ops"); }
+            catch { MessageBox.Show("opsup"); }
         }
 
         private void Load_see_formBottom(object sender, EventArgs e)
@@ -139,7 +139,7 @@ namespace wardrobe
                     see_clothe = new Form3();
                     NewF3?.Invoke(this, EventArgs.Empty);
                 }
-                if (listView1.SelectedItems.Count > 0)
+                if (listView2.SelectedItems.Count > 0)
                 {
                     ListViewItem selectedItem = listView2.SelectedItems[0];
                     string s = selectedItem.Text;
@@ -149,9 +149,51 @@ namespace wardrobe
                     see_clothe.Show();
                 }
             }
-            catch { MessageBox.Show("ops"); }
+            catch { MessageBox.Show("opsbottom"); }
         }
 
-        
+        private void Load_see_formSuit(object sender, EventArgs e)
+        {
+            try
+            {
+                if (see_clothe.IsDisposed || see_clothe.Visible)
+                {
+                    see_clothe = new Form3();
+                    NewF3?.Invoke(this, EventArgs.Empty);
+                }
+                if (listView3.SelectedItems.Count > 0)
+                {
+                    ListViewItem selectedItem = listView3.SelectedItems[0];
+                    string s = selectedItem.Text;
+                    string[] s1 = s.Split('.');
+                    setId = int.Parse(s1[0]);
+                    see_clothe.MainForm = this;
+                    see_clothe.Show();
+                }
+            }
+            catch { MessageBox.Show("opssuit"); }
+        }
+
+        private void Load_see_formShoe(object sender, EventArgs e)
+        {
+            try
+            {
+                if (see_clothe.IsDisposed || see_clothe.Visible)
+                {
+                    see_clothe = new Form3();
+                    NewF3?.Invoke(this, EventArgs.Empty);
+                }
+                if (listView4.SelectedItems.Count > 0)
+                {
+                    ListViewItem selectedItem = listView4.SelectedItems[0];
+                    string s = selectedItem.Text;
+                    string[] s1 = s.Split('.');
+                    setId = int.Parse(s1[0]);
+                    see_clothe.MainForm = this;
+                    see_clothe.Show();
+                }
+            }
+            catch { MessageBox.Show("opsshoe"); }
+        }
     }
 }

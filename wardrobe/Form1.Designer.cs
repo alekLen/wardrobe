@@ -285,6 +285,7 @@
             listView4.TabIndex = 15;
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
+            listView4.SelectedIndexChanged += Load_see_formShoe;
             // 
             // checkBox1
             // 
@@ -429,6 +430,7 @@
             listView3.TabIndex = 14;
             listView3.UseCompatibleStateImageBehavior = false;
             listView3.View = View.Details;
+            listView3.SelectedIndexChanged += Load_see_formSuit;
             // 
             // label5
             // 
