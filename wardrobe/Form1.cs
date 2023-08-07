@@ -92,6 +92,9 @@ namespace wardrobe
             {
                 LoadF?.Invoke(this, EventArgs.Empty);
                 LoadUp?.Invoke(this, EventArgs.Empty);
+                LoadBottom?.Invoke(this, EventArgs.Empty);
+                LoadSuit?.Invoke(this, EventArgs.Empty);
+                LoadShoe?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception ex)
             {
