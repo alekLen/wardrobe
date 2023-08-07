@@ -247,7 +247,22 @@ namespace wardrobe
                 {
                     form.ClearUp();
                     Load_Up(sender, e);
-                }                             
+                }
+                if (form.add_clothe.type == "низ")
+                {
+                    form.ClearBottom();
+                    Load_Bottom(sender, e);
+                }
+                if (form.add_clothe.type == "платье/костюм")
+                {
+                    form.ClearSuit();
+                    Load_Suit(sender, e);
+                }
+                if (form.add_clothe.type == "обувь")
+                {
+                    form.ClearShoe();
+                    Load_Shoe(sender, e);
+                }
             }
             catch (Exception ex)
             {
