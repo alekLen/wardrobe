@@ -78,7 +78,7 @@ namespace wardrobe
                     string s = query.ToString();
                     string[]s1=s.Split('~');
                     form.see_clothe.SetName(s1[1]);
-                    form.see_clothe.SetColor(s1[3]);
+                    form.see_clothe.SetSeason(s1[5]);
                     form.see_clothe.SetStyle(s1[4]);
                     form.see_clothe.SetColor(s1[3]);
                     form.see_clothe.SetPhoto(s1[9]);
