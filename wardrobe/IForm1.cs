@@ -24,6 +24,12 @@ namespace wardrobe
         public List<int> Ids { get; set; }
         public void SetChoseItemUp(string s);
         public void SetPhotoItemUp(string s);
+        public void SetChoseItemBottom(string s);
+        public void SetPhotoItemBottom(string s);
+        public void SetChoseItemSuit(string s);
+        public void SetPhotoItemSuit(string s);
+        public void SetChoseItemShoe(string s);
+        public void SetPhotoItemShoe(string s);
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;

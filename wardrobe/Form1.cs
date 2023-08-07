@@ -95,6 +95,30 @@ namespace wardrobe
         {
             pictureBox1.Image = Image.FromFile(s);
         }
+        public void SetChoseItemBottom(string s)
+        {
+            listBox2.Items.Add(s);
+        }
+        public void SetPhotoItemBottom(string s)
+        {
+            pictureBox2.Image = Image.FromFile(s);
+        }
+        public void SetChoseItemSuit(string s)
+        {
+            listBox3.Items.Add(s);
+        }
+        public void SetPhotoItemSuit(string s)
+        {
+            pictureBox3.Image = Image.FromFile(s);
+        }
+        public void SetChoseItemShoe(string s)
+        {
+            listBox4.Items.Add(s);
+        }
+        public void SetPhotoItemShoe(string s)
+        {
+            pictureBox4.Image = Image.FromFile(s);
+        }
 
         private void LoadForm(object sender, EventArgs e)
         {
