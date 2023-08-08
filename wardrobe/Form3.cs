@@ -118,12 +118,14 @@ namespace wardrobe
 
         private void AddToComplectBox(object sender, EventArgs e)
         {
+            MainForm.see_clothe = this;
             AddToCom?.Invoke(this, EventArgs.Empty);
             this.Close();
         }
 
         private void edit_item(object sender, EventArgs e)
         {
+            MainForm.see_clothe = this;
             textBoxName.Enabled = true;
             textBoxDate.Enabled = true;
             textBoxPlace.Enabled = true;
@@ -135,6 +137,7 @@ namespace wardrobe
         }
         void LoadPhotoButton()
         {
+            MainForm.see_clothe = this;
             buttonPhoto =new System.Windows.Forms.Button();
             buttonPhoto.Location = button1.Location;
             buttonPhoto.Size = button1.Size;
@@ -147,6 +150,7 @@ namespace wardrobe
         void LoadEditStyle()
         {
             try {
+                MainForm.see_clothe = this;
                 comboBoxStyle = new System.Windows.Forms.ComboBox();
                 comboBoxStyle.Location = textBoxStyle.Location;
                 comboBoxStyle.Size = textBoxStyle.Size;
@@ -161,6 +165,7 @@ namespace wardrobe
         {
             try
             {
+                MainForm.see_clothe = this;
                 comboBoxSeason = new System.Windows.Forms.ComboBox();
                 comboBoxSeason.Location = textBoxSeason.Location;
                 comboBoxSeason.Size = textBoxSeason.Size;
@@ -175,6 +180,7 @@ namespace wardrobe
         {
             try
             {
+                MainForm.see_clothe = this;
                 comboBoxColor = new System.Windows.Forms.ComboBox();
                 comboBoxColor.Location = textBoxColor.Location;
                 comboBoxColor.Size = textBoxColor.Size;
@@ -187,6 +193,7 @@ namespace wardrobe
         }
         private void delete(object sender, EventArgs e)
         {
+            MainForm.see_clothe = this;
             DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text + " из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -199,6 +206,7 @@ namespace wardrobe
 
         private void SaveIt(object sender, EventArgs e)
         {
+            MainForm.see_clothe = this;
             DialogResult result = MessageBox.Show("вы хотите сохранить изменения\n если изменили фото, то старое будет удалено", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -222,6 +230,7 @@ namespace wardrobe
         }
         private void buttonPhoto_Click(object sender, EventArgs e)
         {
+            MainForm.see_clothe = this;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
