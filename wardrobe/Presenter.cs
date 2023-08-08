@@ -34,6 +34,7 @@ namespace wardrobe
             form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
             form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
+            form.see_clothe.DeletePhoto += new EventHandler<EventArgs>(DelPhoto);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -573,6 +574,24 @@ namespace wardrobe
                     db.Remove(query);
                     db.SaveChanges();
                     UpdateFm1(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void DelPhoto(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.clothes_items
+                             where b.Id == form.see_clothe.cId
+                             select b.photo).Single();
+                    deletePhoto(q);                 
                 }
             }
             catch (Exception ex)

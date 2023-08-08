@@ -21,7 +21,11 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadStyle;
         public event EventHandler<EventArgs> LoadSeason;
         public event EventHandler<EventArgs> LoadColor;
-        public int cId;
+        public event EventHandler<EventArgs> DeletePhoto;
+        public int cId { get; set; }
+        public string newphoto { get; set; }
+        public string oldphoto { get; set; }
+
         System.Windows.Forms.ComboBox comboBoxStyle;
         System.Windows.Forms.ComboBox comboBoxSeason;
         System.Windows.Forms.ComboBox comboBoxColor;
@@ -74,6 +78,7 @@ namespace wardrobe
         public void SetPhoto(string s)
         {
             pictureBox1.Image = Image.FromFile(s);
+            oldphoto = s;
         }
 
         private void LoadFm3(object sender, EventArgs e)
@@ -115,6 +120,8 @@ namespace wardrobe
             buttonPhoto.Text = "изменить фото";
             this.Controls.Remove(button1);
             this.Controls.Add(buttonPhoto);
+            buttonPhoto.Click += buttonPhoto_Click;
+
         }
         void LoadEditStyle()
         {
@@ -171,12 +178,30 @@ namespace wardrobe
 
         private void SaveIt(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("вы хотите сохранить изменения", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("вы хотите сохранить изменения\n если изменили фото, то старое будет удалено", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                EditItem?.Invoke(this, EventArgs.Empty);
-                this.Close();
+                DeletePhoto?.Invoke(this, EventArgs.Empty);
+                EditItem?.Invoke(this, EventArgs.Empty);               
                 MessageBox.Show("измененения сохранены успешно");
+            }
+            if (result == DialogResult.No)
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = Image.FromFile(oldphoto);
+            }
+        }
+        private void buttonPhoto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    newphoto = openFileDialog.FileName;
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = Image.FromFile(newphoto);
+                }
             }
         }
     }
