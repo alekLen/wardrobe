@@ -25,6 +25,7 @@ namespace wardrobe
         System.Windows.Forms.ComboBox comboBoxStyle;
         System.Windows.Forms.ComboBox comboBoxSeason;
         System.Windows.Forms.ComboBox comboBoxColor;
+        System.Windows.Forms.Button buttonPhoto;
         public Form3()
         {
             InitializeComponent();
@@ -104,6 +105,16 @@ namespace wardrobe
             LoadEditStyle();
             LoadEditSeason();
             LoadEditColor();
+            LoadPhotoButton();
+        }
+        void LoadPhotoButton()
+        {
+            buttonPhoto =new System.Windows.Forms.Button();
+            buttonPhoto.Location = button1.Location;
+            buttonPhoto.Size = button1.Size;
+            buttonPhoto.Text = "изменить фото";
+            this.Controls.Remove(button1);
+            this.Controls.Add(buttonPhoto);
         }
         void LoadEditStyle()
         {
