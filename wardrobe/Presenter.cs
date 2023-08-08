@@ -31,6 +31,7 @@ namespace wardrobe
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
             form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
             form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
+            form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -320,6 +321,25 @@ namespace wardrobe
                         string s = p.Style_name;
                         form.SetStyleToWardrobe(s);
                     }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadStyleToEdit(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = from b in db.clothes_styles
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Style_name;
+                    form.see_clothe.SetStyleToEdit(s);
+                }
             }
             catch (Exception ex)
             {
