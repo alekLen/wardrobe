@@ -35,6 +35,7 @@ namespace wardrobe
             form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
             form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
             form.see_clothe.DeletePhoto += new EventHandler<EventArgs>(DelPhoto);
+            form.see_clothe.EditItem += new EventHandler<EventArgs>(EditItem);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -592,6 +593,66 @@ namespace wardrobe
                              where b.Id == form.see_clothe.cId
                              select b.photo).Single();
                     deletePhoto(q);                 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void EditItem(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.clothes_items
+                             where b.Id == form.see_clothe.cId
+                             select b).Single();
+                    if (form.see_clothe.newSeason != form.see_clothe.oldSeason)
+                    {
+                        var query1 = (from b in db.seasons
+                                     where b.Season_name == form.see_clothe.newSeason
+                                     select b).Single();
+                        q.season = query1;
+                    }
+                    if (form.see_clothe.newStyle != form.see_clothe.oldStyle)
+                    {
+                        var query1 = (from b in db.clothes_styles
+                                      where b.Style_name == form.see_clothe.newStyle
+                                      select b).Single();
+                        q.style = query1;
+                    }
+                    if (form.see_clothe.newColor != form.see_clothe.oldColor)
+                    {
+                        var query1 = (from b in db.colors
+                                      where b.Color_name == form.see_clothe.newColor
+                                      select b).Single();
+                        q.color = query1;
+                    }
+                    if (form.see_clothe.newName != form.see_clothe.oldName)
+                    {
+                        q.Clothes_Item_name = form.see_clothe.newName; 
+                    }
+                    if (form.see_clothe.newDate != form.see_clothe.oldDate)
+                    {
+                        q.date=form.see_clothe.newDate;
+                    }
+                    if (form.see_clothe.newPlace != form.see_clothe.oldPlace)
+                    {
+                        q.place = form.see_clothe.newPlace;
+                    }
+                    if (form.see_clothe.newSize != form.see_clothe.oldSize)
+                    {
+                        q.size=form.see_clothe.newSize;
+                    }
+                    if (form.see_clothe.newphoto != form.see_clothe.oldphoto)
+                    {
+
+                    }
+                        db.SaveChanges();
+                    UpdateFm1(sender, e);
                 }
             }
             catch (Exception ex)
