@@ -23,7 +23,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadColor;
         public event EventHandler<EventArgs> DeletePhoto;
         public int cId { get; set; }
-        public string newphoto { get; set; }
+        public string newphoto { get; set; } 
         public string oldphoto { get; set; }
         public string newName { get; set; }
         public string oldName { get; set; }
@@ -202,14 +202,18 @@ namespace wardrobe
             DialogResult result = MessageBox.Show("вы хотите сохранить изменения\n если изменили фото, то старое будет удалено", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                DeletePhoto?.Invoke(this, EventArgs.Empty);
+                if(newphoto!=null)
+                     DeletePhoto?.Invoke(this, EventArgs.Empty);
                 EditItem?.Invoke(this, EventArgs.Empty);               
                 MessageBox.Show("измененения сохранены успешно");
             }
             if (result == DialogResult.No)
             {
-                pictureBox1.Image.Dispose();
-                pictureBox1.Image = Image.FromFile(oldphoto);
+                if (newphoto != null)
+                {
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = Image.FromFile(oldphoto);
+                }
             }
         }
         private void buttonPhoto_Click(object sender, EventArgs e)
