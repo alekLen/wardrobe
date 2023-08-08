@@ -25,6 +25,20 @@ namespace wardrobe
         public int cId { get; set; }
         public string newphoto { get; set; }
         public string oldphoto { get; set; }
+        public string newName { get; set; }
+        public string oldName { get; set; }
+        public string newStyle { get; set; }
+        public string oldStyle { get; set; }
+        public string newSeason { get; set; }
+        public string oldSeason { get; set; }
+        public string newColor { get; set; }
+        public string oldColor { get; set; }
+        public string newDate { get; set; }
+        public string oldDate { get; set; }
+        public string newPlace { get; set; }
+        public string oldPlace { get; set; }
+        public string newSize { get; set; }
+        public string oldSize { get; set; }
 
         System.Windows.Forms.ComboBox comboBoxStyle;
         System.Windows.Forms.ComboBox comboBoxSeason;
@@ -38,6 +52,7 @@ namespace wardrobe
         public void SetSeason(string s)
         {
             textBoxSeason.Text = s;
+            oldSeason = s;
         }
         public void SetSeasonToEdit(string s)
         {
@@ -46,6 +61,7 @@ namespace wardrobe
         public void SetStyle(string s)
         {
             textBoxStyle.Text = s;
+            oldStyle = s;
         }
         public void SetStyleToEdit(string s)
         {
@@ -54,6 +70,7 @@ namespace wardrobe
         public void SetColor(string s)
         {
             textBoxColor.Text = s;
+            oldColor = s;
         }
         public void SetColorToEdit(string s)
         {
@@ -62,18 +79,22 @@ namespace wardrobe
         public void SetName(string s)
         {
             textBoxName.Text = s;
+            oldName = s;
         }
         public void SetPlace(string s)
         {
             textBoxPlace.Text = s;
+            oldPlace = s;
         }
         public void SetDate(string s)
         {
             textBoxDate.Text = s;
+            oldDate = s;
         }
         public void SetSize(string s)
         {
             textBoxSize.Text = s;
+            oldSize = s;
         }
         public void SetPhoto(string s)
         {
