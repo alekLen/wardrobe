@@ -203,8 +203,11 @@ namespace wardrobe
             if (result == DialogResult.Yes)
             {
                 SetNewData();
-                if (newphoto!=null)
-                     DeletePhoto?.Invoke(this, EventArgs.Empty);
+                if (newphoto != null)
+                {
+                    pictureBox1.Image.Dispose();
+                    DeletePhoto?.Invoke(this, EventArgs.Empty);
+                }
                 EditItem?.Invoke(this, EventArgs.Empty);               
                 MessageBox.Show("измененения сохранены успешно");
             }
