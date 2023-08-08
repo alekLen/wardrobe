@@ -191,7 +191,7 @@ namespace wardrobe
                 Wardrobe_Context db = Get_db();
                 using (db)
                 {                  
-                    savePhoto();
+                    savePhoto(form.add_clothe.FilePath);
                    if(targetFilePath != null)
                    {
                         Clothes_Item item = new Clothes_Item();
@@ -227,7 +227,7 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
-       void savePhoto()
+       void savePhoto(string s)
         {
             try
             {
@@ -236,8 +236,8 @@ namespace wardrobe
             {
                 Directory.CreateDirectory(targetFolderPath);
             }
-            targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(form.add_clothe.FilePath));
-            File.Copy(form.add_clothe.FilePath, targetFilePath, true);
+            targetFilePath = Path.Combine(targetFolderPath, Path.GetFileName(s));
+            File.Copy(s, targetFilePath, true);
             }
             catch (Exception ex)
             {
