@@ -45,6 +45,7 @@
             textBoxDate = new TextBox();
             buttonDelete = new Button();
             buttonEdit = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -185,7 +186,7 @@
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(232, 29);
             buttonDelete.TabIndex = 16;
-            buttonDelete.Text = "удалить";
+            buttonDelete.Text = "удалить из гардероба";
             buttonDelete.UseVisualStyleBackColor = true;
             buttonDelete.Click += delete;
             // 
@@ -193,17 +194,28 @@
             // 
             buttonEdit.Location = new Point(63, 587);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(232, 29);
+            buttonEdit.Size = new Size(123, 29);
             buttonEdit.TabIndex = 17;
             buttonEdit.Text = "редактировать";
             buttonEdit.UseVisualStyleBackColor = true;
             buttonEdit.Click += edit_item;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(187, 587);
+            button2.Name = "button2";
+            button2.Size = new Size(108, 29);
+            button2.TabIndex = 18;
+            button2.Text = "сохранить";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += SaveIt;
             // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 688);
+            Controls.Add(button2);
             Controls.Add(buttonEdit);
             Controls.Add(buttonDelete);
             Controls.Add(textBoxDate);
@@ -248,5 +260,6 @@
         private TextBox textBoxDate;
         private Button buttonDelete;
         private Button buttonEdit;
+        private Button button2;
     }
 }

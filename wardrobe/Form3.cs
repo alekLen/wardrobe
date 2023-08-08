@@ -17,7 +17,12 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadF3;
         public event EventHandler<EventArgs> AddToCom;
         public event EventHandler<EventArgs> DeleteItem;
+        public event EventHandler<EventArgs> EditItem;
+        public event EventHandler<EventArgs> LoadStyle;
         public int cId;
+        System.Windows.Forms.ComboBox comboBoxStyle;
+        System.Windows.Forms.ComboBox comboBoxSeason;
+        System.Windows.Forms.ComboBox comboBoxColor;
         public Form3()
         {
             InitializeComponent();
@@ -30,6 +35,10 @@ namespace wardrobe
         public void SetStyle(string s)
         {
             textBoxStyle.Text = s;
+        }
+        public void SetStyleToEdit(string s)
+        {
+            comboBoxStyle.Items.Add( s);
         }
         public void SetColor(string s)
         {
@@ -78,17 +87,37 @@ namespace wardrobe
 
         private void edit_item(object sender, EventArgs e)
         {
-
+            textBoxName.Enabled = true;
+            textBoxDate.Enabled = true;
+            textBoxPlace.Enabled = true;
+            textBoxSize.Enabled = true;
+            comboBoxStyle = new System.Windows.Forms.ComboBox();
+            comboBoxStyle.Location = textBoxStyle.Location;
+            comboBoxStyle.Size = textBoxStyle.Size;
+            LoadStyle?.Invoke(this, EventArgs.Empty);
+            comboBoxStyle.SelectedText = textBoxStyle.Text;
+            this.Controls.Remove(textBoxStyle);
+            this.Controls.Add(comboBoxStyle);
         }
-
         private void delete(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " +textBoxName.Text+" из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text + " из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 DeleteItem?.Invoke(this, EventArgs.Empty);
                 this.Close();
                 MessageBox.Show("одежда  удалена");
+            }
+        }
+
+        private void SaveIt(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("вы хотите сохранить изменения", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                EditItem?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                MessageBox.Show("измененения сохранены успешно");
             }
         }
     }
