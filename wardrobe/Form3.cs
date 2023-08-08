@@ -202,7 +202,8 @@ namespace wardrobe
             DialogResult result = MessageBox.Show("вы хотите сохранить изменения\n если изменили фото, то старое будет удалено", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                if(newphoto!=null)
+                SetNewData();
+                if (newphoto!=null)
                      DeletePhoto?.Invoke(this, EventArgs.Empty);
                 EditItem?.Invoke(this, EventArgs.Empty);               
                 MessageBox.Show("измененения сохранены успешно");
@@ -228,6 +229,16 @@ namespace wardrobe
                     pictureBox1.Image = Image.FromFile(newphoto);
                 }
             }
+        }
+        void SetNewData()
+        {
+            newName = textBoxName.Text;
+            newSeason=comboBoxSeason.Text;
+            newStyle=comboBoxStyle.Text;
+            newColor=comboBoxColor.Text;
+            newDate=textBoxDate.Text;
+            newPlace=textBoxPlace.Text;
+            newSize=textBoxSize.Text;
         }
     }
 }
