@@ -50,6 +50,10 @@ namespace wardrobe
         {
             textBoxColor.Text = s;
         }
+        public void SetColorToEdit(string s)
+        {
+            comboBoxColor.Items.Add(s);
+        }
         public void SetName(string s)
         {
             textBoxName.Text = s;
@@ -99,6 +103,7 @@ namespace wardrobe
             textBoxSize.Enabled = true;
             LoadEditStyle();
             LoadEditSeason();
+            LoadEditColor();
         }
         void LoadEditStyle()
         {
@@ -132,12 +137,12 @@ namespace wardrobe
             try
             {
                 comboBoxColor = new System.Windows.Forms.ComboBox();
-                comboBoxStyle.Location = textBoxStyle.Location;
-                comboBoxStyle.Size = textBoxStyle.Size;
-                LoadStyle?.Invoke(this, EventArgs.Empty);
-                comboBoxStyle.SelectedText = textBoxStyle.Text;
-                this.Controls.Remove(textBoxStyle);
-                this.Controls.Add(comboBoxStyle);
+                comboBoxColor.Location = textBoxColor.Location;
+                comboBoxColor.Size = textBoxColor.Size;
+                LoadColor?.Invoke(this, EventArgs.Empty);
+                comboBoxColor.SelectedText = textBoxColor.Text;
+                this.Controls.Remove(textBoxColor);
+                this.Controls.Add(comboBoxColor);
             }
             catch { }
         }

@@ -33,6 +33,7 @@ namespace wardrobe
             form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
             form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
+            form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -383,6 +384,25 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void LoadColorToEdit(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = from b in db.colors
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Color_name;
+                    form.see_clothe.SetColorToEdit(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         Wardrobe_Context Get_db()
         {
             var builder = new ConfigurationBuilder();
@@ -475,6 +495,7 @@ namespace wardrobe
             form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
             form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
+            form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
         }
         public void NewAForm(object sender, EventArgs e)
         {
