@@ -30,6 +30,7 @@ namespace wardrobe
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
             form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
+            form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -271,6 +272,24 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void UpdateFm1(object sender, EventArgs e)
+        {
+            try
+            {
+                    form.ClearUp();
+                    Load_Up(sender, e);
+                    form.ClearBottom();
+                    Load_Bottom(sender, e);
+                    form.ClearSuit();
+                    Load_Suit(sender, e);
+                    form.ClearShoe();
+                    Load_Shoe(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void ToSeasonBox(Wardrobe_Context db)
         {
             try
@@ -414,6 +433,7 @@ namespace wardrobe
         {
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
             form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
+            form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
         }
         public void NewAForm(object sender, EventArgs e)
         {
@@ -453,6 +473,26 @@ namespace wardrobe
                         form.SetPhotoItemShoe(s[1]);
                     }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void DeleteItemFromWardrobe(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var query = (from b in db.clothes_items
+                                 where b.Id == form.see_clothe.cId
+                                select b).Single();
+                    db.Remove(query);
+                    db.SaveChanges();
+                    UpdateFm1(sender, e);
                 }
             }
             catch (Exception ex)

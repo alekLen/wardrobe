@@ -83,11 +83,12 @@ namespace wardrobe
 
         private void delete(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text+" из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " +textBoxName.Text+" из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 DeleteItem?.Invoke(this, EventArgs.Empty);
                 this.Close();
+                MessageBox.Show("одежда  удалена");
             }
         }
     }
