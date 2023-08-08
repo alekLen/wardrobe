@@ -151,9 +151,10 @@ namespace wardrobe
             DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text + " из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                DeleteItem?.Invoke(this, EventArgs.Empty);
-                this.Close();
-                MessageBox.Show("одежда  удалена");
+                pictureBox1.Image.Dispose();            
+                 DeleteItem?.Invoke(this, EventArgs.Empty);
+                 this.Close();
+                MessageBox.Show("одежда  удалена!");
             }
         }
 

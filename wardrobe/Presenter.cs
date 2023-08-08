@@ -243,6 +243,20 @@ namespace wardrobe
                 targetFilePath = null;
             }
         }
+        public void deletePhoto(string s)
+        {
+            try
+            {
+                if (File.Exists(s))
+                {
+                    File.Delete(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         public void UpdateForm1(object sender, EventArgs e)
         {
@@ -549,6 +563,10 @@ namespace wardrobe
                 Wardrobe_Context db = Get_db();
                 using (db)
                 {
+                    var q = (from b in db.clothes_items
+                                 where b.Id == form.see_clothe.cId
+                                 select b.photo).Single();
+                    deletePhoto(q);
                     var query = (from b in db.clothes_items
                                  where b.Id == form.see_clothe.cId
                                 select b).Single();
