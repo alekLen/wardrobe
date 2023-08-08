@@ -19,6 +19,8 @@ namespace wardrobe
         public event EventHandler<EventArgs> DeleteItem;
         public event EventHandler<EventArgs> EditItem;
         public event EventHandler<EventArgs> LoadStyle;
+        public event EventHandler<EventArgs> LoadSeason;
+        public event EventHandler<EventArgs> LoadColor;
         public int cId;
         System.Windows.Forms.ComboBox comboBoxStyle;
         System.Windows.Forms.ComboBox comboBoxSeason;
@@ -31,6 +33,10 @@ namespace wardrobe
         public void SetSeason(string s)
         {
             textBoxSeason.Text = s;
+        }
+        public void SetSeasonToEdit(string s)
+        {
+            comboBoxSeason.Items.Add(s);
         }
         public void SetStyle(string s)
         {
@@ -91,13 +97,49 @@ namespace wardrobe
             textBoxDate.Enabled = true;
             textBoxPlace.Enabled = true;
             textBoxSize.Enabled = true;
-            comboBoxStyle = new System.Windows.Forms.ComboBox();
-            comboBoxStyle.Location = textBoxStyle.Location;
-            comboBoxStyle.Size = textBoxStyle.Size;
-            LoadStyle?.Invoke(this, EventArgs.Empty);
-            comboBoxStyle.SelectedText = textBoxStyle.Text;
-            this.Controls.Remove(textBoxStyle);
-            this.Controls.Add(comboBoxStyle);
+            LoadEditStyle();
+            LoadEditSeason();
+        }
+        void LoadEditStyle()
+        {
+            try {
+                comboBoxStyle = new System.Windows.Forms.ComboBox();
+                comboBoxStyle.Location = textBoxStyle.Location;
+                comboBoxStyle.Size = textBoxStyle.Size;
+                LoadStyle?.Invoke(this, EventArgs.Empty);
+                comboBoxStyle.SelectedText = textBoxStyle.Text;
+                this.Controls.Remove(textBoxStyle);
+                this.Controls.Add(comboBoxStyle);
+            }
+            catch { }
+        }
+        void LoadEditSeason()
+        {
+            try
+            {
+                comboBoxSeason = new System.Windows.Forms.ComboBox();
+                comboBoxSeason.Location = textBoxSeason.Location;
+                comboBoxSeason.Size = textBoxSeason.Size;
+                LoadSeason?.Invoke(this, EventArgs.Empty);
+                comboBoxSeason.SelectedText = textBoxSeason.Text;
+                this.Controls.Remove(textBoxSeason);
+                this.Controls.Add(comboBoxSeason);
+            }
+            catch { }
+        }
+        void LoadEditColor()
+        {
+            try
+            {
+                comboBoxColor = new System.Windows.Forms.ComboBox();
+                comboBoxStyle.Location = textBoxStyle.Location;
+                comboBoxStyle.Size = textBoxStyle.Size;
+                LoadStyle?.Invoke(this, EventArgs.Empty);
+                comboBoxStyle.SelectedText = textBoxStyle.Text;
+                this.Controls.Remove(textBoxStyle);
+                this.Controls.Add(comboBoxStyle);
+            }
+            catch { }
         }
         private void delete(object sender, EventArgs e)
         {

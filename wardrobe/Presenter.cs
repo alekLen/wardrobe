@@ -32,6 +32,7 @@ namespace wardrobe
             form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
             form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
             form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
+            form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -89,7 +90,6 @@ namespace wardrobe
                     form.see_clothe.SetDate(s1[6]);
                     form.see_clothe.SetPlace(s1[7]);
                     form.see_clothe.SetSize(s1[8]);
-                    form.see_clothe.Focus();
                 }
             }
             catch (Exception ex)
@@ -309,6 +309,25 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void LoadSeasonToEdit(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query1 = from b in db.seasons
+                             select b;
+
+                foreach (var p in query1)
+                {
+                    string s = p.Season_name;
+                    form.see_clothe.SetSeasonToEdit(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void ToStyleBox(Wardrobe_Context db)
         {
             try
@@ -454,6 +473,8 @@ namespace wardrobe
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
             form.see_clothe.AddToCom += new EventHandler<EventArgs>(AddToChose);
             form.see_clothe.DeleteItem += new EventHandler<EventArgs>(DeleteItemFromWardrobe);
+            form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
+            form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
         }
         public void NewAForm(object sender, EventArgs e)
         {
