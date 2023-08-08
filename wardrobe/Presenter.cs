@@ -512,6 +512,8 @@ namespace wardrobe
             form.see_clothe.LoadStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.see_clothe.LoadSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
             form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
+            form.see_clothe.DeletePhoto += new EventHandler<EventArgs>(DelPhoto);
+            form.see_clothe.EditItem += new EventHandler<EventArgs>(EditItem);
         }
         public void NewAForm(object sender, EventArgs e)
         {
@@ -649,7 +651,8 @@ namespace wardrobe
                     }
                     if (form.see_clothe.newphoto != form.see_clothe.oldphoto)
                     {
-
+                        savePhoto(form.see_clothe.newphoto);
+                        q.photo = form.see_clothe.newphoto;
                     }
                         db.SaveChanges();
                     UpdateFm1(sender, e);
