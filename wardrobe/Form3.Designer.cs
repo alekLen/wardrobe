@@ -43,6 +43,8 @@
             textBoxSize = new TextBox();
             label6 = new Label();
             textBoxDate = new TextBox();
+            buttonDelete = new Button();
+            buttonEdit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -91,7 +93,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(63, 495);
+            button1.Location = new Point(63, 394);
             button1.Name = "button1";
             button1.Size = new Size(232, 43);
             button1.TabIndex = 5;
@@ -177,11 +179,33 @@
             textBoxDate.Size = new Size(167, 27);
             textBoxDate.TabIndex = 15;
             // 
+            // buttonDelete
+            // 
+            buttonDelete.Location = new Point(63, 636);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(232, 29);
+            buttonDelete.TabIndex = 16;
+            buttonDelete.Text = "удалить";
+            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.Click += delete;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.Location = new Point(63, 587);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(232, 29);
+            buttonEdit.TabIndex = 17;
+            buttonEdit.Text = "редактировать";
+            buttonEdit.UseVisualStyleBackColor = true;
+            buttonEdit.Click += edit_item;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 688);
+            Controls.Add(buttonEdit);
+            Controls.Add(buttonDelete);
             Controls.Add(textBoxDate);
             Controls.Add(label6);
             Controls.Add(textBoxSize);
@@ -222,5 +246,7 @@
         private TextBox textBoxSize;
         private Label label6;
         private TextBox textBoxDate;
+        private Button buttonDelete;
+        private Button buttonEdit;
     }
 }

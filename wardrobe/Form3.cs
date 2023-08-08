@@ -16,6 +16,7 @@ namespace wardrobe
         public Form1 MainForm { get; set; }
         public event EventHandler<EventArgs> LoadF3;
         public event EventHandler<EventArgs> AddToCom;
+        public event EventHandler<EventArgs> DeleteItem;
         public int cId;
         public Form3()
         {
@@ -73,6 +74,21 @@ namespace wardrobe
         {
             AddToCom?.Invoke(this, EventArgs.Empty);
             this.Close();
+        }
+
+        private void edit_item(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text+" из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                DeleteItem?.Invoke(this, EventArgs.Empty);
+                this.Close();
+            }
         }
     }
 }
