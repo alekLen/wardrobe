@@ -238,5 +238,10 @@ namespace wardrobe
             }
             catch { MessageBox.Show("opsshoe"); }
         }
+
+        private void editStyle(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,7 +36,6 @@
             добавитьToolStripMenuItem = new ToolStripMenuItem();
             удалитьToolStripMenuItem = new ToolStripMenuItem();
             редактироватьToolStripMenuItem1 = new ToolStripMenuItem();
-            сезонToolStripMenuItem = new ToolStripMenuItem();
             цветToolStripMenuItem = new ToolStripMenuItem();
             альбомToolStripMenuItem = new ToolStripMenuItem();
             добавитьодеждуToolStripMenuItem = new ToolStripMenuItem();
@@ -118,7 +117,7 @@
             // 
             // редактироватьToolStripMenuItem
             // 
-            редактироватьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { стильОдеждыToolStripMenuItem, сезонToolStripMenuItem, цветToolStripMenuItem, альбомToolStripMenuItem });
+            редактироватьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { стильОдеждыToolStripMenuItem, цветToolStripMenuItem, альбомToolStripMenuItem });
             редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
             редактироватьToolStripMenuItem.Size = new Size(126, 24);
             редактироватьToolStripMenuItem.Text = "редактировать";
@@ -127,43 +126,38 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(210, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
             // 
             добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            добавитьToolStripMenuItem.Size = new Size(132, 26);
+            добавитьToolStripMenuItem.Size = new Size(224, 26);
             добавитьToolStripMenuItem.Text = "стиль";
+            добавитьToolStripMenuItem.Click += editStyle;
             // 
             // удалитьToolStripMenuItem
             // 
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            удалитьToolStripMenuItem.Size = new Size(132, 26);
+            удалитьToolStripMenuItem.Size = new Size(224, 26);
             удалитьToolStripMenuItem.Text = "сезон";
             // 
             // редактироватьToolStripMenuItem1
             // 
             редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
-            редактироватьToolStripMenuItem1.Size = new Size(132, 26);
+            редактироватьToolStripMenuItem1.Size = new Size(224, 26);
             редактироватьToolStripMenuItem1.Text = "цвет";
-            // 
-            // сезонToolStripMenuItem
-            // 
-            сезонToolStripMenuItem.Name = "сезонToolStripMenuItem";
-            сезонToolStripMenuItem.Size = new Size(210, 26);
-            сезонToolStripMenuItem.Text = "предмет одежды";
             // 
             // цветToolStripMenuItem
             // 
             цветToolStripMenuItem.Name = "цветToolStripMenuItem";
-            цветToolStripMenuItem.Size = new Size(210, 26);
+            цветToolStripMenuItem.Size = new Size(224, 26);
             цветToolStripMenuItem.Text = "комплект";
             // 
             // альбомToolStripMenuItem
             // 
             альбомToolStripMenuItem.Name = "альбомToolStripMenuItem";
-            альбомToolStripMenuItem.Size = new Size(210, 26);
+            альбомToolStripMenuItem.Size = new Size(224, 26);
             альбомToolStripMenuItem.Text = "альбом";
             // 
             // добавитьодеждуToolStripMenuItem
@@ -573,7 +567,6 @@
         private ToolStripMenuItem добавитьToolStripMenuItem;
         private ToolStripMenuItem удалитьToolStripMenuItem;
         private ToolStripMenuItem редактироватьToolStripMenuItem1;
-        private ToolStripMenuItem сезонToolStripMenuItem;
         private ToolStripMenuItem цветToolStripMenuItem;
         private Button button1;
         private Button button2;
