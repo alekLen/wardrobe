@@ -45,14 +45,17 @@ namespace wardrobe
              }
             if (category == "style")
             {
+                label1.Text = "стили";
                 LoadEditStyle?.Invoke(this, EventArgs.Empty);
             }
             if (category == "season")
             {
+                label1.Text = "сезоны";
                 LoadEditStyle?.Invoke(this, EventArgs.Empty);
             }
             if (category == "color")
             {
+                label1.Text = "цвета";
                 LoadEditStyle?.Invoke(this, EventArgs.Empty);
             }
 
