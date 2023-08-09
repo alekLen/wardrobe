@@ -19,6 +19,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadShoe;
         public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
+        public event EventHandler<EventArgs> NewF4;
         public Form1()
         {
             InitializeComponent();
@@ -242,26 +243,53 @@ namespace wardrobe
 
         private void editStyle(object sender, EventArgs e)
         {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
             edit_form.MainForm = this;
             edit_form.category = "style";
             edit_form.action = "edit";
             edit_form.Show();
+            }
+            catch { }
         }
 
         private void delStyle(object sender, EventArgs e)
         {
-            edit_form.MainForm = this;
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
             edit_form.category = "style";
             edit_form.action = "delete";
             edit_form.Show();
+            }
+            catch { }
         }
 
         private void addStyle(object sender, EventArgs e)
         {
-            edit_form.MainForm = this;
+                try
+                {
+                    if (edit_form.IsDisposed || edit_form.Visible)
+                    {
+                        edit_form = new Form4();
+                        NewF4?.Invoke(this, EventArgs.Empty);
+                    }
+                    edit_form.MainForm = this;
             edit_form.category = "style";
             edit_form.action = "add";
             edit_form.Show();
+            }
+            catch { }
         }
     }
 }
