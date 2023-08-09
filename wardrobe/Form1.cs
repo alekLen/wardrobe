@@ -242,17 +242,26 @@ namespace wardrobe
 
         private void editStyle(object sender, EventArgs e)
         {
-
+            edit_form.MainForm = this;
+            edit_form.category = "style";
+            edit_form.action = "edit";
+            edit_form.Show();
         }
 
         private void delStyle(object sender, EventArgs e)
         {
-
+            edit_form.MainForm = this;
+            edit_form.category = "style";
+            edit_form.action = "delete";
+            edit_form.Show();
         }
 
         private void addStyle(object sender, EventArgs e)
         {
-
+            edit_form.MainForm = this;
+            edit_form.category = "style";
+            edit_form.action = "add";
+            edit_form.Show();
         }
     }
 }
