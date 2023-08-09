@@ -64,6 +64,7 @@ namespace wardrobe
 
         private void addPhoto(object sender, EventArgs e)
         {
+            MainForm.add_clothe = this;
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.gif)|*.jpg;*.jpeg;*.png;*.gif";
@@ -77,6 +78,7 @@ namespace wardrobe
 
         private void saveClothe(object sender, EventArgs e)
         {
+            MainForm.add_clothe = this;
             if (FilePath != null && name != null && type != null && style != null && season != null && color != null)
             {
                 Save_clothes?.Invoke(this, EventArgs.Empty);
