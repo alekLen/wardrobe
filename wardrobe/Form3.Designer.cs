@@ -94,7 +94,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(63, 394);
+            button1.Location = new Point(63, 301);
             button1.Name = "button1";
             button1.Size = new Size(232, 43);
             button1.TabIndex = 5;
@@ -192,9 +192,9 @@
             // 
             // buttonEdit
             // 
-            buttonEdit.Location = new Point(63, 587);
+            buttonEdit.Location = new Point(63, 555);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(123, 29);
+            buttonEdit.Size = new Size(123, 61);
             buttonEdit.TabIndex = 17;
             buttonEdit.Text = "редактировать";
             buttonEdit.UseVisualStyleBackColor = true;
@@ -202,9 +202,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(187, 587);
+            button2.Location = new Point(187, 555);
             button2.Name = "button2";
-            button2.Size = new Size(108, 29);
+            button2.Size = new Size(108, 61);
             button2.TabIndex = 18;
             button2.Text = "сохранить";
             button2.UseVisualStyleBackColor = true;
@@ -235,6 +235,7 @@
             Controls.Add(textBoxName);
             Name = "Form3";
             Text = "Предмет одежды";
+            TopMost = true;
             Load += LoadFm3;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

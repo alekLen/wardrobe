@@ -23,7 +23,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadColor;
         public event EventHandler<EventArgs> DeletePhoto;
         public int cId { get; set; }
-        public string newphoto { get; set; } 
+        public string newphoto { get; set; }
         public string oldphoto { get; set; }
         public string newName { get; set; }
         public string oldName { get; set; }
@@ -65,7 +65,7 @@ namespace wardrobe
         }
         public void SetStyleToEdit(string s)
         {
-            comboBoxStyle.Items.Add( s);
+            comboBoxStyle.Items.Add(s);
         }
         public void SetColor(string s)
         {
@@ -138,7 +138,7 @@ namespace wardrobe
         void LoadPhotoButton()
         {
             MainForm.see_clothe = this;
-            buttonPhoto =new System.Windows.Forms.Button();
+            buttonPhoto = new System.Windows.Forms.Button();
             buttonPhoto.Location = button1.Location;
             buttonPhoto.Size = button1.Size;
             buttonPhoto.Text = "изменить фото";
@@ -149,7 +149,8 @@ namespace wardrobe
         }
         void LoadEditStyle()
         {
-            try {
+            try
+            {
                 MainForm.see_clothe = this;
                 comboBoxStyle = new System.Windows.Forms.ComboBox();
                 comboBoxStyle.Location = textBoxStyle.Location;
@@ -197,9 +198,9 @@ namespace wardrobe
             DialogResult result = MessageBox.Show("вы действительно хотите удалить\n " + textBoxName.Text + " из гардероба", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                pictureBox1.Image.Dispose();            
-                 DeleteItem?.Invoke(this, EventArgs.Empty);
-                 this.Close();
+                pictureBox1.Image.Dispose();
+                DeleteItem?.Invoke(this, EventArgs.Empty);
+                this.Close();
                 MessageBox.Show("одежда  удалена!");
             }
         }
@@ -216,7 +217,7 @@ namespace wardrobe
                     pictureBox1.Image.Dispose();
                     DeletePhoto?.Invoke(this, EventArgs.Empty);
                 }
-                EditItem?.Invoke(this, EventArgs.Empty);               
+                EditItem?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show("измененения сохранены успешно");
             }
             if (result == DialogResult.No)
@@ -245,12 +246,12 @@ namespace wardrobe
         void SetNewData()
         {
             newName = textBoxName.Text;
-            newSeason=comboBoxSeason.Text;
-            newStyle=comboBoxStyle.Text;
-            newColor=comboBoxColor.Text;
-            newDate=textBoxDate.Text;
-            newPlace=textBoxPlace.Text;
-            newSize=textBoxSize.Text;
+            newSeason = comboBoxSeason.Text;
+            newStyle = comboBoxStyle.Text;
+            newColor = comboBoxColor.Text;
+            newDate = textBoxDate.Text;
+            newPlace = textBoxPlace.Text;
+            newSize = textBoxSize.Text;
         }
     }
 }
