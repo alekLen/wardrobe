@@ -8,6 +8,7 @@ namespace wardrobe
     {
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
+        public Form4 edit_form { get; set; } = new Form4();
         public int setId { get; set; }
         public List<int> Ids { get; set; }
 
@@ -240,6 +241,16 @@ namespace wardrobe
         }
 
         private void editStyle(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delStyle(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addStyle(object sender, EventArgs e)
         {
 
         }

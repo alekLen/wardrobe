@@ -34,6 +34,9 @@
             редактироватьToolStripMenuItem = new ToolStripMenuItem();
             стильОдеждыToolStripMenuItem = new ToolStripMenuItem();
             добавитьToolStripMenuItem = new ToolStripMenuItem();
+            удалитьToolStripMenuItem1 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem = new ToolStripMenuItem();
+            добавитьToolStripMenuItem1 = new ToolStripMenuItem();
             удалитьToolStripMenuItem = new ToolStripMenuItem();
             редактироватьToolStripMenuItem1 = new ToolStripMenuItem();
             цветToolStripMenuItem = new ToolStripMenuItem();
@@ -126,15 +129,36 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(201, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
             // 
+            добавитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1, изменитьToolStripMenuItem, добавитьToolStripMenuItem1 });
             добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             добавитьToolStripMenuItem.Size = new Size(224, 26);
             добавитьToolStripMenuItem.Text = "стиль";
-            добавитьToolStripMenuItem.Click += editStyle;
+            // 
+            // удалитьToolStripMenuItem1
+            // 
+            удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            удалитьToolStripMenuItem1.Size = new Size(224, 26);
+            удалитьToolStripMenuItem1.Text = "удалить";
+            удалитьToolStripMenuItem1.Click += delStyle;
+            // 
+            // изменитьToolStripMenuItem
+            // 
+            изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            изменитьToolStripMenuItem.Size = new Size(224, 26);
+            изменитьToolStripMenuItem.Text = "изменить";
+            изменитьToolStripMenuItem.Click += editStyle;
+            // 
+            // добавитьToolStripMenuItem1
+            // 
+            добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
+            добавитьToolStripMenuItem1.Size = new Size(224, 26);
+            добавитьToolStripMenuItem1.Text = "добавить";
+            добавитьToolStripMenuItem1.Click += addStyle;
             // 
             // удалитьToolStripMenuItem
             // 
@@ -606,5 +630,8 @@
         private Label label10;
         private Label label11;
         private Label label12;
+        private ToolStripMenuItem удалитьToolStripMenuItem1;
+        private ToolStripMenuItem изменитьToolStripMenuItem;
+        private ToolStripMenuItem добавитьToolStripMenuItem1;
     }
 }
