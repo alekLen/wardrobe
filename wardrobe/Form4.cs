@@ -29,6 +29,9 @@ namespace wardrobe
         public event EventHandler<EventArgs> EditStyle;
         public event EventHandler<EventArgs> EditSeason;
         public event EventHandler<EventArgs> EditColor;
+        public event EventHandler<EventArgs> DeleteStyle;
+        public event EventHandler<EventArgs> DeleteSeason;
+        public event EventHandler<EventArgs> DeleteColor;
         System.Windows.Forms.ListBox listbox;
         public Form1 MainForm { get; set; }
         public Form4()
@@ -71,16 +74,19 @@ namespace wardrobe
                 {
                     label1.Text = "стили";
                     LoadEditStyle?.Invoke(this, EventArgs.Empty);
+                    button1.Click += deleteStyle;
                 }
                 if (category == "season")
                 {
                     label1.Text = "сезоны";
                     LoadEditSeason?.Invoke(this, EventArgs.Empty);
+                    button1.Click += deleteSeason;
                 }
                 if (category == "color")
                 {
                     label1.Text = "цвета";
                     LoadEditColor?.Invoke(this, EventArgs.Empty);
+                    button1.Click += deleteColor;
                 }
             }
             if (action == "add")
@@ -176,6 +182,27 @@ namespace wardrobe
             EditColor?.Invoke(this, EventArgs.Empty);
             this.Close();
             MessageBox.Show("цвет исправлен!");
+        }
+        private void deleteStyle(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            DeleteStyle?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("стиль удален!");
+        }
+        private void deleteSeason(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            DeleteSeason?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("сезон удален!");
+        }
+        private void deleteColor(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            DeleteColor?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("цвет удален!");
         }
     }
 }
