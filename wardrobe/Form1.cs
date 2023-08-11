@@ -393,5 +393,17 @@ namespace wardrobe
             }
             catch { }
         }
+        public void ClearStyleBox()
+        {
+            comboBox3.Items.Clear();
+        }
+        public void ClearSeasonBox()
+        {
+            comboBox2.Items.Clear();
+        }
+        public void ClearColorBox()
+        {
+            comboBox1.Items.Clear();
+        }
     }
 }

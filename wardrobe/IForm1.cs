@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace wardrobe
 {
@@ -41,7 +42,10 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF4;
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
-        public Form4 edit_form { get; set; } 
+        public Form4 edit_form { get; set; }
 
+        public void ClearStyleBox();
+        public void ClearSeasonBox();
+        public void ClearColorBox();
     }
 }

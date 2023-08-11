@@ -761,6 +761,8 @@ namespace wardrobe
                 style.Style_name = form.edit_form.name;
                 db.Add(style);
                 db.SaveChanges();
+                form.ClearStyleBox();
+                ToStyleBox(db);
             }
             catch (Exception ex)
             {
@@ -776,6 +778,8 @@ namespace wardrobe
                 season.Season_name = form.edit_form.name;
                 db.Add(season);
                 db.SaveChanges();
+                form.ClearSeasonBox();
+                ToSeasonBox(db);
             }
             catch (Exception ex)
             {
@@ -791,11 +795,14 @@ namespace wardrobe
                 color.Color_name = form.edit_form.name;
                 db.Add(color);
                 db.SaveChanges();
+                form.ClearColorBox();
+                ToColorBox(db);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+      
     }
 }
