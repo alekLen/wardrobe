@@ -14,6 +14,7 @@ namespace wardrobe
     public partial class Form4 : Form
     {
         public string name { get; set; }
+        public string oldname { get; set; }
         public string category { get; set; }
         public string action { get; set; }
         public event EventHandler<EventArgs> LoadEditStyle;
@@ -154,6 +155,7 @@ namespace wardrobe
         }
         private void editStyle(object sender, EventArgs e)
         {
+            oldname = comboBox1.SelectedItem.ToString();
             name = textBox1.Text;
             EditStyle?.Invoke(this, EventArgs.Empty);
             this.Close();
@@ -161,6 +163,7 @@ namespace wardrobe
         }
         private void editSeason(object sender, EventArgs e)
         {
+            oldname = comboBox1.SelectedItem.ToString();
             name = textBox1.Text;
             EditSeason?.Invoke(this, EventArgs.Empty);
             this.Close();
@@ -168,6 +171,7 @@ namespace wardrobe
         }
         private void editColor(object sender, EventArgs e)
         {
+            oldname = comboBox1.SelectedItem.ToString();
             name = textBox1.Text;
             EditColor?.Invoke(this, EventArgs.Empty);
             this.Close();

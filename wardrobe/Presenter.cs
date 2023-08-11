@@ -8,6 +8,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace wardrobe
@@ -46,6 +47,9 @@ namespace wardrobe
            form.edit_form.AddStyle += new EventHandler<EventArgs>(AddStyle);
            form.edit_form.AddSeason += new EventHandler<EventArgs>(AddSeason);
             form.edit_form.AddColor += new EventHandler<EventArgs>(AddColor);
+            form.edit_form.EditStyle += new EventHandler<EventArgs>(EditStyle);
+            form.edit_form.EditSeason += new EventHandler<EventArgs>(EditSeason);
+            form.edit_form.EditColor += new EventHandler<EventArgs>(EditColor);
 
         }
         public void LoadAll(object sender, EventArgs e)
@@ -608,6 +612,9 @@ namespace wardrobe
             form.edit_form.AddStyle += new EventHandler<EventArgs>(AddStyle);
             form.edit_form.AddSeason += new EventHandler<EventArgs>(AddSeason);
             form.edit_form.AddColor += new EventHandler<EventArgs>(AddColor);
+            form.edit_form.EditStyle += new EventHandler<EventArgs>(EditStyle);
+            form.edit_form.EditSeason += new EventHandler<EventArgs>(EditSeason);
+            form.edit_form.EditColor += new EventHandler<EventArgs>(EditColor);
         }
         public void AddToChose(object sender, EventArgs e)
         {
@@ -803,6 +810,60 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
-      
+        public void EditStyle(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.clothes_styles
+                            where b.Style_name == form.edit_form.oldname
+                            select b).Single();
+               query.Style_name = form.edit_form.name;              
+                db.SaveChanges();
+                form.ClearStyleBox();
+                ToStyleBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void EditSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.seasons
+                             where b.Season_name == form.edit_form.oldname
+                             select b).Single();
+                query.Season_name = form.edit_form.name;
+                db.SaveChanges();
+                form.ClearSeasonBox();
+                ToSeasonBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void EditColor(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.colors
+                             where b.Color_name == form.edit_form.oldname
+                             select b).Single();
+                query.Color_name = form.edit_form.name;
+                db.SaveChanges();
+                form.ClearColorBox();
+                ToColorBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }
