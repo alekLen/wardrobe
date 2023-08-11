@@ -40,6 +40,9 @@ namespace wardrobe
             form.edit_form.LoadEditStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.edit_form.LoadEditSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
             form.edit_form.LoadEditColor += new EventHandler<EventArgs>(LoadColorToEdit);
+            form.edit_form.LoadShowStyle += new EventHandler<EventArgs>(LoadStyleToE);
+            form.edit_form.LoadShowSeason += new EventHandler<EventArgs>(LoadSeasonToE);
+            form.edit_form.LoadShowColor += new EventHandler<EventArgs>(LoadColorToE);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -352,6 +355,25 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void LoadSeasonToE(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query1 = from b in db.seasons
+                             select b;
+
+                foreach (var p in query1)
+                {
+                    string s = p.Season_name;
+                        form.edit_form.ShowCategory(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void ToStyleBox(Wardrobe_Context db)
         {
             try
@@ -392,6 +414,25 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void LoadStyleToE(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = from b in db.clothes_styles
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Style_name;                 
+                        form.edit_form.ShowCategory(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         public void ToColorBox(Wardrobe_Context db)
         {
             try
@@ -425,6 +466,25 @@ namespace wardrobe
                         form.see_clothe.SetColorToEdit(s);
                     if (sender is Form4)
                         form.edit_form.SetCategory(s);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void LoadColorToE(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = from b in db.colors
+                            select b;
+
+                foreach (var p in query)
+                {
+                    string s = p.Color_name;                  
+                        form.edit_form.ShowCategory(s);
                 }
             }
             catch (Exception ex)
@@ -538,6 +598,9 @@ namespace wardrobe
             form.edit_form.LoadEditStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
             form.edit_form.LoadEditSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
             form.edit_form.LoadEditColor += new EventHandler<EventArgs>(LoadColorToEdit);
+            form.edit_form.LoadShowStyle += new EventHandler<EventArgs>(LoadStyleToE);
+            form.edit_form.LoadShowSeason += new EventHandler<EventArgs>(LoadSeasonToE);
+            form.edit_form.LoadShowColor += new EventHandler<EventArgs>(LoadColorToE);
         }
         public void AddToChose(object sender, EventArgs e)
         {

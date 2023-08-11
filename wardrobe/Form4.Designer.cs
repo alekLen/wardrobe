@@ -32,6 +32,7 @@
             comboBox1 = new ComboBox();
             button1 = new Button();
             textBox1 = new TextBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -45,6 +46,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(21, 45);
             comboBox1.Name = "comboBox1";
@@ -68,15 +70,26 @@
             textBox1.Size = new Size(191, 27);
             textBox1.TabIndex = 6;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(217, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 20);
+            label2.TabIndex = 7;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(428, 183);
+            Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form4";
             Text = "Form4";
             Load += Load_Form4;
@@ -90,5 +103,6 @@
         private ComboBox comboBox1;
         private Button button1;
         private TextBox textBox1;
+        private Label label2;
     }
 }
