@@ -13,6 +13,7 @@ namespace wardrobe
 {
     public partial class Form4 : Form
     {
+        public string name { get; set; }
         public string category { get; set; }
         public string action { get; set; }
         public event EventHandler<EventArgs> LoadEditStyle;
@@ -112,15 +113,24 @@ namespace wardrobe
         }
         private void addStyle(object sender, EventArgs e)
         {
+            name = textBox1.Text;
             AddStyle?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("стиль добавлен!");
         }
         private void addSeason(object sender, EventArgs e)
         {
+            name = textBox1.Text;
             AddSeason?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("сезон добавлен!");
         }
         private void addColor(object sender, EventArgs e)
         {
+            name = textBox1.Text;
             AddColor?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("цвет добавлен!");
         }
     }
 }

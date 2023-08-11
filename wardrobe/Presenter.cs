@@ -43,6 +43,10 @@ namespace wardrobe
             form.edit_form.LoadShowStyle += new EventHandler<EventArgs>(LoadStyleToE);
             form.edit_form.LoadShowSeason += new EventHandler<EventArgs>(LoadSeasonToE);
             form.edit_form.LoadShowColor += new EventHandler<EventArgs>(LoadColorToE);
+           form.edit_form.AddStyle += new EventHandler<EventArgs>(AddStyle);
+           form.edit_form.AddSeason += new EventHandler<EventArgs>(AddSeason);
+            form.edit_form.AddColor += new EventHandler<EventArgs>(AddColor);
+
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -601,6 +605,9 @@ namespace wardrobe
             form.edit_form.LoadShowStyle += new EventHandler<EventArgs>(LoadStyleToE);
             form.edit_form.LoadShowSeason += new EventHandler<EventArgs>(LoadSeasonToE);
             form.edit_form.LoadShowColor += new EventHandler<EventArgs>(LoadColorToE);
+            form.edit_form.AddStyle += new EventHandler<EventArgs>(AddStyle);
+            form.edit_form.AddSeason += new EventHandler<EventArgs>(AddSeason);
+            form.edit_form.AddColor += new EventHandler<EventArgs>(AddColor);
         }
         public void AddToChose(object sender, EventArgs e)
         {
@@ -739,6 +746,51 @@ namespace wardrobe
                         db.SaveChanges();
                     UpdateFm1(sender, e);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void AddStyle(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                Clothes_style style = new ();
+                style.Style_name = form.edit_form.name;
+                db.Add(style);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void AddSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                Season season = new ();
+                season.Season_name = form.edit_form.name;
+                db.Add(season);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void AddColor(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                Colors color = new Colors();
+                color.Color_name = form.edit_form.name;
+                db.Add(color);
+                db.SaveChanges();
             }
             catch (Exception ex)
             {
