@@ -185,21 +185,21 @@ namespace wardrobe
         }
         private void deleteStyle(object sender, EventArgs e)
         {
-            name = textBox1.Text;
+            oldname = textBox1.Text;
             DeleteStyle?.Invoke(this, EventArgs.Empty);
             this.Close();
             MessageBox.Show("стиль удален!");
         }
         private void deleteSeason(object sender, EventArgs e)
         {
-            name = textBox1.Text;
+            oldname = textBox1.Text;
             DeleteSeason?.Invoke(this, EventArgs.Empty);
             this.Close();
             MessageBox.Show("сезон удален!");
         }
         private void deleteColor(object sender, EventArgs e)
         {
-            name = textBox1.Text;
+            oldname = textBox1.Text;
             DeleteColor?.Invoke(this, EventArgs.Empty);
             this.Close();
             MessageBox.Show("цвет удален!");

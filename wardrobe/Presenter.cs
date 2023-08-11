@@ -50,6 +50,9 @@ namespace wardrobe
             form.edit_form.EditStyle += new EventHandler<EventArgs>(EditStyle);
             form.edit_form.EditSeason += new EventHandler<EventArgs>(EditSeason);
             form.edit_form.EditColor += new EventHandler<EventArgs>(EditColor);
+            form.edit_form.DeleteStyle += new EventHandler<EventArgs>(DeleteStyle);
+            form.edit_form.DeleteSeason += new EventHandler<EventArgs>(DeleteSeason);
+            form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
 
         }
         public void LoadAll(object sender, EventArgs e)
@@ -615,6 +618,9 @@ namespace wardrobe
             form.edit_form.EditStyle += new EventHandler<EventArgs>(EditStyle);
             form.edit_form.EditSeason += new EventHandler<EventArgs>(EditSeason);
             form.edit_form.EditColor += new EventHandler<EventArgs>(EditColor);
+            form.edit_form.DeleteStyle += new EventHandler<EventArgs>(DeleteStyle);
+            form.edit_form.DeleteSeason += new EventHandler<EventArgs>(DeleteSeason);
+            form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
         }
         public void AddToChose(object sender, EventArgs e)
         {
@@ -864,6 +870,62 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void DeleteStyle(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.clothes_styles
+                             where b.Style_name == form.edit_form.oldname
+                             select b).Single();
+                db.Remove(query);
+                db.SaveChanges();
+                form.ClearStyleBox();
+                ToStyleBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void DeleteSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.seasons
+                             where b.Season_name == form.edit_form.oldname
+                             select b).Single();
+                db.Remove(query);
+                db.SaveChanges();
+                form.ClearSeasonBox();
+                ToSeasonBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void DeleteColor(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                var query = (from b in db.colors
+                             where b.Color_name == form.edit_form.oldname
+                             select b).Single();
+                db.Remove(query);
+                db.SaveChanges();
+                form.ClearColorBox();
+                ToColorBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
     }
+
 }
+
