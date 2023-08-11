@@ -25,6 +25,9 @@ namespace wardrobe
         public event EventHandler<EventArgs> AddStyle;
         public event EventHandler<EventArgs> AddSeason;
         public event EventHandler<EventArgs> AddColor;
+        public event EventHandler<EventArgs> EditStyle;
+        public event EventHandler<EventArgs> EditSeason;
+        public event EventHandler<EventArgs> EditColor;
         System.Windows.Forms.ListBox listbox;
         public Form1 MainForm { get; set; }
         public Form4()
@@ -39,12 +42,45 @@ namespace wardrobe
                 this.Text = "редактирование";
                 textBox1.Enabled = true;
                 button1.Text = "изменить";
+                if (category == "style" )
+                {
+                    label1.Text = "стили";
+                    LoadEditStyle?.Invoke(this, EventArgs.Empty);
+                    button1.Click += editStyle;
+                }
+                if (category == "season" )
+                {
+                    label1.Text = "сезоны";
+                    LoadEditSeason?.Invoke(this, EventArgs.Empty);
+                    button1.Click += editSeason;
+                }
+                if (category == "color" )
+                {
+                    label1.Text = "цвета";
+                    LoadEditColor?.Invoke(this, EventArgs.Empty);
+                    button1.Click += editColor;
+                }
             }
             if (action == "delete")
             {
                 this.Text = "удаление";
                 textBox1.Enabled = false;
                 button1.Text = "удалить";
+                if (category == "style")
+                {
+                    label1.Text = "стили";
+                    LoadEditStyle?.Invoke(this, EventArgs.Empty);
+                }
+                if (category == "season")
+                {
+                    label1.Text = "сезоны";
+                    LoadEditSeason?.Invoke(this, EventArgs.Empty);
+                }
+                if (category == "color")
+                {
+                    label1.Text = "цвета";
+                    LoadEditColor?.Invoke(this, EventArgs.Empty);
+                }
             }
             if (action == "add")
             {
@@ -73,24 +109,8 @@ namespace wardrobe
                     LoadShowColor?.Invoke(this, EventArgs.Empty);
                     button1.Click += addColor;
                 }
-            }
-            if (category == "style" && action != "add")
-            {
-                label1.Text = "стили";
-                LoadEditStyle?.Invoke(this, EventArgs.Empty);
-            }
-            if (category == "season" && action != "add")
-            {
-                label1.Text = "сезоны";
-                LoadEditSeason?.Invoke(this, EventArgs.Empty);
-            }
-            if (category == "color" && action != "add")
-            {
-                label1.Text = "цвета";
-                LoadEditColor?.Invoke(this, EventArgs.Empty);
-            }
-            if (action != "add")
                 comboBox1.SelectedIndex = 0;
+            }                        
         }
         public void SetCategory(string s)
         {
@@ -131,6 +151,27 @@ namespace wardrobe
             AddColor?.Invoke(this, EventArgs.Empty);
             this.Close();
             MessageBox.Show("цвет добавлен!");
+        }
+        private void editStyle(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            EditStyle?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("стиль исправлен!");
+        }
+        private void editSeason(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            EditSeason?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("сезон исправлен!");
+        }
+        private void editColor(object sender, EventArgs e)
+        {
+            name = textBox1.Text;
+            EditColor?.Invoke(this, EventArgs.Empty);
+            this.Close();
+            MessageBox.Show("цвет исправлен!");
         }
     }
 }
