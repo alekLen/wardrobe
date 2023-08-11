@@ -38,6 +38,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadShoe;
         public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
+        public event EventHandler<EventArgs> NewF4;
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
         public Form4 edit_form { get; set; } 

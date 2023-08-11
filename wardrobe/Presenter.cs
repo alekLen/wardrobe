@@ -22,6 +22,7 @@ namespace wardrobe
             form.LoadF += new EventHandler<EventArgs>(LoadAll);
             form.NewF2 += new EventHandler<EventArgs>(NewAForm);
             form.NewF3 += new EventHandler<EventArgs>(NewSForm);
+            form.NewF4 += new EventHandler<EventArgs>(NewEForm);
             form.LoadUp += new EventHandler<EventArgs>(Load_Up);
             form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
@@ -36,6 +37,9 @@ namespace wardrobe
             form.see_clothe.LoadColor += new EventHandler<EventArgs>(LoadColorToEdit);
             form.see_clothe.DeletePhoto += new EventHandler<EventArgs>(DelPhoto);
             form.see_clothe.EditItem += new EventHandler<EventArgs>(EditItem);
+            form.edit_form.LoadEditStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
+            form.edit_form.LoadEditSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
+            form.edit_form.LoadEditColor += new EventHandler<EventArgs>(LoadColorToEdit);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -337,7 +341,10 @@ namespace wardrobe
                 foreach (var p in query1)
                 {
                     string s = p.Season_name;
-                    form.see_clothe.SetSeasonToEdit(s);
+                    if (sender is Form3)
+                        form.see_clothe.SetSeasonToEdit(s);
+                    if (sender is Form4)
+                        form.edit_form.SetCategory(s);
                 }
             }
             catch (Exception ex)
@@ -374,7 +381,10 @@ namespace wardrobe
                 foreach (var p in query)
                 {
                     string s = p.Style_name;
-                    form.see_clothe.SetStyleToEdit(s);
+                    if (sender is Form3)
+                        form.see_clothe.SetStyleToEdit(s);
+                    if (sender is Form4)
+                        form.edit_form.SetCategory(s);
                 }
             }
             catch (Exception ex)
@@ -411,7 +421,10 @@ namespace wardrobe
                 foreach (var p in query)
                 {
                     string s = p.Color_name;
-                    form.see_clothe.SetColorToEdit(s);
+                    if (sender is Form3)
+                        form.see_clothe.SetColorToEdit(s);
+                    if (sender is Form4)
+                        form.edit_form.SetCategory(s);
                 }
             }
             catch (Exception ex)
@@ -519,6 +532,12 @@ namespace wardrobe
         {
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);
+        }
+        public void NewEForm(object sender, EventArgs e)
+        {
+            form.edit_form.LoadEditStyle += new EventHandler<EventArgs>(LoadStyleToEdit);
+            form.edit_form.LoadEditSeason += new EventHandler<EventArgs>(LoadSeasonToEdit);
+            form.edit_form.LoadEditColor += new EventHandler<EventArgs>(LoadColorToEdit);
         }
         public void AddToChose(object sender, EventArgs e)
         {
