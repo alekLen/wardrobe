@@ -250,10 +250,10 @@ namespace wardrobe
                     edit_form = new Form4();
                     NewF4?.Invoke(this, EventArgs.Empty);
                 }
-            edit_form.MainForm = this;
-            edit_form.category = "style";
-            edit_form.action = "edit";
-            edit_form.Show();
+                edit_form.MainForm = this;
+                edit_form.category = "style";
+                edit_form.action = "edit";
+                edit_form.Show();
             }
             catch { }
         }
@@ -268,26 +268,128 @@ namespace wardrobe
                     NewF4?.Invoke(this, EventArgs.Empty);
                 }
                 edit_form.MainForm = this;
-            edit_form.category = "style";
-            edit_form.action = "delete";
-            edit_form.Show();
+                edit_form.category = "style";
+                edit_form.action = "delete";
+                edit_form.Show();
             }
             catch { }
         }
 
         private void addStyle(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
                 {
-                    if (edit_form.IsDisposed || edit_form.Visible)
-                    {
-                        edit_form = new Form4();
-                        NewF4?.Invoke(this, EventArgs.Empty);
-                    }
-                    edit_form.MainForm = this;
-            edit_form.category = "style";
-            edit_form.action = "add";
-            edit_form.Show();
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "style";
+                edit_form.action = "add";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void delSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "season";
+                edit_form.action = "delete";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void editSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "season";
+                edit_form.action = "edit";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void addSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "season";
+                edit_form.action = "add";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void delColor(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "color";
+                edit_form.action = "delete";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void editColor(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "color";
+                edit_form.action = "edit";
+                edit_form.Show();
+            }
+            catch { }
+        }
+
+        private void addColor(object sender, EventArgs e)
+        {
+            try
+            {
+                if (edit_form.IsDisposed || edit_form.Visible)
+                {
+                    edit_form = new Form4();
+                    NewF4?.Invoke(this, EventArgs.Empty);
+                }
+                edit_form.MainForm = this;
+                edit_form.category = "color";
+                edit_form.action = "add";
+                edit_form.Show();
             }
             catch { }
         }

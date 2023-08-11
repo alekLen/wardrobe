@@ -38,7 +38,13 @@
             изменитьToolStripMenuItem = new ToolStripMenuItem();
             добавитьToolStripMenuItem1 = new ToolStripMenuItem();
             удалитьToolStripMenuItem = new ToolStripMenuItem();
+            удалитьToolStripMenuItem2 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem1 = new ToolStripMenuItem();
+            добавитьToolStripMenuItem2 = new ToolStripMenuItem();
             редактироватьToolStripMenuItem1 = new ToolStripMenuItem();
+            удалитьToolStripMenuItem3 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem2 = new ToolStripMenuItem();
+            добавитьToolStripMenuItem3 = new ToolStripMenuItem();
             цветToolStripMenuItem = new ToolStripMenuItem();
             альбомToolStripMenuItem = new ToolStripMenuItem();
             добавитьодеждуToolStripMenuItem = new ToolStripMenuItem();
@@ -129,7 +135,7 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(201, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
@@ -142,35 +148,79 @@
             // удалитьToolStripMenuItem1
             // 
             удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            удалитьToolStripMenuItem1.Size = new Size(224, 26);
+            удалитьToolStripMenuItem1.Size = new Size(159, 26);
             удалитьToolStripMenuItem1.Text = "удалить";
             удалитьToolStripMenuItem1.Click += delStyle;
             // 
             // изменитьToolStripMenuItem
             // 
             изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            изменитьToolStripMenuItem.Size = new Size(224, 26);
+            изменитьToolStripMenuItem.Size = new Size(159, 26);
             изменитьToolStripMenuItem.Text = "изменить";
             изменитьToolStripMenuItem.Click += editStyle;
             // 
             // добавитьToolStripMenuItem1
             // 
             добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            добавитьToolStripMenuItem1.Size = new Size(224, 26);
+            добавитьToolStripMenuItem1.Size = new Size(159, 26);
             добавитьToolStripMenuItem1.Text = "добавить";
             добавитьToolStripMenuItem1.Click += addStyle;
             // 
             // удалитьToolStripMenuItem
             // 
+            удалитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem2, изменитьToolStripMenuItem1, добавитьToolStripMenuItem2 });
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             удалитьToolStripMenuItem.Size = new Size(224, 26);
             удалитьToolStripMenuItem.Text = "сезон";
             // 
+            // удалитьToolStripMenuItem2
+            // 
+            удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
+            удалитьToolStripMenuItem2.Size = new Size(224, 26);
+            удалитьToolStripMenuItem2.Text = "удалить";
+            удалитьToolStripMenuItem2.Click += delSeason;
+            // 
+            // изменитьToolStripMenuItem1
+            // 
+            изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
+            изменитьToolStripMenuItem1.Size = new Size(224, 26);
+            изменитьToolStripMenuItem1.Text = "изменить";
+            изменитьToolStripMenuItem1.Click += editSeason;
+            // 
+            // добавитьToolStripMenuItem2
+            // 
+            добавитьToolStripMenuItem2.Name = "добавитьToolStripMenuItem2";
+            добавитьToolStripMenuItem2.Size = new Size(224, 26);
+            добавитьToolStripMenuItem2.Text = "добавить";
+            добавитьToolStripMenuItem2.Click += addSeason;
+            // 
             // редактироватьToolStripMenuItem1
             // 
+            редактироватьToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem3, изменитьToolStripMenuItem2, добавитьToolStripMenuItem3 });
             редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
             редактироватьToolStripMenuItem1.Size = new Size(224, 26);
             редактироватьToolStripMenuItem1.Text = "цвет";
+            // 
+            // удалитьToolStripMenuItem3
+            // 
+            удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
+            удалитьToolStripMenuItem3.Size = new Size(224, 26);
+            удалитьToolStripMenuItem3.Text = "удалить";
+            удалитьToolStripMenuItem3.Click += delColor;
+            // 
+            // изменитьToolStripMenuItem2
+            // 
+            изменитьToolStripMenuItem2.Name = "изменитьToolStripMenuItem2";
+            изменитьToolStripMenuItem2.Size = new Size(224, 26);
+            изменитьToolStripMenuItem2.Text = "изменить";
+            изменитьToolStripMenuItem2.Click += editColor;
+            // 
+            // добавитьToolStripMenuItem3
+            // 
+            добавитьToolStripMenuItem3.Name = "добавитьToolStripMenuItem3";
+            добавитьToolStripMenuItem3.Size = new Size(224, 26);
+            добавитьToolStripMenuItem3.Text = "добавить";
+            добавитьToolStripMenuItem3.Click += addColor;
             // 
             // цветToolStripMenuItem
             // 
@@ -633,5 +683,11 @@
         private ToolStripMenuItem удалитьToolStripMenuItem1;
         private ToolStripMenuItem изменитьToolStripMenuItem;
         private ToolStripMenuItem добавитьToolStripMenuItem1;
+        private ToolStripMenuItem удалитьToolStripMenuItem2;
+        private ToolStripMenuItem изменитьToolStripMenuItem1;
+        private ToolStripMenuItem добавитьToolStripMenuItem2;
+        private ToolStripMenuItem удалитьToolStripMenuItem3;
+        private ToolStripMenuItem изменитьToolStripMenuItem2;
+        private ToolStripMenuItem добавитьToolStripMenuItem3;
     }
 }
