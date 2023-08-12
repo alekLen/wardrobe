@@ -61,10 +61,6 @@
             listBox4 = new ListBox();
             listView2 = new ListView();
             listView4 = new ListView();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
             button4 = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -85,6 +81,14 @@
             label11 = new Label();
             label12 = new Label();
             label4 = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -282,9 +286,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(261, 348);
+            listBox1.Location = new Point(314, 353);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(190, 24);
+            listBox1.Size = new Size(176, 24);
             listBox1.TabIndex = 6;
             // 
             // pictureBox2
@@ -318,27 +322,27 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 20;
-            listBox2.Location = new Point(614, 348);
+            listBox2.Location = new Point(661, 353);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(199, 24);
+            listBox2.Size = new Size(186, 24);
             listBox2.TabIndex = 10;
             // 
             // listBox3
             // 
             listBox3.FormattingEnabled = true;
             listBox3.ItemHeight = 20;
-            listBox3.Location = new Point(952, 348);
+            listBox3.Location = new Point(1009, 352);
             listBox3.Name = "listBox3";
-            listBox3.Size = new Size(210, 24);
+            listBox3.Size = new Size(191, 24);
             listBox3.TabIndex = 11;
             // 
             // listBox4
             // 
             listBox4.FormattingEnabled = true;
             listBox4.ItemHeight = 20;
-            listBox4.Location = new Point(1314, 348);
+            listBox4.Location = new Point(1356, 353);
             listBox4.Name = "listBox4";
-            listBox4.Size = new Size(190, 24);
+            listBox4.Size = new Size(182, 24);
             listBox4.TabIndex = 12;
             // 
             // listView2
@@ -364,42 +368,6 @@
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
             listView4.SelectedIndexChanged += Load_see_formShoe;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(486, 355);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(18, 17);
-            checkBox1.TabIndex = 16;
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(849, 355);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(18, 17);
-            checkBox2.TabIndex = 17;
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(1198, 355);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(18, 17);
-            checkBox3.TabIndex = 18;
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(1536, 355);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(18, 17);
-            checkBox4.TabIndex = 19;
-            checkBox4.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -589,11 +557,95 @@
             label4.TabIndex = 42;
             label4.Text = "фильтровать по:";
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(496, 356);
+            label13.Name = "label13";
+            label13.Size = new Size(17, 20);
+            label13.TabIndex = 43;
+            label13.Text = "0";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(853, 355);
+            label14.Name = "label14";
+            label14.Size = new Size(17, 20);
+            label14.TabIndex = 44;
+            label14.Text = "0";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(1206, 356);
+            label15.Name = "label15";
+            label15.Size = new Size(17, 20);
+            label15.TabIndex = 45;
+            label15.Text = "0";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(1544, 356);
+            label16.Name = "label16";
+            label16.Size = new Size(17, 20);
+            label16.TabIndex = 46;
+            label16.Text = "0";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(228, 356);
+            label17.Name = "label17";
+            label17.Size = new Size(80, 19);
+            label17.TabIndex = 47;
+            label17.Text = "в комплект";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(575, 355);
+            label18.Name = "label18";
+            label18.Size = new Size(80, 19);
+            label18.TabIndex = 48;
+            label18.Text = "в комплект";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(923, 356);
+            label19.Name = "label19";
+            label19.Size = new Size(80, 19);
+            label19.TabIndex = 49;
+            label19.Text = "в комплект";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            label20.Location = new Point(1270, 355);
+            label20.Name = "label20";
+            label20.Size = new Size(80, 19);
+            label20.TabIndex = 50;
+            label20.Text = "в комплект";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1714, 744);
+            Controls.Add(label20);
+            Controls.Add(label19);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(label16);
+            Controls.Add(label15);
+            Controls.Add(label14);
+            Controls.Add(label13);
             Controls.Add(label4);
             Controls.Add(label12);
             Controls.Add(label11);
@@ -613,10 +665,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button4);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
             Controls.Add(listView4);
             Controls.Add(listView3);
             Controls.Add(listView2);
@@ -671,10 +719,6 @@
         private ListBox listBox4;
         private ListView listView2;
         private ListView listView4;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
         private Button button4;
         private Label label1;
         private Label label2;
@@ -706,5 +750,13 @@
         private ToolStripMenuItem изменитьToolStripMenuItem2;
         private ToolStripMenuItem добавитьToolStripMenuItem3;
         private Label label4;
+        private Label label13;
+        private Label label14;
+        private Label label15;
+        private Label label16;
+        private Label label17;
+        private Label label18;
+        private Label label19;
+        private Label label20;
     }
 }
