@@ -51,9 +51,5 @@ namespace wardrobe
         public void ClearStyleBox();
         public void ClearSeasonBox();
         public void ClearColorBox();
-        public void Clear_Up_Items();
-        public void Clear_Bottom_Items();
-        public void Clear_Suit_Items();
-        public void Clear_Shoe_Items();
     }
 }

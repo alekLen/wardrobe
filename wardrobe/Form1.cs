@@ -57,7 +57,15 @@ namespace wardrobe
         }
         public void SetTypeUpToWardrobe(string s)
         {
-            listView1.Items.Add(s);
+            bool q = true;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.Text == s) q = false;
+            }
+            if (q)
+            {
+                listView1.Items.Add(s);
+            }
         }
         public void ClearUp()
         {
@@ -65,8 +73,16 @@ namespace wardrobe
         }
         public void SetTypeBottomToWardrobe(string s)
         {
-            ListViewItem item1 = new ListViewItem(s);
-            listView2.Items.Add(item1);
+            bool q = true;
+            foreach (ListViewItem item in listView2.Items)
+            {
+                if (item.Text == s) q = false;
+            }
+            if (q)
+            {
+                ListViewItem item1 = new ListViewItem(s);
+                listView2.Items.Add(item1);
+            }
         }
         public void ClearBottom()
         {
@@ -74,8 +90,16 @@ namespace wardrobe
         }
         public void SetTypeSuitToWardrobe(string s)
         {
-            ListViewItem item1 = new ListViewItem(s);
-            listView3.Items.Add(item1);
+            bool q = true;
+            foreach(ListViewItem item in listView3.Items)
+            {
+                if(item.Text == s) q = false;
+            }
+            if (q)
+            {
+                ListViewItem item1 = new ListViewItem(s);
+                listView3.Items.Add(item1);
+            }
         }
         public void ClearSuit()
         {
@@ -83,8 +107,16 @@ namespace wardrobe
         }
         public void SetTypeShoeToWardrobe(string s)
         {
-            ListViewItem item1 = new ListViewItem(s);
-            listView4.Items.Add(item1);
+            bool q = true;
+            foreach (ListViewItem item in listView4.Items)
+            {
+                if (item.Text == s) q = false;
+            }
+            if (q)
+            {
+                ListViewItem item1 = new ListViewItem(s);
+                listView4.Items.Add(item1);
+            }
         }
         public void ClearShoe()
         {
@@ -439,22 +471,6 @@ namespace wardrobe
                 Filtr?.Invoke(this, EventArgs.Empty);
             }
            
-        }
-        public void Clear_Up_Items()
-        {
-            listView1 .Items.Clear();
-        }
-        public void Clear_Bottom_Items()
-        {
-            listView2.Items.Clear();
-        }
-        public void Clear_Suit_Items()
-        {
-            listView3.Items.Clear();
-        }
-        public void Clear_Shoe_Items()
-        {
-            listView4.Items.Clear();
         }
     }
 }
