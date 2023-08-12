@@ -23,6 +23,9 @@ namespace wardrobe
         public void ClearShoe();
         public int setId { get; set; }
         public List<int> Ids { get; set; }
+        public List<string> f_color { get; set; }
+        public List<string> f_style { get; set; }
+        public List<string> f_season { get; set; }
         public void SetChoseItemUp(string s);
         public void SetPhotoItemUp(string s);
         public void SetChoseItemBottom(string s);
@@ -48,5 +51,9 @@ namespace wardrobe
         public void ClearStyleBox();
         public void ClearSeasonBox();
         public void ClearColorBox();
+        public void Clear_Up_Items();
+        public void Clear_Bottom_Items();
+        public void Clear_Suit_Items();
+        public void Clear_Shoe_Items();
     }
 }

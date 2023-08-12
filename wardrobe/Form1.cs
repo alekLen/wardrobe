@@ -440,5 +440,21 @@ namespace wardrobe
             }
            
         }
+        public void Clear_Up_Items()
+        {
+            listView1 .Items.Clear();
+        }
+        public void Clear_Bottom_Items()
+        {
+            listView2.Items.Clear();
+        }
+        public void Clear_Suit_Items()
+        {
+            listView3.Items.Clear();
+        }
+        public void Clear_Shoe_Items()
+        {
+            listView4.Items.Clear();
+        }
     }
 }
