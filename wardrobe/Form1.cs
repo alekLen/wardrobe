@@ -612,5 +612,49 @@ namespace wardrobe
             }
             catch { }
         }
+
+        private void selectUp(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                string s = listBox1.SelectedItem.ToString();
+                string[] s1 = s.Split('.');
+                setId = int.Parse(s1[0]);
+                Change_Photo_Up?.Invoke(this, new EventArgs());
+            }
+        }
+
+        private void selectBottom(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedIndex != -1)
+            {
+                string s = listBox2.SelectedItem.ToString();
+                string[] s1 = s.Split('.');
+                setId = int.Parse(s1[0]);
+                Change_Photo_Bottom?.Invoke(this, new EventArgs());
+            }
+        }
+
+        private void selectSuit(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedIndex != -1)
+            {
+                string s = listBox3.SelectedItem.ToString();
+                string[] s1 = s.Split('.');
+                setId = int.Parse(s1[0]);
+                Change_Photo_Suit?.Invoke(this, new EventArgs());
+            }
+        }
+
+        private void selectShoe(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedIndex != -1)
+            {
+                string s = listBox4.SelectedItem.ToString();
+                string[] s1 = s.Split('.');
+                setId = int.Parse(s1[0]);
+                Change_Photo_Shoe?.Invoke(this, new EventArgs());
+            }
+        }
     }
 }

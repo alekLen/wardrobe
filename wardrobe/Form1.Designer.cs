@@ -290,6 +290,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(176, 24);
             listBox1.TabIndex = 6;
+            listBox1.SelectedIndexChanged += selectUp;
             listBox1.DoubleClick += del_Choosen_Up;
             // 
             // pictureBox2
@@ -327,7 +328,8 @@
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(191, 24);
             listBox3.TabIndex = 11;
-            listBox3.Click += del_chosen_suit;
+            listBox3.SelectedIndexChanged += selectSuit;
+            listBox3.DoubleClick += del_chosen_suit;
             // 
             // listBox4
             // 
@@ -337,7 +339,8 @@
             listBox4.Name = "listBox4";
             listBox4.Size = new Size(182, 24);
             listBox4.TabIndex = 12;
-            listBox4.Click += del_chosen_shoe;
+            listBox4.SelectedIndexChanged += selectShoe;
+            listBox4.DoubleClick += del_chosen_shoe;
             // 
             // listView2
             // 
@@ -636,6 +639,7 @@
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(186, 24);
             listBox2.TabIndex = 51;
+            listBox2.SelectedIndexChanged += selectBottom;
             listBox2.DoubleClick += del_chosen_bottom;
             // 
             // Form1
