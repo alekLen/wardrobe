@@ -56,7 +56,6 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            listBox2 = new ListBox();
             listBox3 = new ListBox();
             listBox4 = new ListBox();
             listView2 = new ListView();
@@ -89,6 +88,7 @@
             label18 = new Label();
             label19 = new Label();
             label20 = new Label();
+            listBox2 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -290,6 +290,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(176, 24);
             listBox1.TabIndex = 6;
+            listBox1.DoubleClick += del_Choosen_Up;
             // 
             // pictureBox2
             // 
@@ -318,15 +319,6 @@
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
             // 
-            // listBox2
-            // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 20;
-            listBox2.Location = new Point(661, 353);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(186, 24);
-            listBox2.TabIndex = 10;
-            // 
             // listBox3
             // 
             listBox3.FormattingEnabled = true;
@@ -335,6 +327,7 @@
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(191, 24);
             listBox3.TabIndex = 11;
+            listBox3.Click += del_chosen_suit;
             // 
             // listBox4
             // 
@@ -344,6 +337,7 @@
             listBox4.Name = "listBox4";
             listBox4.Size = new Size(182, 24);
             listBox4.TabIndex = 12;
+            listBox4.Click += del_chosen_shoe;
             // 
             // listView2
             // 
@@ -377,6 +371,7 @@
             button4.TabIndex = 20;
             button4.Text = "добавить комплект";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += Add_Complect;
             // 
             // label1
             // 
@@ -633,11 +628,22 @@
             label20.TabIndex = 50;
             label20.Text = "в комплект";
             // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 20;
+            listBox2.Location = new Point(661, 350);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(186, 24);
+            listBox2.TabIndex = 51;
+            listBox2.DoubleClick += del_chosen_bottom;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1714, 744);
+            Controls.Add(listBox2);
             Controls.Add(label20);
             Controls.Add(label19);
             Controls.Add(label18);
@@ -670,7 +676,6 @@
             Controls.Add(listView2);
             Controls.Add(listBox4);
             Controls.Add(listBox3);
-            Controls.Add(listBox2);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -714,7 +719,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private ListBox listBox2;
         private ListBox listBox3;
         private ListBox listBox4;
         private ListView listView2;
@@ -758,5 +762,6 @@
         private Label label18;
         private Label label19;
         private Label label20;
+        private ListBox listBox2;
     }
 }

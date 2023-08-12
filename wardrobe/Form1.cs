@@ -26,6 +26,10 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF4;
         public event EventHandler<EventArgs> Filtr;
         public event EventHandler<EventArgs> Clear_Filtr;
+        public event EventHandler<EventArgs> Change_Photo_Up;
+        public event EventHandler<EventArgs> Change_Photo_Bottom;
+        public event EventHandler<EventArgs> Change_Photo_Suit;
+        public event EventHandler<EventArgs> Change_Photo_Shoe;
         public Form1()
         {
             InitializeComponent();
@@ -132,6 +136,7 @@ namespace wardrobe
         {
             listBox1.Items.Add(s);
             label13.Text = listBox1.Items.Count.ToString();
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
         }
         public void SetPhotoItemUp(string s)
         {
@@ -141,6 +146,7 @@ namespace wardrobe
         {
             listBox2.Items.Add(s);
             label14.Text = listBox2.Items.Count.ToString();
+            listBox2.SelectedIndex = listBox2.Items.Count - 1;
         }
         public void SetPhotoItemBottom(string s)
         {
@@ -150,6 +156,7 @@ namespace wardrobe
         {
             listBox3.Items.Add(s);
             label15.Text = listBox3.Items.Count.ToString();
+            listBox3.SelectedIndex = listBox3.Items.Count - 1;
         }
         public void SetPhotoItemSuit(string s)
         {
@@ -159,6 +166,7 @@ namespace wardrobe
         {
             listBox4.Items.Add(s);
             label16.Text = listBox4.Items.Count.ToString();
+            listBox4.SelectedIndex = listBox4.Items.Count - 1;
         }
         public void SetPhotoItemShoe(string s)
         {
@@ -482,6 +490,127 @@ namespace wardrobe
             f_style.Clear();
             listView5.Items.Clear();
             Clear_Filtr?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Add_Complect(object sender, EventArgs e)
+        {
+
+        }
+
+        private void del_Choosen_Up(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox1.SelectedIndex != -1)
+                {
+                    string s = listBox1.SelectedItem.ToString();
+                    DialogResult result = MessageBox.Show("вы действительно хотите удалить из комплекта\n" + s + "  ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        string[] s1 = s.Split('.');
+                        Ids.Remove(int.Parse(s1[0]));
+                        pictureBox1.Image = Image.FromFile("Photos/up.png");
+                        listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                        label13.Text = listBox1.Items.Count.ToString();
+                        if (listBox1.Items.Count > 0)
+                        {
+                            listBox1.SelectedIndex = listBox1.Items.Count - 1;
+                            string s2 = listBox1.Items[listBox1.Items.Count - 1].ToString();
+                            string[] s3 = s2.Split('.');
+                            setId = int.Parse(s3[0]);
+                            Change_Photo_Up?.Invoke(this, new EventArgs());
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void del_chosen_bottom(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox2.SelectedIndex != -1)
+                {
+                    string s = listBox2.SelectedItem.ToString();
+                    DialogResult result = MessageBox.Show("вы действительно хотите удалить из комплекта\n" + s + "  ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        string[] s1 = s.Split('.');
+                        Ids.Remove(int.Parse(s1[0]));
+                        pictureBox2.Image = Image.FromFile("Photos/bottom.png");
+                        listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+                        label14.Text = listBox2.Items.Count.ToString();
+                        if (listBox2.Items.Count > 0)
+                        {
+                            listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                            string s2 = listBox2.Items[listBox2.Items.Count - 1].ToString();
+                            string[] s3 = s2.Split('.');
+                            setId = int.Parse(s3[0]);
+                            Change_Photo_Bottom?.Invoke(this, new EventArgs());
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void del_chosen_suit(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox3.SelectedIndex != -1)
+                {
+                    string s = listBox3.SelectedItem.ToString();
+                    DialogResult result = MessageBox.Show("вы действительно хотите удалить из комплекта\n" + s + "  ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        string[] s1 = s.Split('.');
+                        Ids.Remove(int.Parse(s1[0]));
+                        pictureBox3.Image = Image.FromFile("Photos/dress.png");
+                        listBox3.Items.RemoveAt(listBox3.SelectedIndex);
+                        label15.Text = listBox3.Items.Count.ToString();
+                        if (listBox3.Items.Count > 0)
+                        {
+                            listBox3.SelectedIndex = listBox3.Items.Count - 1;
+                            string s2 = listBox3.Items[listBox3.Items.Count - 1].ToString();
+                            string[] s3 = s2.Split('.');
+                            setId = int.Parse(s3[0]);
+                            Change_Photo_Suit?.Invoke(this, new EventArgs());
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void del_chosen_shoe(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listBox4.SelectedIndex != -1)
+                {
+                    string s = listBox4.SelectedItem.ToString();
+                    DialogResult result = MessageBox.Show("вы действительно хотите удалить из комплекта\n" + s + "  ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        string[] s1 = s.Split('.');
+                        Ids.Remove(int.Parse(s1[0]));
+                        pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
+                        listBox4.Items.RemoveAt(listBox4.SelectedIndex);
+                        label16.Text = listBox4.Items.Count.ToString();
+                        if (listBox4.Items.Count > 0)
+                        {
+                            listBox4.SelectedIndex = listBox4.Items.Count - 1;
+                            string s2 = listBox4.Items[listBox4.Items.Count - 1].ToString();
+                            string[] s3 = s2.Split('.');
+                            setId = int.Parse(s3[0]);
+                            Change_Photo_Shoe?.Invoke(this, new EventArgs());
+                        }
+                    }
+                }
+            }
+            catch { }
         }
     }
 }
