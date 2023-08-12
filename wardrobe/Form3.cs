@@ -23,7 +23,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> LoadColor;
         public event EventHandler<EventArgs> DeletePhoto;
         public int cId { get; set; }
-        public string newphoto { get; set; }
+        public string newphoto { get; set; } = null;
         public string oldphoto { get; set; }
         public string newName { get; set; }
         public string oldName { get; set; }
@@ -125,6 +125,8 @@ namespace wardrobe
 
         private void edit_item(object sender, EventArgs e)
         {
+            buttonEdit.Enabled = false;
+            button2.Enabled = true;
             MainForm.see_clothe = this;
             textBoxName.Enabled = true;
             textBoxDate.Enabled = true;
@@ -228,6 +230,7 @@ namespace wardrobe
                     pictureBox1.Image = Image.FromFile(oldphoto);
                 }
             }
+            this.Close();
         }
         private void buttonPhoto_Click(object sender, EventArgs e)
         {

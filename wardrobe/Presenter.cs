@@ -753,7 +753,7 @@ namespace wardrobe
                     {
                         q.size=form.see_clothe.newSize;
                     }
-                    if (form.see_clothe.newphoto != form.see_clothe.oldphoto)
+                    if (form.see_clothe.newphoto != form.see_clothe.oldphoto && form.see_clothe.newphoto !=null )
                     {
                         savePhoto(form.see_clothe.newphoto);
                         q.photo = form.see_clothe.newphoto;
