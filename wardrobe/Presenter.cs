@@ -28,6 +28,7 @@ namespace wardrobe
             form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
             form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
+            form.Filtr += new EventHandler<EventArgs>(Filter);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
@@ -924,7 +925,46 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
-
+        public void Filter(object sender, EventArgs e)
+        {
+            try
+            {              
+                Wardrobe_Context db = Get_db();
+                foreach(string a in form.f_color)
+                {
+                    filter_Color(db, a);
+                }
+                
+                ToColorBox(db);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void filter_Color(Wardrobe_Context db, string a)
+        {
+            var query1 = from b in db.clothes_items
+                         where b.color.Color_name == a && b.type.Type_name == "обувь"
+                         select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+            foreach (var i in query1)
+                form.SetTypeShoeToWardrobe(i);
+            var query2 = from b in db.clothes_items
+                         where b.color.Color_name == a && b.type.Type_name == "верх"
+                         select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+            foreach (var i in query2)
+                form.SetTypeUpToWardrobe(i);
+            var query3 = from b in db.clothes_items
+                         where b.color.Color_name == a && b.type.Type_name == "низ"
+                         select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+            foreach (var i in query3)
+                form.SetTypeBottomToWardrobe(i);
+            var query4 = from b in db.clothes_items
+                         where b.color.Color_name == a && b.type.Type_name == "платье/костюм"
+                         select b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name;
+            foreach (var i in query4)
+                form.SetTypeSuitToWardrobe(i);
+        }
     }
 
 }
