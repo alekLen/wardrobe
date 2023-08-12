@@ -928,7 +928,11 @@ namespace wardrobe
         public void Filter(object sender, EventArgs e)
         {
             try
-            {              
+            { 
+                form.Clear_Up_Items();
+                form.Clear_Bottom_Items();
+                form.Clear_Suit_Items();
+                form.Clear_Shoe_Items();
                 Wardrobe_Context db = Get_db();
                 foreach(string a in form.f_color)
                 {
