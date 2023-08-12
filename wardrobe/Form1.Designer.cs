@@ -458,6 +458,7 @@
             button5.TabIndex = 29;
             button5.Text = "сбросить фильтр";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += clear_filter;
             // 
             // button6
             // 

@@ -29,6 +29,7 @@ namespace wardrobe
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
             form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
             form.Filtr += new EventHandler<EventArgs>(Filter);
+            form.Clear_Filtr += new EventHandler<EventArgs>(UpdateFm1);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
@@ -1023,6 +1024,10 @@ namespace wardrobe
             foreach (var i in query4)
                 form.SetTypeSuitToWardrobe(i);
         }
+      /*  public void Clear_Filter(object sender, EventArgs e)
+        {
+
+        }*/
     }
 
 }

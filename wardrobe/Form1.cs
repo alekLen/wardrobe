@@ -1,4 +1,5 @@
 using Azure.Messaging;
+using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -24,6 +25,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF3;
         public event EventHandler<EventArgs> NewF4;
         public event EventHandler<EventArgs> Filtr;
+        public event EventHandler<EventArgs> Clear_Filtr;
         public Form1()
         {
             InitializeComponent();
@@ -91,9 +93,9 @@ namespace wardrobe
         public void SetTypeSuitToWardrobe(string s)
         {
             bool q = true;
-            foreach(ListViewItem item in listView3.Items)
+            foreach (ListViewItem item in listView3.Items)
             {
-                if(item.Text == s) q = false;
+                if (item.Text == s) q = false;
             }
             if (q)
             {
@@ -466,11 +468,20 @@ namespace wardrobe
 
         private void filter_Start(object sender, EventArgs e)
         {
-            if (f_color.Count > 0|| f_season.Count > 0|| f_style.Count > 0)
-            { 
+            if (f_color.Count > 0 || f_season.Count > 0 || f_style.Count > 0)
+            {
                 Filtr?.Invoke(this, EventArgs.Empty);
             }
-           
+
+        }
+
+        private void clear_filter(object sender, EventArgs e)
+        {
+            f_color.Clear();
+            f_season.Clear();
+            f_style.Clear();
+            listView5.Items.Clear();
+            Clear_Filtr?.Invoke(this, EventArgs.Empty);
         }
     }
 }
