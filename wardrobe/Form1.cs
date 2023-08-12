@@ -23,6 +23,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
         public event EventHandler<EventArgs> NewF4;
+        public event EventHandler<EventArgs> Filtr;
         public Form1()
         {
             InitializeComponent();
@@ -429,6 +430,15 @@ namespace wardrobe
             f_style.Add(comboBox3.SelectedItem.ToString());
             ListViewItem item1 = new ListViewItem(comboBox3.SelectedItem.ToString());
             listView5.Items.Add(item1);
+        }
+
+        private void filter_Start(object sender, EventArgs e)
+        {
+            if (f_color.Count > 0|| f_season.Count > 0|| f_style.Count > 0)
+            { 
+                Filtr?.Invoke(this, EventArgs.Empty);
+            }
+           
         }
     }
 }

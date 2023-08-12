@@ -467,6 +467,7 @@
             button6.TabIndex = 30;
             button6.Text = "фильтровать";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += filter_Start;
             // 
             // comboBox1
             // 
