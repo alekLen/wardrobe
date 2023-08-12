@@ -30,6 +30,10 @@ namespace wardrobe
             form.LoadShoe += new EventHandler<EventArgs>(Load_Shoe);
             form.Filtr += new EventHandler<EventArgs>(Filter);
             form.Clear_Filtr += new EventHandler<EventArgs>(UpdateFm1);
+            form.Change_Photo_Up += new EventHandler<EventArgs>(SetPhotoUp);
+            form.Change_Photo_Bottom += new EventHandler<EventArgs>(SetPhotoBottom);
+            form.Change_Photo_Suit += new EventHandler<EventArgs>(SetPhotoSuit);
+            form.Change_Photo_Shoe += new EventHandler<EventArgs>(SetPhotoShoe);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
@@ -1030,7 +1034,44 @@ namespace wardrobe
             foreach (var i in query4)
                 form.SetTypeSuitToWardrobe(i);
         }
-   
+        public void SetPhotoUp(object sender, EventArgs e)
+        {
+           string s= GetPhoto();
+            form.SetPhotoItemUp(s);
+        }
+        public void SetPhotoBottom(object sender, EventArgs e)
+        {
+            string s = GetPhoto();
+            form.SetPhotoItemBottom(s);
+        }
+        public void SetPhotoSuit(object sender, EventArgs e)
+        {
+            string s = GetPhoto();
+            form.SetPhotoItemSuit(s);
+        }
+        public void SetPhotoShoe(object sender, EventArgs e)
+        {
+            string s = GetPhoto();
+            form.SetPhotoItemShoe(s);
+        }
+        string GetPhoto()
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.clothes_items
+                             where b.Id == form.setId
+                             select b.photo).Single();
+                    return q;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); return null;
+            }
+        }
     }
 
 }
