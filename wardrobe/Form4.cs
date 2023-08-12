@@ -64,6 +64,7 @@ namespace wardrobe
                     LoadEditColor?.Invoke(this, EventArgs.Empty);
                     button1.Click += editColor;
                 }
+                comboBox1.SelectedIndex = 0;
             }
             if (action == "delete")
             {
@@ -88,6 +89,7 @@ namespace wardrobe
                     LoadEditColor?.Invoke(this, EventArgs.Empty);
                     button1.Click += deleteColor;
                 }
+                comboBox1.SelectedIndex = 0;
             }
             if (action == "add")
             {
@@ -116,7 +118,6 @@ namespace wardrobe
                     LoadShowColor?.Invoke(this, EventArgs.Empty);
                     button1.Click += addColor;
                 }
-                comboBox1.SelectedIndex = 0;
             }                        
         }
         public void SetCategory(string s)
@@ -185,24 +186,36 @@ namespace wardrobe
         }
         private void deleteStyle(object sender, EventArgs e)
         {
-            oldname = textBox1.Text;
-            DeleteStyle?.Invoke(this, EventArgs.Empty);
-            this.Close();
-            MessageBox.Show("стиль удален!");
+            DialogResult result = MessageBox.Show("если в гардеробе есть вещи этого стиля\n они тоже будут удалены  безвозвратно\n \nуверены , что хотите удалить ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                oldname = textBox1.Text;
+                DeleteStyle?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                MessageBox.Show("стиль удален!");
+            }
         }
         private void deleteSeason(object sender, EventArgs e)
         {
-            oldname = textBox1.Text;
-            DeleteSeason?.Invoke(this, EventArgs.Empty);
-            this.Close();
-            MessageBox.Show("сезон удален!");
+            DialogResult result = MessageBox.Show("если в гардеробе есть вещи этого сезона\n они тоже будут удалены  безвозвратно\n \nуверены , что хотите удалить ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                oldname = textBox1.Text;
+                DeleteSeason?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                MessageBox.Show("сезон удален!");
+            }
         }
         private void deleteColor(object sender, EventArgs e)
         {
-            oldname = textBox1.Text;
-            DeleteColor?.Invoke(this, EventArgs.Empty);
-            this.Close();
-            MessageBox.Show("цвет удален!");
+            DialogResult result = MessageBox.Show("если в гардеробе есть вещи этого цвета\n они тоже будут удалены  безвозвратно\n \nуверены , что хотите удалить ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                oldname = textBox1.Text;
+                DeleteColor?.Invoke(this, EventArgs.Empty);
+                this.Close();
+                MessageBox.Show("цвет удален!");
+            }
         }
     }
 }
