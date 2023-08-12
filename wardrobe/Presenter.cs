@@ -830,6 +830,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearStyleBox();
                 ToStyleBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -848,6 +849,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearSeasonBox();
                 ToSeasonBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -866,6 +868,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearColorBox();
                 ToColorBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -884,6 +887,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearStyleBox();
                 ToStyleBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -902,6 +906,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearSeasonBox();
                 ToSeasonBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -920,6 +925,7 @@ namespace wardrobe
                 db.SaveChanges();
                 form.ClearColorBox();
                 ToColorBox(db);
+                UpdateFm1(sender, e);
             }
             catch (Exception ex)
             {
@@ -1024,10 +1030,7 @@ namespace wardrobe
             foreach (var i in query4)
                 form.SetTypeSuitToWardrobe(i);
         }
-      /*  public void Clear_Filter(object sender, EventArgs e)
-        {
-
-        }*/
+   
     }
 
 }
