@@ -38,7 +38,7 @@ namespace wardrobe
                 listView2.Columns.Add("низ", 300);
                 listView3.Columns.Add("платье/костюм", 300);
                 listView4.Columns.Add("обувь", 300);
-                listView5.Columns.Add("фильтр", 140);
+                listView5.Columns.Add("параметры:", 140);
             }
             catch (Exception ex)
             {
@@ -414,6 +414,20 @@ namespace wardrobe
         {
             f_color.Add(comboBox1.SelectedItem.ToString());
             ListViewItem item1 = new ListViewItem(comboBox1.SelectedItem.ToString());
+            listView5.Items.Add(item1);
+        }
+
+        private void filter_season(object sender, EventArgs e)
+        {
+            f_season.Add(comboBox2.SelectedItem.ToString());
+            ListViewItem item1 = new ListViewItem(comboBox2.SelectedItem.ToString());
+            listView5.Items.Add(item1);
+        }
+
+        private void filter_style(object sender, EventArgs e)
+        {
+            f_style.Add(comboBox3.SelectedItem.ToString());
+            ListViewItem item1 = new ListViewItem(comboBox3.SelectedItem.ToString());
             listView5.Items.Add(item1);
         }
     }

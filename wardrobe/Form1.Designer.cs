@@ -95,11 +95,12 @@
             // listView1
             // 
             listView1.AccessibleRole = AccessibleRole.ScrollBar;
+            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
             listView1.Location = new Point(227, 378);
             listView1.Name = "listView1";
-            listView1.Size = new Size(314, 304);
+            listView1.Size = new Size(314, 308);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -249,7 +250,8 @@
             // 
             // button1
             // 
-            button1.Location = new Point(357, 699);
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Location = new Point(357, 703);
             button1.Name = "button1";
             button1.Size = new Size(261, 29);
             button1.TabIndex = 3;
@@ -258,7 +260,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(699, 699);
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button2.Location = new Point(699, 703);
             button2.Name = "button2";
             button2.Size = new Size(261, 29);
             button2.TabIndex = 4;
@@ -267,7 +270,8 @@
             // 
             // button3
             // 
-            button3.Location = new Point(1018, 699);
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button3.Location = new Point(1018, 703);
             button3.Name = "button3";
             button3.Size = new Size(261, 29);
             button3.TabIndex = 5;
@@ -339,10 +343,11 @@
             // 
             // listView2
             // 
+            listView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             listView2.GridLines = true;
             listView2.Location = new Point(573, 378);
             listView2.Name = "listView2";
-            listView2.Size = new Size(314, 304);
+            listView2.Size = new Size(314, 308);
             listView2.TabIndex = 13;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -350,10 +355,11 @@
             // 
             // listView4
             // 
+            listView4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             listView4.GridLines = true;
             listView4.Location = new Point(1270, 378);
             listView4.Name = "listView4";
-            listView4.Size = new Size(314, 304);
+            listView4.Size = new Size(314, 308);
             listView4.TabIndex = 15;
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
@@ -397,11 +403,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(1596, 305);
+            button4.Location = new Point(1601, 305);
             button4.Name = "button4";
-            button4.Size = new Size(106, 80);
+            button4.Size = new Size(101, 80);
             button4.TabIndex = 20;
-            button4.Text = "ДОБАВИТЬ КОМПЛЕКТ";
+            button4.Text = "добавить комплект";
             button4.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -434,6 +440,7 @@
             // listView5
             // 
             listView5.AccessibleRole = AccessibleRole.ScrollBar;
+            listView5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             listView5.FullRowSelect = true;
             listView5.GridLines = true;
             listView5.Location = new Point(32, 260);
@@ -479,6 +486,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 32;
+            comboBox2.SelectedIndexChanged += filter_season;
             // 
             // comboBox3
             // 
@@ -488,13 +496,15 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
             comboBox3.TabIndex = 33;
+            comboBox3.SelectedIndexChanged += filter_style;
             // 
             // listView3
             // 
+            listView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             listView3.GridLines = true;
             listView3.Location = new Point(922, 378);
             listView3.Name = "listView3";
-            listView3.Size = new Size(314, 304);
+            listView3.Size = new Size(314, 308);
             listView3.TabIndex = 14;
             listView3.UseCompatibleStateImageBehavior = false;
             listView3.View = View.Details;
@@ -581,7 +591,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1714, 740);
+            ClientSize = new Size(1714, 744);
             Controls.Add(label4);
             Controls.Add(label12);
             Controls.Add(label11);
