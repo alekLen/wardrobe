@@ -70,7 +70,6 @@
             label2 = new Label();
             label3 = new Label();
             listView5 = new ListView();
-            label4 = new Label();
             button5 = new Button();
             button6 = new Button();
             comboBox1 = new ComboBox();
@@ -85,6 +84,7 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -135,14 +135,14 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(201, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
             // 
             добавитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1, изменитьToolStripMenuItem, добавитьToolStripMenuItem1 });
             добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            добавитьToolStripMenuItem.Size = new Size(224, 26);
+            добавитьToolStripMenuItem.Size = new Size(132, 26);
             добавитьToolStripMenuItem.Text = "стиль";
             // 
             // удалитьToolStripMenuItem1
@@ -170,27 +170,27 @@
             // 
             удалитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem2, изменитьToolStripMenuItem1, добавитьToolStripMenuItem2 });
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            удалитьToolStripMenuItem.Size = new Size(224, 26);
+            удалитьToolStripMenuItem.Size = new Size(132, 26);
             удалитьToolStripMenuItem.Text = "сезон";
             // 
             // удалитьToolStripMenuItem2
             // 
             удалитьToolStripMenuItem2.Name = "удалитьToolStripMenuItem2";
-            удалитьToolStripMenuItem2.Size = new Size(224, 26);
+            удалитьToolStripMenuItem2.Size = new Size(159, 26);
             удалитьToolStripMenuItem2.Text = "удалить";
             удалитьToolStripMenuItem2.Click += delSeason;
             // 
             // изменитьToolStripMenuItem1
             // 
             изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
-            изменитьToolStripMenuItem1.Size = new Size(224, 26);
+            изменитьToolStripMenuItem1.Size = new Size(159, 26);
             изменитьToolStripMenuItem1.Text = "изменить";
             изменитьToolStripMenuItem1.Click += editSeason;
             // 
             // добавитьToolStripMenuItem2
             // 
             добавитьToolStripMenuItem2.Name = "добавитьToolStripMenuItem2";
-            добавитьToolStripMenuItem2.Size = new Size(224, 26);
+            добавитьToolStripMenuItem2.Size = new Size(159, 26);
             добавитьToolStripMenuItem2.Text = "добавить";
             добавитьToolStripMenuItem2.Click += addSeason;
             // 
@@ -198,40 +198,40 @@
             // 
             редактироватьToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem3, изменитьToolStripMenuItem2, добавитьToolStripMenuItem3 });
             редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
-            редактироватьToolStripMenuItem1.Size = new Size(224, 26);
+            редактироватьToolStripMenuItem1.Size = new Size(132, 26);
             редактироватьToolStripMenuItem1.Text = "цвет";
             // 
             // удалитьToolStripMenuItem3
             // 
             удалитьToolStripMenuItem3.Name = "удалитьToolStripMenuItem3";
-            удалитьToolStripMenuItem3.Size = new Size(224, 26);
+            удалитьToolStripMenuItem3.Size = new Size(159, 26);
             удалитьToolStripMenuItem3.Text = "удалить";
             удалитьToolStripMenuItem3.Click += delColor;
             // 
             // изменитьToolStripMenuItem2
             // 
             изменитьToolStripMenuItem2.Name = "изменитьToolStripMenuItem2";
-            изменитьToolStripMenuItem2.Size = new Size(224, 26);
+            изменитьToolStripMenuItem2.Size = new Size(159, 26);
             изменитьToolStripMenuItem2.Text = "изменить";
             изменитьToolStripMenuItem2.Click += editColor;
             // 
             // добавитьToolStripMenuItem3
             // 
             добавитьToolStripMenuItem3.Name = "добавитьToolStripMenuItem3";
-            добавитьToolStripMenuItem3.Size = new Size(224, 26);
+            добавитьToolStripMenuItem3.Size = new Size(159, 26);
             добавитьToolStripMenuItem3.Text = "добавить";
             добавитьToolStripMenuItem3.Click += addColor;
             // 
             // цветToolStripMenuItem
             // 
             цветToolStripMenuItem.Name = "цветToolStripMenuItem";
-            цветToolStripMenuItem.Size = new Size(224, 26);
+            цветToolStripMenuItem.Size = new Size(201, 26);
             цветToolStripMenuItem.Text = "комплект";
             // 
             // альбомToolStripMenuItem
             // 
             альбомToolStripMenuItem.Name = "альбомToolStripMenuItem";
-            альбомToolStripMenuItem.Size = new Size(224, 26);
+            альбомToolStripMenuItem.Size = new Size(201, 26);
             альбомToolStripMenuItem.Text = "альбом";
             // 
             // добавитьодеждуToolStripMenuItem
@@ -409,44 +409,39 @@
             label1.AutoSize = true;
             label1.Location = new Point(32, 84);
             label1.Name = "label1";
-            label1.Size = new Size(40, 20);
+            label1.Size = new Size(47, 20);
             label1.TabIndex = 22;
-            label1.Text = "цвет";
+            label1.Text = "цвету";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 146);
+            label2.Location = new Point(32, 138);
             label2.Name = "label2";
-            label2.Size = new Size(49, 20);
+            label2.Size = new Size(56, 20);
             label2.TabIndex = 25;
-            label2.Text = "сезон";
+            label2.Text = "сезону";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 210);
+            label3.Location = new Point(32, 192);
             label3.Name = "label3";
-            label3.Size = new Size(47, 20);
+            label3.Size = new Size(51, 20);
             label3.TabIndex = 26;
-            label3.Text = "стиль";
+            label3.Text = "стилю";
             // 
             // listView5
             // 
-            listView5.Location = new Point(32, 336);
+            listView5.AccessibleRole = AccessibleRole.ScrollBar;
+            listView5.FullRowSelect = true;
+            listView5.GridLines = true;
+            listView5.Location = new Point(32, 260);
             listView5.Name = "listView5";
-            listView5.Size = new Size(148, 124);
-            listView5.TabIndex = 27;
+            listView5.Size = new Size(148, 221);
+            listView5.TabIndex = 0;
             listView5.UseCompatibleStateImageBehavior = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(32, 313);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 20);
-            label4.TabIndex = 28;
-            label4.Text = "фильтр";
+            listView5.View = View.Details;
             // 
             // button5
             // 
@@ -459,7 +454,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(32, 477);
+            button6.Location = new Point(32, 496);
             button6.Name = "button6";
             button6.Size = new Size(148, 29);
             button6.TabIndex = 30;
@@ -474,12 +469,13 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 31;
+            comboBox1.SelectedIndexChanged += filter_color;
             // 
             // comboBox2
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(32, 169);
+            comboBox2.Location = new Point(31, 161);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
             comboBox2.TabIndex = 32;
@@ -488,7 +484,7 @@
             // 
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(31, 233);
+            comboBox3.Location = new Point(32, 215);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
             comboBox3.TabIndex = 33;
@@ -572,11 +568,21 @@
             label12.Size = new Size(0, 20);
             label12.TabIndex = 41;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(31, 64);
+            label4.Name = "label4";
+            label4.Size = new Size(123, 20);
+            label4.TabIndex = 42;
+            label4.Text = "фильтровать по:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1714, 740);
+            Controls.Add(label4);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -590,7 +596,6 @@
             Controls.Add(comboBox1);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(label4);
             Controls.Add(listView5);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -663,7 +668,6 @@
         private Label label2;
         private Label label3;
         private ListView listView5;
-        private Label label4;
         private Button button5;
         private ToolStripMenuItem альбомToolStripMenuItem;
         private Button button6;
@@ -689,5 +693,6 @@
         private ToolStripMenuItem удалитьToolStripMenuItem3;
         private ToolStripMenuItem изменитьToolStripMenuItem2;
         private ToolStripMenuItem добавитьToolStripMenuItem3;
+        private Label label4;
     }
 }

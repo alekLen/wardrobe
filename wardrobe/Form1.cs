@@ -10,7 +10,10 @@ namespace wardrobe
         public Form3 see_clothe { get; set; } = new Form3();
         public Form4 edit_form { get; set; } = new Form4();
         public int setId { get; set; }
-        public List<int> Ids { get; set; }
+        public List<int> Ids { get; set; } = new();
+        public List<string> f_color { get; set; } = new();
+        public List<string> f_style { get; set; } = new();
+        public List<string> f_season { get; set; } = new();
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
@@ -35,6 +38,7 @@ namespace wardrobe
                 listView2.Columns.Add("низ", 300);
                 listView3.Columns.Add("платье/костюм", 300);
                 listView4.Columns.Add("обувь", 300);
+                listView5.Columns.Add("фильтр", 140);
             }
             catch (Exception ex)
             {
@@ -404,6 +408,13 @@ namespace wardrobe
         public void ClearColorBox()
         {
             comboBox1.Items.Clear();
+        }
+
+        private void filter_color(object sender, EventArgs e)
+        {
+            f_color.Add(comboBox1.SelectedItem.ToString());
+            ListViewItem item1 = new ListViewItem(comboBox1.SelectedItem.ToString());
+            listView5.Items.Add(item1);
         }
     }
 }
