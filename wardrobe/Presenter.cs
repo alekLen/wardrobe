@@ -24,6 +24,7 @@ namespace wardrobe
             form.NewF2 += new EventHandler<EventArgs>(NewAForm);
             form.NewF3 += new EventHandler<EventArgs>(NewSForm);
             form.NewF4 += new EventHandler<EventArgs>(NewEForm);
+            form.NewF5 += new EventHandler<EventArgs>(NewСForm);
             form.LoadUp += new EventHandler<EventArgs>(Load_Up);
             form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
@@ -59,7 +60,7 @@ namespace wardrobe
             form.edit_form.DeleteStyle += new EventHandler<EventArgs>(DeleteStyle);
             form.edit_form.DeleteSeason += new EventHandler<EventArgs>(DeleteSeason);
             form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
-
+            form.complect_form.TakePhoto+=new EventHandler<EventArgs>(PhotoToComplect);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -628,6 +629,10 @@ namespace wardrobe
             form.edit_form.DeleteSeason += new EventHandler<EventArgs>(DeleteSeason);
             form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
         }
+        public void NewСForm(object sender, EventArgs e)
+        {
+            form.complect_form.TakePhoto += new EventHandler<EventArgs>(PhotoToComplect);
+        }
         public void AddToChose(object sender, EventArgs e)
         {
             try
@@ -1070,6 +1075,24 @@ namespace wardrobe
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); return null;
+            }
+        }
+        public void PhotoToComplect(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.clothes_items
+                             where b.Id == form.complect_form.Id_Item
+                             select b.photo).Single();
+                    form.complect_form.Path = q;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
