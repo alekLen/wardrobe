@@ -57,6 +57,7 @@
             button1.TabIndex = 6;
             button1.Text = "сохранить комплект ";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += Save_Complect;
             // 
             // Form5
             // 

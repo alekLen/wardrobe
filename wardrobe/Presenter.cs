@@ -61,6 +61,7 @@ namespace wardrobe
             form.edit_form.DeleteSeason += new EventHandler<EventArgs>(DeleteSeason);
             form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
             form.complect_form.TakePhoto+=new EventHandler<EventArgs>(PhotoToComplect);
+            form.complect_form.SaveComplect += new EventHandler<EventArgs>(SaveComplect);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -632,6 +633,7 @@ namespace wardrobe
         public void NewСForm(object sender, EventArgs e)
         {
             form.complect_form.TakePhoto += new EventHandler<EventArgs>(PhotoToComplect);
+            form.complect_form.SaveComplect += new EventHandler<EventArgs>(SaveComplect);
         }
         public void AddToChose(object sender, EventArgs e)
         {
@@ -1088,6 +1090,32 @@ namespace wardrobe
                              where b.Id == form.complect_form.Id_Item
                              select b.photo).Single();
                     form.complect_form.Path = q;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void SaveComplect(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    Outfit complect = new();
+                    complect.outfit_name = form.complect_form.Path;
+                    db.outfits.Add(complect);
+                    foreach (int i in form.Ids)
+                    {
+                        var q = (from b in db.clothes_items
+                                 where b.Id == i
+                                 select b).Single();
+                        complect.clothes_items.Add(q);
+                    }
+                  
+                    db.SaveChanges();
                 }
             }
             catch (Exception ex)

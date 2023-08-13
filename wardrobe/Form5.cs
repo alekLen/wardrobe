@@ -16,6 +16,7 @@ namespace wardrobe
         public string Path { get; set; }
         public int Id_Item { get; set; }
         public event EventHandler<EventArgs> TakePhoto;
+        public event EventHandler<EventArgs> SaveComplect;
         public Form5()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace wardrobe
 
         private void LoadF5(object sender, EventArgs e)
         {
-            int a=MainForm.Ids.Count;
+            int a = MainForm.Ids.Count;
             for (int i = 0; i < a; i++)
             {
                 PictureBox pictureBox = new PictureBox();
@@ -31,7 +32,6 @@ namespace wardrobe
                 pictureBox.Height = 200;
                 pictureBox.Location = new System.Drawing.Point(20 + i * 220, 100);
                 pictureBox.BackColor = System.Drawing.Color.Gray;
-                // pictureBox.Image = Image.FromFile("Photos/up.png");
                 Id_Item = MainForm.Ids[i];
                 TakePhoto?.Invoke(this, new EventArgs());
                 pictureBox.Image = Image.FromFile(Path);
@@ -40,7 +40,20 @@ namespace wardrobe
 
             }
             this.Width = a * 220 + 100;
-        }       
-       
+        }
+
+        private void Save_Complect(object sender, EventArgs e)
+        {
+            if(textBox1.Text != "")
+            {
+                Path=textBox1.Text;
+                SaveComplect?.Invoke(this, new EventArgs());
+                MessageBox.Show("комплект сохранен!");
+            }
+            else
+            {
+                MessageBox.Show("введите название комплекта!");
+            }
+        }
     }
 }
