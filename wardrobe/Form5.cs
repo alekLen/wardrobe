@@ -14,6 +14,7 @@ namespace wardrobe
     {
         public Form1 MainForm { get; set; }
         public string Path { get; set; }
+        public bool sucses { get; set; }
         public int Id_Item { get; set; }
         public event EventHandler<EventArgs> TakePhoto;
         public event EventHandler<EventArgs> SaveComplect;
@@ -48,7 +49,10 @@ namespace wardrobe
             {
                 Path=textBox1.Text;
                 SaveComplect?.Invoke(this, new EventArgs());
-                MessageBox.Show("комплект сохранен!");
+                if(sucses)
+                   MessageBox.Show("комплект сохранен!");
+                else
+                    MessageBox.Show("ошибка сохранения!");
                 this.Close();
             }
             else

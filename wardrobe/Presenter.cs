@@ -1113,14 +1113,15 @@ namespace wardrobe
                                  where b.Id == i
                                  select b).Single();
                         complect.clothes_items.Add(q);
-                    }
-                  
+                    }                  
                     db.SaveChanges();
+                    form.complect_form.sucses = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                form.complect_form.sucses = false;
             }
         }
     }
