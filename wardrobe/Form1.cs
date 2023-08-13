@@ -27,6 +27,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF3;
         public event EventHandler<EventArgs> NewF4;
         public event EventHandler<EventArgs> NewF5;
+        public event EventHandler<EventArgs> NewF6;
         public event EventHandler<EventArgs> Filtr;
         public event EventHandler<EventArgs> Clear_Filtr;
         public event EventHandler<EventArgs> Change_Photo_Up;
@@ -669,6 +670,13 @@ namespace wardrobe
 
         private void See_Complects(object sender, EventArgs e)
         {
+            complects_show_form.Show();
+            if (complects_show_form.IsDisposed || complects_show_form.Visible)
+            {
+                complects_show_form = new Form6();
+                NewF6?.Invoke(this, EventArgs.Empty);
+            }
+            //complects_show_form.MainForm = this;
             complects_show_form.Show();
         }
     }
