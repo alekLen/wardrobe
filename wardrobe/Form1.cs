@@ -10,6 +10,7 @@ namespace wardrobe
         public Form2 add_clothe { get; set; } = new Form2();
         public Form3 see_clothe { get; set; } = new Form3();
         public Form4 edit_form { get; set; } = new Form4();
+        public Form5 complect_form { get; set; } = new Form5();
         public int setId { get; set; }
         public List<int> Ids { get; set; } = new();
         public List<string> f_color { get; set; } = new();
@@ -24,6 +25,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
         public event EventHandler<EventArgs> NewF4;
+        public event EventHandler<EventArgs> NewF5;
         public event EventHandler<EventArgs> Filtr;
         public event EventHandler<EventArgs> Clear_Filtr;
         public event EventHandler<EventArgs> Change_Photo_Up;
@@ -494,7 +496,13 @@ namespace wardrobe
 
         private void Add_Complect(object sender, EventArgs e)
         {
-
+            if (complect_form.IsDisposed || complect_form.Visible)
+            {
+                complect_form = new Form5();
+                NewF5?.Invoke(this, EventArgs.Empty);
+            }
+            complect_form.MainForm = this;
+            complect_form.Show();
         }
 
         private void del_Choosen_Up(object sender, EventArgs e)

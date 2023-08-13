@@ -43,6 +43,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> NewF2;
         public event EventHandler<EventArgs> NewF3;
         public event EventHandler<EventArgs> NewF4;
+        public event EventHandler<EventArgs> NewF5;
         public event EventHandler<EventArgs> Filtr;
         public event EventHandler<EventArgs> Clear_Filtr;
         public event EventHandler<EventArgs> Change_Photo_Up;
@@ -52,7 +53,7 @@ namespace wardrobe
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
         public Form4 edit_form { get; set; }
-
+        public Form5 complect_form { get; set; }
         public void ClearStyleBox();
         public void ClearSeasonBox();
         public void ClearColorBox();
