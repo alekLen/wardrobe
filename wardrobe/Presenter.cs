@@ -17,6 +17,7 @@ namespace wardrobe
     {
         private readonly IForm1 form;
         string targetFilePath;
+               
         public Presenter(IForm1 f)
         {
             form = f;
@@ -25,6 +26,7 @@ namespace wardrobe
             form.NewF3 += new EventHandler<EventArgs>(NewSForm);
             form.NewF4 += new EventHandler<EventArgs>(NewEForm);
             form.NewF5 += new EventHandler<EventArgs>(NewСForm);
+            form.NewF6 += new EventHandler<EventArgs>(NewСcForm);
             form.LoadUp += new EventHandler<EventArgs>(Load_Up);
             form.LoadBottom += new EventHandler<EventArgs>(Load_Bottom);
             form.LoadSuit += new EventHandler<EventArgs>(Load_Suit);
@@ -62,6 +64,9 @@ namespace wardrobe
             form.edit_form.DeleteColor += new EventHandler<EventArgs>(DeleteColor);
             form.complect_form.TakePhoto+=new EventHandler<EventArgs>(PhotoToComplect);
             form.complect_form.SaveComplect += new EventHandler<EventArgs>(SaveComplect);
+            form.complects_show_form.CountComplects += new EventHandler<EventArgs>(CountComplects);
+            form.complects_show_form.CountItems += new EventHandler<EventArgs>(CountItems);
+            form.complects_show_form.TakeName += new EventHandler<EventArgs>(TakeName);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -635,6 +640,10 @@ namespace wardrobe
             form.complect_form.TakePhoto += new EventHandler<EventArgs>(PhotoToComplect);
             form.complect_form.SaveComplect += new EventHandler<EventArgs>(SaveComplect);
         }
+        public void NewСcForm(object sender, EventArgs e)
+        {
+            form.complects_show_form.CountComplects += new EventHandler<EventArgs>(CountComplects);
+        }
         public void AddToChose(object sender, EventArgs e)
         {
             try
@@ -1122,6 +1131,69 @@ namespace wardrobe
             {
                 MessageBox.Show(ex.Message);
                 form.complect_form.sucses = false;
+            }
+        }
+        public void CountComplects(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    form.complects_show_form.a = db.outfits.Count();
+                    var q = from b in db.outfits
+                            select b.Id;
+                    foreach (int i in q)
+                        form.complects_show_form.Complects.Add(i);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);               
+            }
+        }
+        public void CountItems(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = db.outfits
+                            .Where(c => c.Id == form.complects_show_form.Complects[form.complects_show_form.c])
+                            .SelectMany(c => c.clothes_items)
+                            .ToList();
+                    form.complects_show_form.b = q.Count();
+                    foreach (var i in q)
+                    {
+                        var q1 = (from b in db.clothes_items
+                                where b == i
+                                select b.Id).Single();
+                        form.complects_show_form.Items.Add(q1);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void TakeName(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.outfits
+                             where b.Id == form.complects_show_form.Complects[form.complects_show_form.c]
+                             select b.outfit_name).Single();
+                    form.complects_show_form.s = q;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

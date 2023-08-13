@@ -669,8 +669,7 @@ namespace wardrobe
         }
 
         private void See_Complects(object sender, EventArgs e)
-        {
-            complects_show_form.Show();
+        {       
             if (complects_show_form.IsDisposed || complects_show_form.Visible)
             {
                 complects_show_form = new Form6();
