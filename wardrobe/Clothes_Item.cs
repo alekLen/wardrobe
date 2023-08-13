@@ -14,11 +14,10 @@ namespace wardrobe
         public Clothes_type type { get; set; }
         public Season season { get; set; }
         public Clothes_style style { get; set; }
-        // public DateTime? date { get; set; }
         public string? date { get; set; }
         public string? place { get; set; }
         public string? size { get; set; }
         public string photo { get; set; }
-        public virtual ICollection<Outfit> outfits { get; set; }
+        public virtual ICollection<Outfit> outfits { get; set; } = new List<Outfit>();
     }
 }
