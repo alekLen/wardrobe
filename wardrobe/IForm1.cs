@@ -50,6 +50,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> Change_Photo_Bottom;
         public event EventHandler<EventArgs> Change_Photo_Suit;
         public event EventHandler<EventArgs> Change_Photo_Shoe;
+        public event EventHandler<EventArgs> SeeComplects;
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
         public Form4 edit_form { get; set; }

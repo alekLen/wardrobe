@@ -11,6 +11,7 @@ namespace wardrobe
         public Form3 see_clothe { get; set; } = new Form3();
         public Form4 edit_form { get; set; } = new Form4();
         public Form5 complect_form { get; set; } = new Form5();
+        public Form6 complects_show_form { get; set; } = new Form6();
         public int setId { get; set; }
         public List<int> Ids { get; set; } = new();
         public List<string> f_color { get; set; } = new();
@@ -32,6 +33,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> Change_Photo_Bottom;
         public event EventHandler<EventArgs> Change_Photo_Suit;
         public event EventHandler<EventArgs> Change_Photo_Shoe;
+        public event EventHandler<EventArgs> SeeComplects;
         public Form1()
         {
             InitializeComponent();
@@ -663,6 +665,11 @@ namespace wardrobe
                 setId = int.Parse(s1[0]);
                 Change_Photo_Shoe?.Invoke(this, new EventArgs());
             }
+        }
+
+        private void See_Complects(object sender, EventArgs e)
+        {
+            complects_show_form.Show();
         }
     }
 }
