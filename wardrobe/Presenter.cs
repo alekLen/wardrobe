@@ -67,6 +67,7 @@ namespace wardrobe
             form.complects_show_form.CountComplects += new EventHandler<EventArgs>(CountComplects);
             form.complects_show_form.CountItems += new EventHandler<EventArgs>(CountItems);
             form.complects_show_form.TakeName += new EventHandler<EventArgs>(TakeName);
+            form.complects_show_form.TakePhoto += new EventHandler<EventArgs>(TakePhoto);
         }
         public void LoadAll(object sender, EventArgs e)
         {
@@ -1188,6 +1189,24 @@ namespace wardrobe
                     var q = (from b in db.outfits
                              where b.Id == form.complects_show_form.Complects[form.complects_show_form.c]
                              select b.outfit_name).Single();
+                    form.complects_show_form.s = q;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void TakePhoto(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q = (from b in db.clothes_items
+                             where b.Id == form.complects_show_form.Items[form.complects_show_form.n]
+                             select b.photo).Single();
                     form.complects_show_form.s = q;
                 }
             }

@@ -20,6 +20,7 @@ namespace wardrobe
         public int b { get; set; }
         public int c { get; set; }
         public int c1 { get; set; }
+        public int n { get; set; }
         public string s { get; set; }
         public List<int> Complects { get; set; } = new();
         public List<int> Items { get; set; } = new();
@@ -35,6 +36,7 @@ namespace wardrobe
                 CountComplects?.Invoke(this, new EventArgs());
                 int y = 50;
                 c = 0;
+                n = 0;
                 for (int i = 0; i < a; i++)
                 {
                     TakeName?.Invoke(this, new EventArgs());
@@ -52,12 +54,11 @@ namespace wardrobe
                         pictureBox.Height = 100;
                         pictureBox.Location = new System.Drawing.Point(250 + i1 * 120, y);
                         pictureBox.BackColor = System.Drawing.Color.Gray;
-                        //  Id_Item = MainForm.Ids[i];
                         TakePhoto?.Invoke(this, new EventArgs());
-                        pictureBox.Image = Image.FromFile("Photos/up.png");
+                        pictureBox.Image = Image.FromFile(s);
                         pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                         this.Controls.Add(pictureBox);
-                        c1++;
+                        c1++;n++;
                     }
                     y += 120;
                     c++;
