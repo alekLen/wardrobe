@@ -49,6 +49,7 @@ namespace wardrobe
                 Path=textBox1.Text;
                 SaveComplect?.Invoke(this, new EventArgs());
                 MessageBox.Show("комплект сохранен!");
+                this.Close();
             }
             else
             {
