@@ -644,6 +644,9 @@ namespace wardrobe
         public void NewСcForm(object sender, EventArgs e)
         {
             form.complects_show_form.CountComplects += new EventHandler<EventArgs>(CountComplects);
+            form.complects_show_form.CountItems += new EventHandler<EventArgs>(CountItems);
+            form.complects_show_form.TakeName += new EventHandler<EventArgs>(TakeName);
+            form.complects_show_form.TakePhoto += new EventHandler<EventArgs>(TakePhoto);
         }
         public void AddToChose(object sender, EventArgs e)
         {
