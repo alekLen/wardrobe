@@ -48,6 +48,7 @@ namespace wardrobe
                     this.Controls.Add(textbox);
                     CountItems?.Invoke(this, new EventArgs());
                     c1 = 0;
+                    int x = 0;
                     for (int i1 = 0; i1 < b; i1++)
                     {
                         PictureBox pictureBox = new PictureBox();
@@ -60,12 +61,25 @@ namespace wardrobe
                         pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                         this.Controls.Add(pictureBox);
                         c1++; n++;
+                        x = i1;
                     }
+                    Button button = new Button();
+                    button.Text = "удалить комплект";
+                    button.Name = "button." + i;
+                    button.Width = 150;
+                    button.Height = 50;
+                    button.Click += Button_Click;
+                    button.Location = new System.Drawing.Point(250 + x * 120 + 150, y);
+                    this.Controls.Add(button);
                     y += 120;
                     c++;
                 }
             }
             catch { }
+        }
+        private void Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
