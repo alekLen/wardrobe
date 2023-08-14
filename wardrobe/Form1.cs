@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace wardrobe
 {
@@ -52,14 +53,11 @@ namespace wardrobe
         public Form1()
         {
             InitializeComponent();
-
+            complect_form.F5Close += new EventHandler<EventArgs>(F5Close);
             try
             {
                 Ids = new();
-                pictureBox1.Image = Image.FromFile("Photos/up.png");
-                pictureBox2.Image = Image.FromFile("Photos/bottom.png");
-                pictureBox3.Image = Image.FromFile("Photos/dress.png");
-                pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
+                PictureFill();
                 listView1.Columns.Add("верх", 300);
                 listView2.Columns.Add("низ", 300);
                 listView3.Columns.Add("платье/костюм", 300);
@@ -517,6 +515,7 @@ namespace wardrobe
             {
                 complect_form = new Form5();
                 NewF5?.Invoke(this, EventArgs.Empty);
+                complect_form.F5Close += new EventHandler<EventArgs>(F5Close);
             }
             complect_form.MainForm = this;
             complect_form.Show();
@@ -793,6 +792,34 @@ namespace wardrobe
             }
             statisticsForm.Controls.Add(chart);
             statisticsForm.Show();
+        }
+        public void F5Close(object sender, EventArgs e)
+        {
+            Ids.Clear();
+            ComplectClear();
+            LabelClear();
+            PictureFill();
+        }
+        void PictureFill()
+        {
+            pictureBox1.Image = Image.FromFile("Photos/up.png");
+            pictureBox2.Image = Image.FromFile("Photos/bottom.png");
+            pictureBox3.Image = Image.FromFile("Photos/dress.png");
+            pictureBox4.Image = Image.FromFile("Photos/shoe.jpg");
+        }
+        void LabelClear()
+        {
+            label13.Text = "0";
+            label14.Text = "0";
+            label15.Text = "0";
+            label16.Text = "0";
+        }
+        void ComplectClear()
+        {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
         }
     }
 }

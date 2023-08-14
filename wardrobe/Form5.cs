@@ -18,6 +18,7 @@ namespace wardrobe
         public int Id_Item { get; set; }
         public event EventHandler<EventArgs> TakePhoto;
         public event EventHandler<EventArgs> SaveComplect;
+        public event EventHandler<EventArgs> F5Close;
         public Form5()
         {
             InitializeComponent();
@@ -53,7 +54,9 @@ namespace wardrobe
                    MessageBox.Show("комплект сохранен!");
                 else
                     MessageBox.Show("ошибка сохранения!");
-                this.Close();
+                F5Close.Invoke(this, new EventArgs());
+                this.Close(); 
+                
             }
             else
             {
