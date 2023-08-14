@@ -44,6 +44,7 @@ namespace wardrobe
                     textbox.Location = new System.Drawing.Point(20, y);
                     textbox.Width = 200;
                     textbox.Text = s;
+                    textbox.Enabled = false;
                     this.Controls.Add(textbox);
                     CountItems?.Invoke(this, new EventArgs());
                     c1 = 0;
