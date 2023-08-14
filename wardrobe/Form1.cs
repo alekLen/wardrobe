@@ -46,6 +46,8 @@ namespace wardrobe
         public event EventHandler<EventArgs> GetStatColor;
         public event EventHandler<EventArgs> GetNumberSeasons;
         public event EventHandler<EventArgs> GetStatSeason;
+        public event EventHandler<EventArgs> GetNumberStyles;
+        public event EventHandler<EventArgs> GetStatStyle;
 
         public Form1()
         {
@@ -765,7 +767,32 @@ namespace wardrobe
 
         private void style_statistic(object sender, EventArgs e)
         {
-          
+            Form statisticsForm = new Form();
+            statisticsForm.Text = "Статистика стилей одежды";
+            statisticsForm.Width = 600;
+            statisticsForm.Height = 500;
+
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
+            chart.ChartAreas.Add(new ChartArea("area"));
+
+            chart.Series.Add(new Series("data"));
+
+            chart.Series["data"].ChartType = SeriesChartType.Bar;
+
+            GetNumberStyles?.Invoke(this, new EventArgs());
+            color = Color.Aqua;
+            for (int i = 0; i < number; i++)
+            {
+                categoryId = Ids[i];
+                GetStatStyle?.Invoke(this, new EventArgs());
+                nameCategory += " -" + point.ToString() + "%";
+                chart.Series["data"].Points.AddXY(nameCategory, point);
+                chart.Series["data"].Points[i].Color = color;
+
+            }
+            statisticsForm.Controls.Add(chart);
+            statisticsForm.Show();
         }
     }
 }
