@@ -39,6 +39,8 @@ namespace wardrobe
             form.Change_Photo_Shoe += new EventHandler<EventArgs>(SetPhotoShoe);
             form.GetNumberColors += new EventHandler<EventArgs>(GetNumberColors);
             form.GetStatColor += new EventHandler<EventArgs>(GetStatColor);
+            form.GetNumberSeasons += new EventHandler<EventArgs>(GetNumberSeasons);
+            form.GetStatSeason += new EventHandler<EventArgs>(GetStatSeason);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
@@ -1281,6 +1283,64 @@ namespace wardrobe
                 return Color.Beige;
             if (s == "серый")
                 return Color.Gray;
+            else
+                return Color.BlueViolet;
+        }
+        public void GetNumberSeasons(object sender, EventArgs e)
+        {
+            try
+            {
+                form.Ids.Clear();
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    foreach (var c in db.seasons)
+                        form.Ids.Add(c.Id);
+                    form.number = db.seasons.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void GetStatSeason(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q1 = (from b in db.seasons
+                              where b.Id == form.categoryId
+                              select b).Single();
+                    form.nameCategory = q1.Season_name;
+                    var q = from b in db.clothes_items
+                            where b.season == q1
+                            select b;
+                    form.point = q.Count() * 100 / db.clothes_items.Count();
+                    form.color = CreateColorSeason(q1.Season_name);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        Color CreateColorSeason(string s)
+        {
+            if (s == "лето")
+                return Color.Red;
+            if (s == "весна/осень")
+                return Color.YellowGreen;
+            if (s == "весна")
+                return Color.Green;
+            if (s == "осень")
+                return Color.Yellow;          
+            if (s == "зима")
+                return Color.Blue;
+            if (s == "все сезоны")
+                return Color.Beige;
             else
                 return Color.BlueViolet;
         }
