@@ -41,6 +41,8 @@ namespace wardrobe
             form.GetStatColor += new EventHandler<EventArgs>(GetStatColor);
             form.GetNumberSeasons += new EventHandler<EventArgs>(GetNumberSeasons);
             form.GetStatSeason += new EventHandler<EventArgs>(GetStatSeason);
+            form.GetNumberStyles += new EventHandler<EventArgs>(GetNumberStyles);
+            form.GetStatStyle += new EventHandler<EventArgs>(GetStatStyle);
             form.add_clothe.LoadF2 += new EventHandler<EventArgs>(LoadAdd);
             form.add_clothe.Save_clothes += new EventHandler<EventArgs>(SaveAdd);        
             form.see_clothe.LoadF3 += new EventHandler<EventArgs>(LoadSeeForm);
@@ -1343,6 +1345,46 @@ namespace wardrobe
                 return Color.Beige;
             else
                 return Color.BlueViolet;
+        }
+        public void GetNumberStyles(object sender, EventArgs e)
+        {
+            try
+            {
+                form.Ids.Clear();
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    foreach (var c in db.clothes_styles)
+                        form.Ids.Add(c.Id);
+                    form.number = db.clothes_styles.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void GetStatStyle(object sender, EventArgs e)
+        {
+            try
+            {
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    var q1 = (from b in db.clothes_styles
+                              where b.Id == form.categoryId
+                              select b).Single();
+                    form.nameCategory = q1.Style_name;
+                    var q = from b in db.clothes_items
+                            where b.style == q1
+                            select b;
+                    form.point = q.Count() * 100 / db.clothes_items.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 
