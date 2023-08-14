@@ -16,6 +16,7 @@ namespace wardrobe
         public event EventHandler<EventArgs> CountItems;
         public event EventHandler<EventArgs> TakeName;
         public event EventHandler<EventArgs> TakePhoto;
+        public event EventHandler<EventArgs> DeleteComplect;
         public int a { get; set; }
         public int b { get; set; }
         public int c { get; set; }
@@ -79,7 +80,16 @@ namespace wardrobe
         }
         private void Button_Click(object sender, EventArgs e)
         {
-
+            Button clickedButton = sender as Button;
+            string s= clickedButton.Name;
+            string[] s1 = s.Split('.');
+            n = int.Parse(s1[1]);
+            DialogResult result = MessageBox.Show("уверены , что хотите удалить комплект ?", "подтвердите", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                DeleteComplect?.Invoke(this, new EventArgs());
+                this.Close();
+            }
         }
     }
 }
