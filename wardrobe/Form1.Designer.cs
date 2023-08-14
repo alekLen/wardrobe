@@ -271,8 +271,9 @@
             button2.Name = "button2";
             button2.Size = new Size(261, 29);
             button2.TabIndex = 4;
-            button2.Text = "статистика видов одежды";
+            button2.Text = "статистика сезонов одежды";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += season_statistic;
             // 
             // button3
             // 
@@ -283,6 +284,7 @@
             button3.TabIndex = 5;
             button3.Text = "статистика стилей";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += style_statistic;
             // 
             // listBox1
             // 

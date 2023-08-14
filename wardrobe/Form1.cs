@@ -44,6 +44,8 @@ namespace wardrobe
         public event EventHandler<EventArgs> SeeComplects;
         public event EventHandler<EventArgs> GetNumberColors;
         public event EventHandler<EventArgs> GetStatColor;
+        public event EventHandler<EventArgs> GetNumberSeasons;
+        public event EventHandler<EventArgs> GetStatSeason;
 
         public Form1()
         {
@@ -700,22 +702,22 @@ namespace wardrobe
             chart.Dock = DockStyle.Fill;
             chart.ChartAreas.Add(new ChartArea("area"));
 
-           chart.Series.Add(new Series("data"));
+            chart.Series.Add(new Series("data"));
 
             chart.Series["data"].ChartType = SeriesChartType.Pie;
             chart.Series["data"]["PieLabelStyle"] = "Outside";
             chart.Series["data"]["PieLineColor"] = "Black";
-            chart.Series["data"]["PieLineWidth"] = "2"; 
-           // chart.Series["data"]["PieDrawingStyle"] = "Default"; 
+            chart.Series["data"]["PieLineWidth"] = "2";
 
             GetNumberColors?.Invoke(this, new EventArgs());
             int x = 0;
-            for(int i=0;i<number;i++)
+            for (int i = 0; i < number; i++)
             {
                 categoryId = Ids[i];
                 GetStatColor?.Invoke(this, new EventArgs());
                 if (point > 0)
                 {
+                    nameCategory += " -" + point.ToString() + "%";
                     chart.Series["data"].Points.AddXY(nameCategory, point);
                     chart.Series["data"].Points[x].Color = color;
                     x++;
@@ -723,6 +725,47 @@ namespace wardrobe
             }
             statisticsForm.Controls.Add(chart);
             statisticsForm.Show();
+        }
+
+        private void season_statistic(object sender, EventArgs e)
+        {
+            Form statisticsForm = new Form();
+            statisticsForm.Text = "Статистика сезонов одежды";
+            statisticsForm.Width = 600;
+            statisticsForm.Height = 500;
+
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
+            chart.ChartAreas.Add(new ChartArea("area"));
+
+            chart.Series.Add(new Series("data"));
+
+            chart.Series["data"].ChartType = SeriesChartType.Pie;
+            chart.Series["data"]["PieLabelStyle"] = "Outside";
+            chart.Series["data"]["PieLineColor"] = "Black";
+            chart.Series["data"]["PieLineWidth"] = "2";
+
+            GetNumberSeasons?.Invoke(this, new EventArgs());
+            int x = 0;
+            for (int i = 0; i < number; i++)
+            {
+                categoryId = Ids[i];
+                GetStatSeason?.Invoke(this, new EventArgs());
+                if (point > 0)
+                {
+                    nameCategory += " -" + point.ToString() + "%";
+                    chart.Series["data"].Points.AddXY(nameCategory, point);
+                    chart.Series["data"].Points[x].Color = color;
+                    x++;
+                }
+            }
+            statisticsForm.Controls.Add(chart);
+            statisticsForm.Show();
+        }
+
+        private void style_statistic(object sender, EventArgs e)
+        {
+          
         }
     }
 }

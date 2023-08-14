@@ -59,6 +59,8 @@ namespace wardrobe
         public event EventHandler<EventArgs> SeeComplects;
         public event EventHandler<EventArgs> GetNumberColors;
         public event EventHandler<EventArgs> GetStatColor;
+        public event EventHandler<EventArgs> GetNumberSeasons;
+        public event EventHandler<EventArgs> GetStatSeason;
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
         public Form4 edit_form { get; set; }
