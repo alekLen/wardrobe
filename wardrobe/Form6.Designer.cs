@@ -35,6 +35,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
             Name = "Form6";
             Text = "комплекты";

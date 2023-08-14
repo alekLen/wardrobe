@@ -140,7 +140,7 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(201, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
@@ -230,13 +230,13 @@
             // цветToolStripMenuItem
             // 
             цветToolStripMenuItem.Name = "цветToolStripMenuItem";
-            цветToolStripMenuItem.Size = new Size(224, 26);
+            цветToolStripMenuItem.Size = new Size(201, 26);
             цветToolStripMenuItem.Text = "комплект";
             // 
             // альбомToolStripMenuItem
             // 
             альбомToolStripMenuItem.Name = "альбомToolStripMenuItem";
-            альбомToolStripMenuItem.Size = new Size(224, 26);
+            альбомToolStripMenuItem.Size = new Size(201, 26);
             альбомToolStripMenuItem.Text = "альбом";
             // 
             // добавитьодеждуToolStripMenuItem
@@ -262,6 +262,7 @@
             button1.TabIndex = 3;
             button1.Text = "цветовая статистика";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += color_statistic;
             // 
             // button2
             // 

@@ -59,7 +59,7 @@ namespace wardrobe
                         pictureBox.Image = Image.FromFile(s);
                         pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                         this.Controls.Add(pictureBox);
-                        c1++;n++;
+                        c1++; n++;
                     }
                     y += 120;
                     c++;

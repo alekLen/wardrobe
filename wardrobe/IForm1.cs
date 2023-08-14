@@ -26,6 +26,11 @@ namespace wardrobe
         public List<string> f_color { get; set; }
         public List<string> f_style { get; set; }
         public List<string> f_season { get; set; }
+        public int point { get; set; }
+        public int categoryId { get; set; }
+        public string nameCategory { get; set; }
+        public int number { get; set; }
+        public Color color { get; set; }
         public void SetChoseItemUp(string s);
         public void SetPhotoItemUp(string s);
         public void SetChoseItemBottom(string s);
@@ -52,6 +57,8 @@ namespace wardrobe
         public event EventHandler<EventArgs> Change_Photo_Suit;
         public event EventHandler<EventArgs> Change_Photo_Shoe;
         public event EventHandler<EventArgs> SeeComplects;
+        public event EventHandler<EventArgs> GetNumberColors;
+        public event EventHandler<EventArgs> GetStatColor;
         public Form2 add_clothe { get; set; }
         public Form3 see_clothe { get; set; }
         public Form4 edit_form { get; set; }

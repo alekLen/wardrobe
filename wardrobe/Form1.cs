@@ -2,6 +2,8 @@ using Azure.Messaging;
 using System.Drawing;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Security.Cryptography;
 
 namespace wardrobe
 {
@@ -17,6 +19,11 @@ namespace wardrobe
         public List<string> f_color { get; set; } = new();
         public List<string> f_style { get; set; } = new();
         public List<string> f_season { get; set; } = new();
+        public int point { get; set; }
+        public int categoryId { get; set; }
+        public string nameCategory { get; set; }
+        public int number { get; set; }
+        public Color color { get; set; }
 
         public event EventHandler<EventArgs> LoadF;
         public event EventHandler<EventArgs> LoadUp;
@@ -35,6 +42,9 @@ namespace wardrobe
         public event EventHandler<EventArgs> Change_Photo_Suit;
         public event EventHandler<EventArgs> Change_Photo_Shoe;
         public event EventHandler<EventArgs> SeeComplects;
+        public event EventHandler<EventArgs> GetNumberColors;
+        public event EventHandler<EventArgs> GetStatColor;
+
         public Form1()
         {
             InitializeComponent();
@@ -669,7 +679,7 @@ namespace wardrobe
         }
 
         private void See_Complects(object sender, EventArgs e)
-        {       
+        {
             if (complects_show_form.IsDisposed || complects_show_form.Visible)
             {
                 complects_show_form = new Form6();
@@ -677,6 +687,42 @@ namespace wardrobe
             }
             //complects_show_form.MainForm = this;
             complects_show_form.Show();
+        }
+
+        private void color_statistic(object sender, EventArgs e)
+        {
+            Form statisticsForm = new Form();
+            statisticsForm.Text = "Статистика цветов одежды";
+            statisticsForm.Width = 600;
+            statisticsForm.Height = 500;
+
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
+            chart.ChartAreas.Add(new ChartArea("area"));
+
+           chart.Series.Add(new Series("data"));
+
+            chart.Series["data"].ChartType = SeriesChartType.Pie;
+            chart.Series["data"]["PieLabelStyle"] = "Outside";
+            chart.Series["data"]["PieLineColor"] = "Black";
+            chart.Series["data"]["PieLineWidth"] = "2"; 
+           // chart.Series["data"]["PieDrawingStyle"] = "Default"; 
+
+            GetNumberColors?.Invoke(this, new EventArgs());
+            int x = 0;
+            for(int i=0;i<number;i++)
+            {
+                categoryId = Ids[i];
+                GetStatColor?.Invoke(this, new EventArgs());
+                if (point > 0)
+                {
+                    chart.Series["data"].Points.AddXY(nameCategory, point);
+                    chart.Series["data"].Points[x].Color = color;
+                    x++;
+                }
+            }
+            statisticsForm.Controls.Add(chart);
+            statisticsForm.Show();
         }
     }
 }
