@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace wardrobe
@@ -964,29 +968,134 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Filter(object sender, EventArgs e)
+        public void Filter1(object sender, EventArgs e)
         {
             try
             { 
-                form.ClearUp();
+               /* form.ClearUp();
                 form.ClearBottom();
                 form.ClearSuit();
                 form.ClearShoe();
                 Wardrobe_Context db = Get_db();
-                foreach(string a in form.f_color)
+                /* foreach(string a in form.f_color)
+                 {
+                     filter_Color(db, a);
+                 }
+                 foreach (string a in form.f_style)
+                 {
+                     filter_Style(db, a);
+                 }
+                 foreach (string a in form.f_season)
+                 {
+                     filter_Season(db, a);
+                 }*/
+                // ToColorBox(db);
+              /*  List<Colors> c = new List<Colors>();
+                List<Season> s = new List<Season>();
+                List<Clothes_style> cs= new List<Clothes_style>();
+                foreach (string a in form.f_season)
                 {
-                    filter_Color(db, a);
+                    var query = (from b in db.seasons
+                                 where b.Season_name == a
+                                 select b).Single();
+                    s.Add(query);
+                }
+                foreach (string a in form.f_color)
+                {
+                    var query = (from b in db.colors
+                                 where b.Color_name == a
+                                 select b).Single();
+                    c.Add(query);
                 }
                 foreach (string a in form.f_style)
                 {
-                    filter_Style(db, a);
-                }
-                foreach (string a in form.f_season)
+                    var query = (from b in db.clothes_styles
+                                 where b.Style_name == a
+                                 select b).Single();
+                    cs.Add(query);
+                } 
+                List<Clothes_Item> selectedClothing=new List<Clothes_Item>();
+                if (c.Count() == 2 && s.Count() == 1 && cs.Count() == 1)
                 {
-                    filter_Season(db, a);
+                     selectedClothing = db.clothes_items
+                    .Where(item => item.color == c[0] || item.color == c[1])
+                    .Where(item => item.season == s[0])
+                    .Where(item => item.style == cs[0])
+                    .ToList();
+                }
+                if (c.Count() == 1 && s.Count() == 1 && cs.Count() == 1)
+                {
+                    selectedClothing = db.clothes_items
+                   .Where(item => item.color == c[0])
+                   .Where(item => item.season == s[0])
+                   .Where(item => item.style == cs[0])
+                   .ToList();
+                }
+                if (c.Count() == 2 && s.Count() == 1 && cs.Count() == 0)
+                {
+                    selectedClothing = db.clothes_items
+                   .Where(item => item.color == c[0] || item.color == c[1])
+                   .Where(item => item.season == s[0])                 
+                   .ToList();
+                }
+                if (c.Count() == 2 && s.Count() == 0 && cs.Count() == 1)
+                {
+                    selectedClothing = db.clothes_items
+                   .Where(item => item.color == c[0] || item.color == c[1])
+                   .Where(item => item.style == cs[0])
+                   .ToList();
+                }*/
+                var builder = new ConfigurationBuilder();
+                builder.SetBasePath(Directory.GetCurrentDirectory());
+                builder.AddJsonFile("appsettings.json");
+                var config = builder.Build();
+                string connectionString = config.GetConnectionString("DefaultConnection");
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Теперь вы готовы выполнить SQL-запрос и получить результат.
+
+                    string sqlQuery = "SELECT Clothes_Item_name FROM clothes_items WHERE colorId = 1";
+                    //var selectedClothing1 = db.clothes_items.SqlQuery(sqlQuery).ToList();
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string f = reader["Clothes_Item_name"].ToString();
+                            MessageBox.Show(f);
+
+                            // Здесь вы можете обработать полученные данные.
+                        }
+                    }
+
                 }
 
-                ToColorBox(db);
+              /*  var r1 = (from b in db.clothes_types
+                             where b.Type_name == "обувь"
+                          select b).Single();
+                var r2 = (from b in db.clothes_types
+                          where b.Type_name == "верх"
+                          select b).Single();
+                var r3 = (from b in db.clothes_types
+                          where b.Type_name == "низ"
+                          select b).Single();
+                var r4 = (from b in db.clothes_types
+                          where b.Type_name == "платье/костюм"
+                          select b).Single();
+                foreach (var b in selectedClothing)
+                {
+                    if(b.type == r1)
+                        form.SetTypeShoeToWardrobe(b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name );
+                    if(b.type == r2)
+                        form.SetTypeUpToWardrobe(b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name);
+                    if (b.type == r3)
+                        form.SetTypeBottomToWardrobe(b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name);
+                    if (b.type == r4)
+                        form.SetTypeSuitToWardrobe(b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name);
+              */
+               // }
             }
             catch (Exception ex)
             {
@@ -1407,6 +1516,136 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
+        public void Filter(object sender, EventArgs e)
+        {
+            try
+            {
+                form.ClearUp();
+                 form.ClearBottom();
+                 form.ClearSuit();
+                 form.ClearShoe();
+                List<int> c = new();
+                List<int> s = new();
+                List<int> cs = new();
+                Wardrobe_Context db = Get_db();
+                using (db)
+                {
+                    foreach (string a in form.f_season)
+                {
+                    var query = (from b in db.seasons
+                                 where b.Season_name == a
+                                 select b.Id).Single();
+                    s.Add(query);
+                }
+                foreach (string a in form.f_color)
+                {
+                    var query = (from b in db.colors
+                                 where b.Color_name == a
+                                 select b.Id).Single();
+                    c.Add(query);
+                }
+                foreach (string a in form.f_style)
+                {
+                    var query = (from b in db.clothes_styles
+                                 where b.Style_name == a
+                                 select b.Id).Single();
+                    cs.Add(query);
+                }
+                string sqlQuery = "SELECT * FROM clothes_items WHERE ";
+
+                    if (form.f_color.Count() > 0)
+                        sqlQuery += " colorId=" + c[0];
+                  for (int i=1;i< form.f_color.Count();i++)
+                  {
+                        sqlQuery+= " OR colorId=" + c[i];
+
+                  }
+                    if (form.f_color.Count() > 0 &&(form.f_style.Count() > 0|| form.f_season.Count() > 0))
+                        sqlQuery += " AND ";
+                    if (form.f_style.Count() > 0)
+                        sqlQuery += " styleId=" + cs[0];
+                    for (int i = 1; i < form.f_style.Count(); i++)
+                    {
+                        sqlQuery += " styleId=" + cs[i];
+                    }
+                    if (form.f_style.Count() > 0 && form.f_season.Count() > 0)
+                        sqlQuery += " AND ";
+                    if (form.f_season.Count() > 0)
+                    {
+                        sqlQuery += " seasonId=" + s[0];
+                    }
+                    for (int i = 1; i < form.f_season.Count(); i++)
+                    {
+                        sqlQuery += " styleId=" + s[i];
+                    }
+
+                    List<Clothes_Item> selectedClothing=new List<Clothes_Item>();
+                
+                var builder = new ConfigurationBuilder();
+                builder.SetBasePath(Directory.GetCurrentDirectory());
+                builder.AddJsonFile("appsettings.json");
+                var config = builder.Build();
+                string connectionString = config.GetConnectionString("DefaultConnection");
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(sqlQuery, connection);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                                // string f = reader["Clothes_Item_name"].ToString();
+                               int type = int.Parse(reader["typeId"].ToString());
+                                string id = reader["id"].ToString(); 
+                                string name= reader["Clothes_Item_name"].ToString();
+                                int st= int.Parse(reader["styleId"].ToString());
+                                int col = int.Parse(reader["colorId"].ToString());
+                                int se = int.Parse(reader["seasonId"].ToString());
+                                string color = GetColor(db, col);
+                                string season = GetSeason(db, se);
+                                string style = GetStyle(db, st);
+                                if (type==1)
+                                    form.SetTypeUpToWardrobe(id+ "." + name + "___" + color + "___" + style + "___" +  season );
+                                if (type == 2)
+                                    form.SetTypeBottomToWardrobe(id + "." + name + "___" + color + "___" + style + "___" + season);
+                                if (type == 3)
+                                    form.SetTypeSuitToWardrobe(id + "." + name + "___" + color + "___" + style + "___" + season);
+                                if (type == 4)
+                                    form.SetTypeShoeToWardrobe(id + "." + name + "___" + color + "___" + style + "___" + season);
+
+                        }
+                    }
+
+                }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        string GetColor(Wardrobe_Context db, int a)
+        {
+                var q = (from b in db.colors
+                             where b.Id == a
+                             select b.Color_name).Single();
+                return q;
+        }
+        string GetStyle(Wardrobe_Context db, int a)
+        {
+                var q = (from b in db.clothes_styles
+                         where b.Id == a
+                         select b.Style_name).Single();
+                return q;
+        }
+        string GetSeason(Wardrobe_Context db, int a)
+        {           
+                var q = (from b in db.seasons
+                         where b.Id == a
+                         select b.Season_name).Single();
+                return q;
+        }
+
     }
 
 }
