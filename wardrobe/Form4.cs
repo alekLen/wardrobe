@@ -46,19 +46,19 @@ namespace wardrobe
                 this.Text = "редактирование";
                 textBox1.Enabled = true;
                 button1.Text = "изменить";
-                if (category == "style" )
+                if (category == "style")
                 {
                     label1.Text = "стили";
                     LoadEditStyle?.Invoke(this, EventArgs.Empty);
                     button1.Click += editStyle;
                 }
-                if (category == "season" )
+                if (category == "season")
                 {
                     label1.Text = "сезоны";
                     LoadEditSeason?.Invoke(this, EventArgs.Empty);
                     button1.Click += editSeason;
                 }
-                if (category == "color" )
+                if (category == "color")
                 {
                     label1.Text = "цвета";
                     LoadEditColor?.Invoke(this, EventArgs.Empty);
@@ -118,7 +118,7 @@ namespace wardrobe
                     LoadShowColor?.Invoke(this, EventArgs.Empty);
                     button1.Click += addColor;
                 }
-            }                        
+            }
         }
         public void SetCategory(string s)
         {
@@ -216,6 +216,6 @@ namespace wardrobe
                 this.Close();
                 MessageBox.Show("цвет удален!");
             }
-        }
+        }     
     }
 }

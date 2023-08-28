@@ -968,10 +968,10 @@ namespace wardrobe
                 MessageBox.Show(ex.Message);
             }
         }
-        public void Filter1(object sender, EventArgs e)
+     /*  public void Filter1(object sender, EventArgs e)
         {
             try
-            { 
+            { */
                /* form.ClearUp();
                 form.ClearBottom();
                 form.ClearSuit();
@@ -1045,7 +1045,7 @@ namespace wardrobe
                    .Where(item => item.style == cs[0])
                    .ToList();
                 }*/
-                var builder = new ConfigurationBuilder();
+              /*  var builder = new ConfigurationBuilder();
                 builder.SetBasePath(Directory.GetCurrentDirectory());
                 builder.AddJsonFile("appsettings.json");
                 var config = builder.Build();
@@ -1096,12 +1096,12 @@ namespace wardrobe
                         form.SetTypeSuitToWardrobe(b.Id + "." + b.Clothes_Item_name + "___" + b.color.Color_name + "___" + b.style.Style_name + "___" + b.season.Season_name);
               */
                // }
-            }
-            catch (Exception ex)
+          //  }
+         /*   catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        }*/
         void filter_Color(Wardrobe_Context db, string a)
         {
             var query1 = from b in db.clothes_items

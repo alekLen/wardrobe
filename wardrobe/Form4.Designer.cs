@@ -80,6 +80,7 @@
             // 
             // Form4
             // 
+            AcceptButton = button1;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(428, 183);
