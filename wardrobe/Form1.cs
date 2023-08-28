@@ -780,7 +780,7 @@ namespace wardrobe
             chart.Series["data"].ChartType = SeriesChartType.Bar;
 
             GetNumberStyles?.Invoke(this, new EventArgs());
-            color = Color.Aqua;
+            color = Color.BlueViolet;
             for (int i = 0; i < number; i++)
             {
                 categoryId = Ids[i];

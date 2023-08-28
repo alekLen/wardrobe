@@ -1378,23 +1378,23 @@ namespace wardrobe
         }
         Color CreateColor(string s)
         {
-            if (s == "красный")
+            if ((string.Equals(s, "красный", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Red", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Red;
-            if (s == "черный")
+            if ((string.Equals(s , "черный", StringComparison.OrdinalIgnoreCase))|| (string.Equals(s, "Black", StringComparison.OrdinalIgnoreCase)))
                 return Color.Black;
-            if (s == "зеленый")
+            if ((string.Equals(s, "зеленый", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Green", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Green;
-            if (s == "желтый")
+            if ((string.Equals(s,  "желтый", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Yellow", StringComparison.OrdinalIgnoreCase)))
                 return Color.Yellow;
-            if (s == "бежевый")
+            if ((string.Equals(s, "бежевый", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Bisque", StringComparison.OrdinalIgnoreCase)))
                 return Color.Bisque;
-            if (s == "коричневый")
+            if ((string.Equals(s, "коричневый", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Brown", StringComparison.OrdinalIgnoreCase)))
                 return Color.Brown;
-            if (s == "синий")
+            if ((string.Equals(s, "синий", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Blue", StringComparison.OrdinalIgnoreCase)))
                 return Color.Blue;
-            if (s == "белый")
+            if (string.Equals(s, "белый", StringComparison.OrdinalIgnoreCase))
                 return Color.Beige;
-            if (s == "серый")
+            if ((string.Equals(s, "серый", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "Gray", StringComparison.OrdinalIgnoreCase)))
                 return Color.Gray;
             else
                 return Color.BlueViolet;
@@ -1442,17 +1442,17 @@ namespace wardrobe
         }
         Color CreateColorSeason(string s)
         {
-            if (s == "лето")
+            if ((string.Equals(s, "лето", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "summer", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Red;
-            if (s == "весна/осень")
+            if ((string.Equals(s, "весна/осень", StringComparison.OrdinalIgnoreCase))|| (string.Equals(s, "spring/autumn", StringComparison.OrdinalIgnoreCase)) )
                 return Color.YellowGreen;
-            if (s == "весна")
+            if ((string.Equals(s, "весна", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "spring", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Green;
-            if (s == "осень")
-                return Color.Yellow;          
-            if (s == "зима")
+            if ((string.Equals(s, "осень", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "autumn", StringComparison.OrdinalIgnoreCase)) )
+                return Color.Yellow;
+            if ((string.Equals(s, "зима", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "winter", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Blue;
-            if (s == "все сезоны")
+            if ((string.Equals(s, "все сезоны", StringComparison.OrdinalIgnoreCase)) || (string.Equals(s, "all seasons", StringComparison.OrdinalIgnoreCase)) )
                 return Color.Beige;
             else
                 return Color.BlueViolet;
