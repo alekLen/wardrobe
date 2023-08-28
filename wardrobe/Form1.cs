@@ -5,6 +5,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+using System.Linq.Expressions;
 
 namespace wardrobe
 {
@@ -472,23 +473,32 @@ namespace wardrobe
 
         private void filter_color(object sender, EventArgs e)
         {
-            f_color.Add(comboBox1.SelectedItem.ToString());
-            ListViewItem item1 = new ListViewItem(comboBox1.SelectedItem.ToString());
-            listView5.Items.Add(item1);
+            try{
+                f_color.Add(comboBox1.SelectedItem.ToString());
+                ListViewItem item1 = new ListViewItem(comboBox1.SelectedItem.ToString());
+                listView5.Items.Add(item1);
+            }
+            catch{ }
         }
 
         private void filter_season(object sender, EventArgs e)
         {
+            try {  
             f_season.Add(comboBox2.SelectedItem.ToString());
             ListViewItem item1 = new ListViewItem(comboBox2.SelectedItem.ToString());
             listView5.Items.Add(item1);
+            }
+            catch { }
         }
 
         private void filter_style(object sender, EventArgs e)
         {
+            try {  
             f_style.Add(comboBox3.SelectedItem.ToString());
             ListViewItem item1 = new ListViewItem(comboBox3.SelectedItem.ToString());
             listView5.Items.Add(item1);
+            }
+            catch { }
         }
 
         private void filter_Start(object sender, EventArgs e)
@@ -502,11 +512,17 @@ namespace wardrobe
 
         private void clear_filter(object sender, EventArgs e)
         {
+            try {  
             f_color.Clear();
             f_season.Clear();
             f_style.Clear();
             listView5.Items.Clear();
             Clear_Filtr?.Invoke(this, EventArgs.Empty);
+            comboBox1.SelectedItem = null;
+            comboBox2.SelectedItem = null;
+            comboBox3.SelectedItem = null;
+            }
+            catch { }
         }
 
         private void Add_Complect(object sender, EventArgs e)

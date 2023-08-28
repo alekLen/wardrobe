@@ -89,6 +89,19 @@
             label19 = new Label();
             label20 = new Label();
             listBox2 = new ListBox();
+            редактироватьToolStripMenuItem2 = new ToolStripMenuItem();
+            стилиToolStripMenuItem = new ToolStripMenuItem();
+            цветаToolStripMenuItem = new ToolStripMenuItem();
+            сезоныToolStripMenuItem = new ToolStripMenuItem();
+            удалитьToolStripMenuItem4 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem3 = new ToolStripMenuItem();
+            добавитьToolStripMenuItem4 = new ToolStripMenuItem();
+            удалитьToolStripMenuItem5 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem4 = new ToolStripMenuItem();
+            добавитьToolStripMenuItem5 = new ToolStripMenuItem();
+            удалитьToolStripMenuItem6 = new ToolStripMenuItem();
+            изменитьToolStripMenuItem5 = new ToolStripMenuItem();
+            добавитьToolStripMenuItem6 = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -122,7 +135,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, добавитьодеждуToolStripMenuItem, просмотрToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { редактироватьToolStripMenuItem, добавитьодеждуToolStripMenuItem, просмотрToolStripMenuItem, редактироватьToolStripMenuItem2 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1714, 28);
@@ -140,34 +153,34 @@
             // 
             стильОдеждыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { добавитьToolStripMenuItem, удалитьToolStripMenuItem, редактироватьToolStripMenuItem1 });
             стильОдеждыToolStripMenuItem.Name = "стильОдеждыToolStripMenuItem";
-            стильОдеждыToolStripMenuItem.Size = new Size(201, 26);
+            стильОдеждыToolStripMenuItem.Size = new Size(224, 26);
             стильОдеждыToolStripMenuItem.Text = "характеристики";
             // 
             // добавитьToolStripMenuItem
             // 
             добавитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem1, изменитьToolStripMenuItem, добавитьToolStripMenuItem1 });
             добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            добавитьToolStripMenuItem.Size = new Size(132, 26);
+            добавитьToolStripMenuItem.Size = new Size(224, 26);
             добавитьToolStripMenuItem.Text = "стиль";
             // 
             // удалитьToolStripMenuItem1
             // 
             удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            удалитьToolStripMenuItem1.Size = new Size(159, 26);
+            удалитьToolStripMenuItem1.Size = new Size(224, 26);
             удалитьToolStripMenuItem1.Text = "удалить";
             удалитьToolStripMenuItem1.Click += delStyle;
             // 
             // изменитьToolStripMenuItem
             // 
             изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            изменитьToolStripMenuItem.Size = new Size(159, 26);
+            изменитьToolStripMenuItem.Size = new Size(224, 26);
             изменитьToolStripMenuItem.Text = "изменить";
             изменитьToolStripMenuItem.Click += editStyle;
             // 
             // добавитьToolStripMenuItem1
             // 
             добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            добавитьToolStripMenuItem1.Size = new Size(159, 26);
+            добавитьToolStripMenuItem1.Size = new Size(224, 26);
             добавитьToolStripMenuItem1.Text = "добавить";
             добавитьToolStripMenuItem1.Click += addStyle;
             // 
@@ -175,7 +188,7 @@
             // 
             удалитьToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem2, изменитьToolStripMenuItem1, добавитьToolStripMenuItem2 });
             удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            удалитьToolStripMenuItem.Size = new Size(132, 26);
+            удалитьToolStripMenuItem.Size = new Size(224, 26);
             удалитьToolStripMenuItem.Text = "сезон";
             // 
             // удалитьToolStripMenuItem2
@@ -203,7 +216,7 @@
             // 
             редактироватьToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem3, изменитьToolStripMenuItem2, добавитьToolStripMenuItem3 });
             редактироватьToolStripMenuItem1.Name = "редактироватьToolStripMenuItem1";
-            редактироватьToolStripMenuItem1.Size = new Size(132, 26);
+            редактироватьToolStripMenuItem1.Size = new Size(224, 26);
             редактироватьToolStripMenuItem1.Text = "цвет";
             // 
             // удалитьToolStripMenuItem3
@@ -230,13 +243,13 @@
             // цветToolStripMenuItem
             // 
             цветToolStripMenuItem.Name = "цветToolStripMenuItem";
-            цветToolStripMenuItem.Size = new Size(201, 26);
+            цветToolStripMenuItem.Size = new Size(224, 26);
             цветToolStripMenuItem.Text = "комплект";
             // 
             // альбомToolStripMenuItem
             // 
             альбомToolStripMenuItem.Name = "альбомToolStripMenuItem";
-            альбомToolStripMenuItem.Size = new Size(201, 26);
+            альбомToolStripMenuItem.Size = new Size(224, 26);
             альбомToolStripMenuItem.Text = "альбом";
             // 
             // добавитьодеждуToolStripMenuItem
@@ -646,6 +659,97 @@
             listBox2.SelectedIndexChanged += selectBottom;
             listBox2.DoubleClick += del_chosen_bottom;
             // 
+            // редактироватьToolStripMenuItem2
+            // 
+            редактироватьToolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { стилиToolStripMenuItem, цветаToolStripMenuItem, сезоныToolStripMenuItem });
+            редактироватьToolStripMenuItem2.Name = "редактироватьToolStripMenuItem2";
+            редактироватьToolStripMenuItem2.Size = new Size(126, 24);
+            редактироватьToolStripMenuItem2.Text = "редактировать";
+            // 
+            // стилиToolStripMenuItem
+            // 
+            стилиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem4, изменитьToolStripMenuItem3, добавитьToolStripMenuItem4 });
+            стилиToolStripMenuItem.Name = "стилиToolStripMenuItem";
+            стилиToolStripMenuItem.Size = new Size(224, 26);
+            стилиToolStripMenuItem.Text = "стиль";
+            // 
+            // цветаToolStripMenuItem
+            // 
+            цветаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem5, изменитьToolStripMenuItem4, добавитьToolStripMenuItem5 });
+            цветаToolStripMenuItem.Name = "цветаToolStripMenuItem";
+            цветаToolStripMenuItem.Size = new Size(224, 26);
+            цветаToolStripMenuItem.Text = "цвет";
+            // 
+            // сезоныToolStripMenuItem
+            // 
+            сезоныToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { удалитьToolStripMenuItem6, изменитьToolStripMenuItem5, добавитьToolStripMenuItem6 });
+            сезоныToolStripMenuItem.Name = "сезоныToolStripMenuItem";
+            сезоныToolStripMenuItem.Size = new Size(224, 26);
+            сезоныToolStripMenuItem.Text = "сезон";
+            // 
+            // удалитьToolStripMenuItem4
+            // 
+            удалитьToolStripMenuItem4.Name = "удалитьToolStripMenuItem4";
+            удалитьToolStripMenuItem4.Size = new Size(224, 26);
+            удалитьToolStripMenuItem4.Text = "удалить";
+            удалитьToolStripMenuItem4.Click += delStyle;
+            // 
+            // изменитьToolStripMenuItem3
+            // 
+            изменитьToolStripMenuItem3.Name = "изменитьToolStripMenuItem3";
+            изменитьToolStripMenuItem3.Size = new Size(224, 26);
+            изменитьToolStripMenuItem3.Text = "изменить";
+            изменитьToolStripMenuItem3.Click += editStyle;
+            // 
+            // добавитьToolStripMenuItem4
+            // 
+            добавитьToolStripMenuItem4.Name = "добавитьToolStripMenuItem4";
+            добавитьToolStripMenuItem4.Size = new Size(224, 26);
+            добавитьToolStripMenuItem4.Text = "добавить";
+            добавитьToolStripMenuItem4.Click += addStyle;
+            // 
+            // удалитьToolStripMenuItem5
+            // 
+            удалитьToolStripMenuItem5.Name = "удалитьToolStripMenuItem5";
+            удалитьToolStripMenuItem5.Size = new Size(224, 26);
+            удалитьToolStripMenuItem5.Text = "удалить";
+            удалитьToolStripMenuItem5.Click += delColor;
+            // 
+            // изменитьToolStripMenuItem4
+            // 
+            изменитьToolStripMenuItem4.Name = "изменитьToolStripMenuItem4";
+            изменитьToolStripMenuItem4.Size = new Size(224, 26);
+            изменитьToolStripMenuItem4.Text = "изменить";
+            изменитьToolStripMenuItem4.Click += editColor;
+            // 
+            // добавитьToolStripMenuItem5
+            // 
+            добавитьToolStripMenuItem5.Name = "добавитьToolStripMenuItem5";
+            добавитьToolStripMenuItem5.Size = new Size(224, 26);
+            добавитьToolStripMenuItem5.Text = "добавить";
+            добавитьToolStripMenuItem5.Click += addColor;
+            // 
+            // удалитьToolStripMenuItem6
+            // 
+            удалитьToolStripMenuItem6.Name = "удалитьToolStripMenuItem6";
+            удалитьToolStripMenuItem6.Size = new Size(224, 26);
+            удалитьToolStripMenuItem6.Text = "удалить";
+            удалитьToolStripMenuItem6.Click += delSeason;
+            // 
+            // изменитьToolStripMenuItem5
+            // 
+            изменитьToolStripMenuItem5.Name = "изменитьToolStripMenuItem5";
+            изменитьToolStripMenuItem5.Size = new Size(224, 26);
+            изменитьToolStripMenuItem5.Text = "изменить";
+            изменитьToolStripMenuItem5.Click += editSeason;
+            // 
+            // добавитьToolStripMenuItem6
+            // 
+            добавитьToolStripMenuItem6.Name = "добавитьToolStripMenuItem6";
+            добавитьToolStripMenuItem6.Size = new Size(224, 26);
+            добавитьToolStripMenuItem6.Text = "добавить";
+            добавитьToolStripMenuItem6.Click += addSeason;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -771,5 +875,18 @@
         private Label label19;
         private Label label20;
         private ListBox listBox2;
+        private ToolStripMenuItem редактироватьToolStripMenuItem2;
+        private ToolStripMenuItem стилиToolStripMenuItem;
+        private ToolStripMenuItem удалитьToolStripMenuItem4;
+        private ToolStripMenuItem изменитьToolStripMenuItem3;
+        private ToolStripMenuItem добавитьToolStripMenuItem4;
+        private ToolStripMenuItem цветаToolStripMenuItem;
+        private ToolStripMenuItem удалитьToolStripMenuItem5;
+        private ToolStripMenuItem изменитьToolStripMenuItem4;
+        private ToolStripMenuItem добавитьToolStripMenuItem5;
+        private ToolStripMenuItem сезоныToolStripMenuItem;
+        private ToolStripMenuItem удалитьToolStripMenuItem6;
+        private ToolStripMenuItem изменитьToolStripMenuItem5;
+        private ToolStripMenuItem добавитьToolStripMenuItem6;
     }
 }
